@@ -1,0 +1,50 @@
+---
+execute:
+  echo: false
+---
+
+# Foreword from the InCiSE Partners {.unnumbered}
+
+We are delighted to publish a second version of the International Civil Service
+Effectiveness (InCiSE) Index. This new version of InCiSE builds on the lessons
+learned during the pilot phase in 2017. It has also been informed by the very
+helpful feedback we received from colleagues all around the world. Thanks to
+their feedback and ideas, the 2019 Index covers 7 additional countries – taking
+the total to 38 – and the InCiSE model uses 46 more metrics and 5 more data
+sources than previously.
+
+The core objective of the InCiSE Index remains the same: to help countries
+determine how their central civil services are performing and learn from each
+other.
+
+Since the July 2017 launch, we have been busy. The Blavatnik School of
+Government at the University of Oxford hosted a major international conference
+to discuss the pilot results and next steps. There was huge interest in the
+InCiSE project and the overwhelming view was that it should continue. The
+InCiSE framework was judged as having significant potential, especially as a
+learning and performance improvement tool, Conference participants from less
+developed countries were keen to engage with InCiSE despite their non-inclusion
+in the Index so far, and we are continuing to explore ways of achieving this.
+
+During 2018 we gave presentations on InCiSE at other international meetings,
+including at the OECD in Paris, a UNDP leadership training event in Singapore,
+and in Brussels at an event organised by the Hertie School of Governance. The
+report was additionally translated into Spanish by the Instituto de
+Administración Pública del Estado de Quintana Roo in Mexico, to be used at a
+major conference there. We also completed two in-depth country case studies
+&ndash; in Nigeria and Brazil &ndash; to determine the relevance of InCiSE in
+contexts where obtaining good quality data is more challenging.
+
+The InCiSE Index was originally developed in consultation with a wide range of
+experts, We are grateful to all those who have given their time to help shape
+this second version. We are also grateful to the many organisations who have
+allowed us to use their data, some for the first time. It remains our goal to
+continue refining and expanding InCiSE, and to publish the Index regularly.
+
+::: {.callout-important collapse="false"}
+Lord Heywood of Whitehall, lately the UK's Cabinet Secretary and Head of the
+Civil Service, championed InCiSE from the outset and continued to support the
+project following its launch in 2017, Lord Heywood died in November 2018 and we
+would like to pay tribute to his selfless commitment to public service, as well
+as his passion for learning and excellence, We dedicate this 2019 report to him.
+:::

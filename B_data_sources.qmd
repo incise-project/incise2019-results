@@ -1,0 +1,86 @@
+---
+execute:
+  echo: false
+---
+
+```{r, setup}
+#| output: false
+
+source("R/tbl_helpers.R")
+source("R/references.R")
+
+tbl_data_sources <- readr::read_csv("tables/data_sources.csv")
+
+```
+
+# InCiSE 2019 data sources {#sec-data-sources}
+
+The InCiSE Index brings together a large number of separate data sources
+measuring civil service or public sector effectiveness. Readers are free to
+copy and reuse the InCiSE Index, indicator and metric scores. Reuse of the
+original data is subject to the intellectual property rights of third parties.
+Please refer to the corresponding organisation's websites and data licences to
+ensure compliance with their reuse obligations.
+
+This Annex provides a list of all the data sources used to compile the 2019
+edition of InCiSE. @tbl-data-sources shows the data sources by indicator. For
+more details on the data sources and the construction of the indicators please
+refer to the [Technical Report](http://incise-project.github.io/incise2019-techreport/).
+
+```{r}
+#| label: tbl-data-sources
+#| tbl-cap: Data sources of the InCiSE indicators
+#| classes: .nostripe
+
+out_tbl_body <- tbl_data_sources |>
+  dplyr::add_count(indicator, name = "row_count") |>
+  dplyr::mutate(
+    indicator = dplyr::case_match(
+      indicator,
+        "CAP" ~ "Capabilities",
+        "CRM" ~ "Crisis and risk management",
+        "DIG" ~ "Digital services",
+        "FFM" ~ "Fiscal and financial management",
+        "HRM" ~ "HR management",
+        "INC" ~ "Inclusiveness",
+        "INT" ~ "Integrity",
+        "OPN" ~ "Openness",
+        "POL" ~ "Policy making",
+        "PRO" ~ "Procurement",
+        "REG" ~ "Regulation",
+        "TAX" ~ "Tax administration"
+    ),
+    row_output = dplyr::case_when(
+      row_count == 1 ~ 
+        paste0("<tr><td>", indicator, "</td><td>", source_ref, "</td></tr>"),
+      indicator != dplyr::lag(indicator, default = "") ~ 
+        paste0("<tr><td rowspan=\"", 
+               row_count, "\">", 
+               indicator,
+               "</td><td>",
+               source_ref, "</td></tr>"),
+      TRUE ~ 
+        paste0("<tr><td>", source_ref, "</td></tr>")
+    )
+  )
+
+out_tbl <- c(
+  "<table class=\"table table-sm small\">",
+  "<thead>",
+  "<tr class=\"header gt_col_headings\">",
+  "<th class=\"gt_col_heading gt_columns_bottom_border\">Indicator</th>",
+  "<th>Data sources</th></tr>",
+  "</thead>",
+  "<tbody class=\"gt_table_body\">",
+  out_tbl_body$row_output,
+  "</tbody>",
+  "</table>"
+)
+
+htmltools::HTML(out_tbl)
+
+```
+
+```{r, ds_refs}
+gen_ds_refs("tables/data_sources.bib")
+```

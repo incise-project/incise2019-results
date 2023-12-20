@@ -1,0 +1,59 @@
+---
+execute:
+  echo: false
+---
+
+```{r, setup}
+#| output: false
+source("R/gen_contents.R")
+```
+
+# Contents {.unnumbered}
+
+# Contents, figures and tables {.unnumbered}
+
+## Contents of the report
+
+This web book version of the report is structured into 17 chapters and two
+appendices.
+
+:::{.custom-toc .report-contents}
+
+```{r, list-sections}
+#| output: asis
+cat(get_content_list("sec"), sep = "\n")
+```
+
+:::
+
+### Changes compared to the original 2019 publication
+
+The [country profiles](04_00_country_profiles.qmd) part of this web book were
+presented as a single chapter (Chapter 4) in the original 2019 publication. For
+improved navigation and readability this part of the report has been split into
+separate chapters. Footnotes have been added to charts, tables and chapters to
+indicate the resulting differences in numbering between this web book and the
+original 2019 publication.
+
+## List of figures
+
+:::{.custom-toc .list-of-figures}
+
+```{r, list-figures}
+#| output: asis
+cat(get_content_list("fig", insert_breaks = FALSE), sep = "\n")
+```
+
+:::
+
+## List of tables
+
+:::{.custom-toc .list-of-tables}
+
+```{r, list-tables}
+#| output: asis
+cat(get_content_list("tbl"), sep = "\n")
+```
+
+:::
+

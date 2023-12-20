@@ -1,0 +1,56 @@
+---
+execute:
+  echo: false
+  warning: false
+---
+
+# Country profiles of the 2019 InCiSE results {#sec-country-profiles}
+
+This chapter provides a visual summary of each country's results from the 2019
+edition  of the InCiSE Index. For each country, there is a bar chart showing
+its position in the overall Index, as well as a ‘radar chart’ showing their
+scores for each indicator compared with the InCiSE average. The radar charts
+highlight where a country performs particularly well compared to the average
+and where further analysis or attention may be beneficial.
+
+As discussed at the start of @sec-index-results, all scores in the InCiSE
+results are relative, meaning that the highest scoring country is assigned
+1.0 and the lowest scoring country is assigned 0.0. Assessment of a country is
+therefore relative to others included in the Index only, and not an absolute
+measure.
+
+Weaker scores do not reflect a view on prioritisation within a country, but
+instead can highlight opportunities to learn from other countries.
+
+@sec-scores-rankings provides tables of the country score for each indicator.
+More detailed results of country scores, including for the metrics which
+underlie each indicator result, can be found on the InCiSE website. Further
+details about the methodological approach, including the construction of each
+indicator, can be found in the
+[Technical Report](http://incise-project.github.io/incise2019-techreport/).
+
+## Key to reading country graphs
+
+Each country section includes a figure with two charts: a bar chart on the
+left hand side showing the results of the InCiSE Index and a radar chart on
+the right hand side showing the results of the 12 indicators that make up
+the Index.
+
+The bar chart on the left hand side of the figure shows the country's overall
+score and ranking in the InCiSE Index. The country's score is coloured in teal,
+the InCiSE average is coloured in dark grey, all other country scores are
+coloured in light grey.
+
+The radar chart on the right hand side of the figure shows the country's scores
+for each of the 12 indicators. The centre of the radar indicates a score of 0
+and the outer edge indicates a score of 1, so the further out a data point is
+from the centre the higher the country's score. The country's scores are
+coloured in teal, a point with a white centre is used to indicate where the
+data for that indicator has completely missing data and their result for that
+indicator is fully estimated using statistical imputation. The InCiSE average
+for each indicator is shown in dark grey.
+
+::: {.callout-note .crf title="Cross-referencing note" icon="false"}
+This content was presented as the introduction to chapter 4 in the original
+2019 publication.
+:::

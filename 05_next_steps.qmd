@@ -1,0 +1,118 @@
+---
+execute:
+  echo: false
+---
+
+# Next steps and conclusions {#sec-next-steps}
+
+## Looking ahead {#sec-looking-ahead}
+
+The overriding priority is to secure long-term funding to enable the InCiSE
+project to be sustained, strengthened and expanded further. The founding
+institutions are actively discussing funding, as well as broader management
+and collaboration opportunities, with potential new partners. Subject to
+funding availability, the main issues the project will focus on during the
+next phase are described below.
+
+### Expanding country coverage
+
+InCiSE will continue to explore ways of expanding
+the Index’s current country coverage, especially the potential to include
+non-OECD and developing countries. During 2018 the partners commissioned
+assessments of how the InCiSE Index could be applied in Brazil and Nigeria[^1].
+These two countries were chosen as large, regionally significant states at
+different stages of economic development and with diverse political structures
+and traditions.
+
+[^1]: These can be accessed from the [Blavatnik School of Government](https://www.bsg.ox.ac.uk/about/partnerships/international-civil-service-effectiveness-index)
+
+The studies yielded important questions to consider as the project moves
+forward, such as: how well does the Index cope with countries with more
+distributed power and less influential executive branches of government? Are
+public service outcomes more important proxies for civil service effectiveness
+in developing countries? Does the Index assume a particular model of
+government, and if so, how does it capture the characteristics of systems that
+do not fit this model? In addition, the studies highlighted the possibility of
+considering the development of regional InCiSE indices, where there are data
+sets that cover particular regions only.
+
+Developing InCiSE as a practical learning and development tool InCiSE has major
+potential as a learning and development tool. Even in its pilot form InCiSE data
+has already been used by some governments for this purpose and there is much
+interest in how it could be further developed.
+
+The InCiSE Index appears to be of most use for the top leadership of the civil
+service, senior officials tasked with driving systemic and behavioural reforms,
+and relevant training and research institutes. Officials with more specific
+responsibilities require data that speaks more directly to their functions and
+interests. To help make InCiSE data more accessible and relevant for users, it
+needs to be tailored more closely than has been possible to date. Experience so
+far also suggests that users want to be able to dig more deeply into what is
+driving the results, and then use this analysis to support learning
+discussions. More broadly, experience suggests that data-based approaches
+will only work when combined with other insights into country specific problems
+and solutions.
+
+The project will therefore focus on two inter-related sets of activity:
+
+* Making InCiSE data more “customisable” for users, to allow them to dig
+  deeper into country results and make more meaningful comparisons with others.
+  This will be achieved by improving the interactivity of Index data on the
+  Blavatnik School of Government website to enable users to tailor it for their
+  needs, including generating reports. Over time, the goal is to establish a
+  self-standing website;
+* Enabling users to have easy access to InCiSE data experts who can help them
+  deal with initial questions and guide early discussions on performance
+  improvements. This will be achieved initially through the delivery of
+  facilitated workshops in target countries and regions, ideally using local
+  suppliers. Where feasible, these workshops could be held at the same time
+  and location as major international public administration events.
+
+### Continuing to strengthen data collection
+
+Tasks will include: determining how best to collect data on the omitted
+indicators (staff engagement, innovation, IT, social security administration
+and finance); exploring how data collection for existing indicators can be
+further strengthened, including filling thematic gaps; reviewing the balance
+between quantitative and qualitative indicators; further expanding data
+sources; reducing instances of public sector performance being used as a
+proxy for civil service performance; and minimising cross-country
+applicability issues.
+
+### Refining the InCiSE framework
+
+Framework tasks will include ensuring each indicator in the framework is a
+unique concept, to avoid duplication or overlap between the themes being
+measured. There is still a need to consider whether the InCiSE framework is
+sufficiently able to measure and compare core functions within federal
+government systems where some aspects could be the constitutional
+responsibilities of sub-national entities (e.g. a state or provincial
+government).
+
+Changes to the InCiSE framework will be determined mainly through user
+feedback and discussions with data owners to learn lessons from their own
+experiences. The International Advisory Panel will also be consulted.
+
+## Conclusion {#sec-conclusion}
+
+This second version of the InCiSE Index has again brought together a rich
+volume of data and insights. It should also continue to stimulate wide-ranging
+discussions at country level and globally about civil service
+effectiveness issues.
+
+Producing a comprehensive and robust set of comparative civil service
+performance indicators remains a work in progress. The InCiSE project team
+will continue to coordinate with others who are engaged in similar efforts to
+assess civil service effectiveness. The team will also continue to collaborate
+with the many organisations who have made a vital contribution to InCiSE so
+far by permitting the use of their research or survey data, as well as
+encourage further data collection in areas where it is lacking. Continued
+collaboration is essential to help strengthen InCiSE.
+
+Feedback remains vitally important to help improve the Index. The project team
+would welcome feedback from country governments, policy and learning networks,
+think tanks and academia.
+
+::: {.callout-note .crf title="Cross-referencing note" icon="false"}
+This content was presented as chapter 5 in the original 2019 publication.
+:::

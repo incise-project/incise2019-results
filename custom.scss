@@ -1,0 +1,539 @@
+/*-- font import --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&family=Inter:wght@300;400;600');
+
+/*-- scss:defaults --*/
+$incise-blue:             #0082c2;
+$incise-blue-tint:        tint-color($incise-blue, 95%) !default;
+$incise-green:            #009d94;
+$incise-green-tint:        tint-color($incise-green, 95%) !default;
+$note-color:              #848484;
+
+$h2-font-size:            1.25rem !default;
+$h3-font-size:            1.1rem !default;
+$headings-font-weight:    600 !default;
+$body-color:              #444444 !default;
+
+$headings-font-family:    "Inter", "Helvetica Neue", "Noto Sans", "Arial", sans-serif !default;
+$headings-font-style:     null !default;
+$headings-font-weight:    600 !default;
+$headings-line-height:    1.2 !default;
+$headings-color:          $incise-green !default;
+
+$font-family-sans-serif:  "Inter", "Helvetica Neue", "Noto Sans", "Arial", sans-serif !default;
+$font-weight-normal:      400 !default;
+$font-size-base:          0.9rem !default;
+
+$table-th-font-weight:    600 !default;
+$table-striped-bg:        $incise-green-tint;
+
+/*-- scss:rules --*/
+
+strong {
+  color: $incise-green;
+  font-weight: 600;
+}
+
+em {
+  color: $incise-green;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+
+h4 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.125rem;
+  font-size: calc(var(--bs-body-font-size) * 1.1);
+}
+
+h1 .chapter-number, h2 .header-section-number, h3 .header-section-number {
+  color: $incise-green;
+}
+
+.lead{
+  font-weight:  600;
+}
+
+.cell {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+.sidebar-title {
+  color: $incise-green;
+  font-weight: 600;
+}
+
+.sidebar .chapter-title, .sidebar .chapter-number, .sidebar .menu-text {
+  color: $body-color;
+}
+
+.sidebar .active .chapter-title, .sidebar .active .chapter-number,
+.sidebar .active .menu-text {
+  color: $incise-green;
+}
+
+h2#toc-title {
+  color: $body-color;
+  font-weight: 400;
+}
+
+.header-section-number {
+  color: $body-color;
+}
+
+.active .header-section-number {
+  color: $incise-green;
+}
+
+.img_h15 {
+  max-height: 15px;
+}
+
+main ul {
+  list-style: none;
+}
+
+main ul li::before {
+  content: "▪";
+  color: $incise-green;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+main ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+main ol li::before {
+  content: counters(li, ".") ".";
+  color: $incise-green;
+  display: inline-block;
+  width: 1.75em;
+  margin-left: -1.75em;
+}
+
+main ol li {
+  counter-increment: li
+}
+
+main .nobullet ul {
+  list-style: none;
+}
+
+main .nobullet ul li::before {
+  content: none;
+  color: none;
+  display: none;
+}
+
+main li p {
+  display: contents;
+}
+
+main ol ol, main ul ul {
+  margin-left: 1.5em;
+}
+
+main ol ol li::before {
+  width: 2.25rem;
+  margin-left: -2.25rem;
+}
+
+#incise-project-note {
+  border: 1px solid $incise-green;
+  display: table-cell;
+  background-color: $incise-green-tint;
+  padding: 1rem;
+}
+
+#incise-project-note p:last-child {
+  margin-bottom: 0px;
+}
+
+.incise-separator {
+  height: 1rem;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.custom-toc li {
+  list-style: none;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.custom-toc li::before {
+  content: none;
+}
+
+.custom-toc hr {
+  background-color: unset;
+  margin: 0.5rem 0;
+}
+
+.custom-toc.report-contents ul li {
+  margin-bottom: 1.25rem;
+}
+
+.custom-toc.report-contents ul ul, .custom-toc.report-contents ul ul li {
+  margin-bottom: 0.25rem;
+  margin-left: 0;
+}
+
+.custom-toc.list-of-tables ul {
+  margin-bottom: 0.25rem;
+}
+
+figure svg {
+  width: 100%;
+  min-width: 700px;
+}
+
+svg text {
+  font-family: $font-family-sans-serif !important;
+}
+
+.source-note {
+  color: $note-color;
+  font-size: 0.65rem;
+  text-align: left !important;
+  padding-top: 0.2rem;
+}
+
+/* table formatting */
+
+table.table caption, figcaption.figure-caption, .quarto-dt-caption {
+  color: $incise-green;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+table.table td {
+  vertical-align: middle;
+}
+
+table.table th {
+  color: $incise-green;
+  vertical-align: top;
+  border-top-width: 0px !important;
+  border-bottom-width: 0px !important;
+}
+
+table.table thead tr {
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+}
+
+table.table thead {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+table.table td, table.table th, table.table tr, table.table thead {
+  border-color: $incise-green !important;
+  border-bottom-color: $incise-green !important;
+}
+
+table.table td img {
+  max-height: 15px;
+}
+
+table.table td, table.table th {
+  background-color: #fff;
+}
+
+table.table tbody tr.odd {
+  background-color: $incise-green-tint;
+}
+
+.no-stripe table.table.table-striped tbody tr.odd,
+.no-stripe table.table.table-striped tbody tr.odd td {
+  --bs-table-striped-bg: transparent;
+}
+
+/* gt classes */
+
+.gt_group_heading {
+  background-color: $incise-green-tint !important;
+  color: $incise-green !important;
+  font-weight: 600;
+}
+
+.gt_left {
+  text-align: left;
+}
+
+.gt_center {
+  text-align: center;
+}
+
+.gt_right {
+  text-align: right;
+}
+
+.gt_column_spanner_outer {
+  text-align: left;
+}
+
+.gt_columns_bottom_border {
+  border-top-width: 0px !important;
+}
+
+.gt_columns_top_border {
+  border-bottom-width: 0px !important;
+}
+
+.gt_footnote {
+  color: $note-color;
+  font-size: 0.65rem;
+  border-bottom: none;
+}
+
+/*-- specific tables --*/
+
+#tbl-scope tbody td {
+  vertical-align: top;
+}
+
+#tbl-dqa-all table tbody tr:last-child td,
+#tbl-dqa-incise table tbody tr:last-child td,
+#tbl-dqa-countries1 table tbody tr:last-child td,
+#tbl-ind-weights table tbody tr:last-child td,
+#tbl-sens-country table tbody tr:last-child td,
+#tbl-sens-date table tbody tr:last-child td,
+#tbl-sens-weight table tbody tr:last-child td,
+#tbl-sens-adjust table tbody tr:last-child td,
+#tbl-sens-impute table tbody tr:last-child td, {
+  color: $incise-green;
+  font-weight: 600;
+}
+
+table.table.composite-metrics-tbl td {
+  vertical-align: top !important;
+}
+
+/*-- reference formatting --*/
+.references ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.references li, .csl-entry {
+  list-style: none;
+  padding-bottom: 0.5rem;
+}
+
+.references li em, .csl-entry em {
+  font-weight: 600;
+}
+
+.references li a, .csl-entry a {
+  color: $body-color;
+}
+
+main a {
+  color: $incise-green;
+}
+
+main a:hover {
+  background-color: $incise-green-tint;
+  color: shade-color($incise-green, 20);
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+  border-left: 1px solid $incise-green !important;
+  color: $incise-green !important;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a:hover, .sidebar nav[role=doc-toc] ul>li>ul>li>a:hover {
+  color: $incise-green !important;
+}
+
+.references li::before {
+  display: none;
+}
+
+/*-- callout boxes --*/
+
+.callout {
+  margin: 0px;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+
+.callout.callout-style-default .callout-body {
+  font-size: 0.65rem;
+}
+
+.callout.callout-style-default {
+    border-left: 3px solid;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+
+.callout .callout-title-container {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.callout {
+  border-radius: unset;
+}
+
+.callout li::before {
+  color: $note-color;
+}
+
+div.callout.callout-style-default>.callout-header {
+  background-color: unset;
+}
+
+div.callout-note.callout {
+  border-left-color: #dddddd;
+  background-color: unset;
+  color: $note-color;
+}
+
+div.callout-tip.callout {
+  border-left-color: $incise-green;
+  background-color: $incise-green-tint;
+  color: $incise-green;
+}
+
+div.callout-important.callout {
+  border-left-color: $incise-green;
+  background-color: unset;
+  color: $incise-green;
+  font-size: 1rem;
+}
+
+.crf {
+  margin-top: 2rem;
+}
+
+.crf a {
+  color: $note-color;
+}
+
+#preface h2 {
+  width: 60%;
+}
+
+@media (min-width: 768px) {
+  .two-col {
+    column-count: 2;
+  }
+}
+
+.datatables {
+  font-size: 0.8rem;
+}
+
+.datatables .table-sm th, .datatables .table-sm td {
+  padding: 0.25rem;
+}
+
+.datatables th {
+  border-left: 0px;
+}
+
+.datatables tbody tr.odd, .datatables tbody tr.odd td {
+  background-color: $incise-green-tint;
+}
+
+.datatables thead th {
+  border-top: 1px solid $incise-green !important;
+  border-bottom: 1px solid $incise-green !important;
+}
+
+.datatables table {
+  border-bottom: 0px !important;
+}
+
+.datatables .ui-toolbar {
+  min-height: 50px;
+  color: $note-color;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.rag-key ul {
+  display: inline-flex;
+  font-size: 0.7rem;
+  color: $note-color;
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+.rag-key ul::before {
+  content: "Icon key: ";
+  padding-right: 1rem;
+}
+
+.rag-key li {
+  padding-right: 1rem;
+}
+
+.dataTables_paginate .previous.ui-state-disabled,
+.dataTables_paginate .next.ui-state-disabled {
+  display: none !important;
+}
+
+.dataTables_paginate .ui-button {
+  color: $body-color;
+  font-weight: 600;
+  margin: 0px 3px;
+}
+
+.dataTables_paginate .ui-button.ui-state-disabled {
+  color: $incise-green;
+  font-weight: 600;
+  border-bottom: 2px solid $incise-green !important;
+}
+
+.dataTables_paginate .ui-button:hover {
+  background-color: $incise-green;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dataTables_filter label {
+  font-weight: 600;
+}
+
+.dataTables_filter input {
+  border: 1px solid #dddddd !important;
+  border-radius: 0px !important;
+  background-color: #fafafa !important;
+  color: $body-color !important;
+  font-weight: 600 !important;
+}
+
+.quarto-title-meta div {
+  margin-top: 0.25rem;
+  display: flex;
+}
+
+.quarto-title-meta-heading, .quarto-title-meta-contents {
+  opacity: 1.0 !important;
+  font-size: 0.8em !important;
+  color: $note-color !important;
+  text-transform: uppercase;
+  margin: 0px !important;
+}
+
+.quarto-title-meta-heading {
+  padding-right: 0.5rem;
+}
+

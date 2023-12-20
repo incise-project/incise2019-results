@@ -1,0 +1,148 @@
+---
+execute:
+  echo: false
+---
+
+# Executive Summary {.unnumbered}
+
+## Why and how InCiSE has been developed
+
+The International Civil Service Effectiveness (InCiSE) Index was launched as a
+pilot in2017. Recognising the important role civil services can play in helping
+their countries to prosper, InCiSE aims to assess how effectively civil services
+around the world perform and to identify in which areas their strengths lie
+relative to their international counterparts.
+
+Previous initiatives have sought to develop reliable civil service
+effectiveness measurement tools, but no other comprehensive set of indicators
+currently exists. There are, however, many existing data surveys and indices
+available globally that can be integrated to provide a single snapshot of
+information on a regular basis. This is what InCiSE aims to do.
+
+InCiSE is focused only on the central government civil service. As a result, it
+does not seek to measure service delivery outcomes, for example health care and
+education. This is because effectiveness in these areas is often driven by
+other parts of the public sector as well.
+
+InCiSE aspires progressively to become a comprehensive, comparative measure of
+civil service performance but is not that yet – mainly because of data
+limitations. In addition, InCiSE does not seek to be definitive: it will be
+important to assess its results alongside other evidence available to leaders
+and citizens. The InCiSE Index should be seen as one of a range of tools
+available to measure civil service effectiveness globally.
+
+It is envisaged that InCiSE will have the following uses:
+
+* As a performance improvement tool to enable senior civil service leaders,
+  as well as other stakeholders, to find out which countries perform best in
+  which areas and learn from them.
+* As an accountability tool which allows citizens, government officials and
+  politicians to find out how well their civil service is performing.
+
+## How the InCiSE framework has been compiled
+
+A detailed explanation of the InCiSEframework is set out in a separate
+[Technical Report](https://incise-project.github.io/incise2019-techreport/).
+
+InCiSE's starting point is to define the core characteristics of an effective
+central government central service. Effectiveness is then assessed based on two
+interrelated components:
+
+* Core functions – the key things a civil service does ("what"). There are 11
+  core function indicators.
+* Attributes – the main characteristics of a civil service that can drive what
+  they do("how"). There are 6 attribute indicators.
+
+It has not been possible so far to measure all indicators, largely because of
+data gaps. The total number of indicators measured has remained static for the
+2019 report – 8 core functions (although one of these has changed) and 4
+attributes.
+
+## How InCiSE 2019 has been refined
+
+The InCiSE 2019 Index builds on the lessons learned from the 2017 Pilot, helped
+by consultations with a wide range of actors over the last year. The
+methodology and approach have been enhanced, while the volume of metrics has
+increased, and many have been strengthened too. The range of data sources has
+increased significantly as well, while country coverage has been expanded from
+31 to 38 countries.
+
+Although one core function, procurement, has been added to the 2019 framework,
+the social security administration indicator has not been included this time
+because of data reliability issues.
+
+The 2019 framework uses the most recently available data as at 30 November 2018.
+Data quality inevitably varies from country to country. Only one country has
+data covering the full set of expanded metrics but many have close to the full
+set. Any missing data has been estimated using standard methods. Countries with
+the highest number of missing data points inevitably have the larger proportion
+of estimated metrics and this should be borne in mind when interpreting results.
+
+## 2019 Index Results
+
+The UK is ranked top overall, followed by New Zealand and Canada respectively.
+No single country appears in the top 5 positions for every indicator, although
+there are some strong all-round performers. These are highlighted in the
+country summary pages of this report. Standout country scores for specific
+indicators have been highlighted as well.
+
+When analysing results it is important to remember that all country scores are
+relative to others included in the Index and are not an absolute measure. A
+country which scores well against a particular indicator or metric may still
+have performance issues.
+
+It is also important to note that it is not possible to directly compare scores
+between the 2017 and 2019 results. While this is partly because of methodology
+changes between the two indexes, it is also because each set of results relates
+to the specific data range and country set used for each Index.
+
+Some interesting trends can be observed in the 2019 report. As also found by
+the pilot edition of InCiSE, the four Commonwealth countries in the Index
+(Australia, Canada, New Zealand and the UK) rank in the top 5. The Nordic
+countries (Denmark, Finland, Iceland, Norway, Sweden) are also placed highly,
+with all but Iceland in the top 10.  The remaining countries of northern and
+western Europe tend to rank more highly than countries in southern and eastern
+Europe. Countries from outside Europe are distributed throughout the ranking.
+
+## Next Steps
+
+Looking ahead, the overriding priority is to secure long-term funding to enable
+the InCiSE project to expand further. The founding institutions are reviewing
+the future potential of the Index and how it could be funded, as well as
+broader collaboration opportunities with potential new partners.
+
+An International Advisory Panel has been formed which is providing strategic
+advice and support to the project. The goal now is to produce the InCiSE Index
+on a regular basis – and to increase country coverage more rapidly than first
+envisaged without compromising on data quality.
+
+Subject to funding, priority tasks over the next two years will include:
+further expansion of the country coverage; developing InCiSE as a practical
+learning and development tool, including by enhancing the interactive website;
+continuing to strengthen data collection and fill gaps; refining the InCiSE
+framework and methodology; and targeted outreach work to increase global
+awareness of InCiSE.
+
+The pilot edition of the Index stimulated wide-ranging discussions at both
+country and global levels about civil service effectiveness issues. InCiSE was
+welcomed not only by countries which featured in the Index but also by many who
+did not. Some of the non-listed countries remain keen to be involved in the
+project so that they can learn from others and take part in broader discussions
+on civil service performance issues. The InCiSE team will continue to explore
+ways of achieving this, for example through the delivery of learning workshops
+in overseas locations and alongside other relevant public events.
+
+The project will also continue to explore ways of including non-OECD and
+developing countries in the Index over time. To this end one of the InCiSE
+founders, the Blavatnik School of Government, has already completed two country
+case studies – focusing on Brazil and Nigeria – to assess the potential for
+InCiSE to be used in countries at different stages of economic development and
+with diverse political structures and traditions. These studies have provided
+valuable insights and ideas about what would be required to extend the Index
+to a wider set of countries.
+
+Producing a comprehensive and robust set of comparative civil service
+performance indicators remains a work in progress. The InCiSE team will
+continue to coordinate with others who are engaged in similar efforts to
+assess civil service effectiveness. Feedback from a wide range of interested
+partners is crucial to help improve the Index as well.

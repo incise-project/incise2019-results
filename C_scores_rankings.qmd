@@ -1,0 +1,86 @@
+---
+execute:
+  echo: false
+---
+
+```{r, setup}
+#| output: false
+
+source("R/tbl_helpers.R")
+
+incise2019 <- readr::read_csv("tables/incise2019_long.csv")
+
+tbl_rank <- incise2019 |>
+  dplyr::mutate(
+    rank = rank(-value, ties.method = "min"),
+    .by = "indicator"
+  ) |>
+  dplyr::mutate(
+    cell_output = dplyr::case_when(
+      rank == 1 | rank == 38 ~ paste0("**", rank, "**"),
+      TRUE ~ as.character(rank)
+    )
+  ) |>
+  dplyr::select(cc_iso3c, indicator, cell_output) |>
+  tidyr::pivot_wider(names_from = indicator, values_from = cell_output) |>
+  dplyr::mutate(
+    incise_rank = as.numeric(gsub("\\D", "", incise_index))
+  ) |>
+  dplyr::arrange(incise_rank) |>
+  dplyr::select(cc_iso3c, index = incise_index, starts_with("ind")) |>
+  dplyr::rename_with(~toupper(gsub("ind_", "", .x)))
+
+tbl_scores <- incise2019 |>
+  dplyr::mutate(
+    cell_output = dplyr::case_when(
+      round(value,3) == 1.000 | round(value,3) == 0.000 ~ 
+        paste0("**", scales::number(value, 0.001), "**"),
+      TRUE ~ scales::number(value, 0.001)
+    )
+  ) |>
+  dplyr::select(cc_iso3c, indicator, cell_output) |>
+  tidyr::pivot_wider(names_from = indicator, values_from = cell_output) |>
+  dplyr::mutate(
+    incise_rank = as.numeric(gsub("\\D", "", incise_index))
+  ) |>
+  dplyr::arrange(-incise_rank) |>
+  dplyr::select(cc_iso3c, index = incise_index, starts_with("ind")) |>
+  dplyr::rename_with(~toupper(gsub("ind_", "", .x)))
+
+```
+
+# InCiSE 2019 country scores and rankings {#sec-scores-rankings}
+
+@tbl-incise-ranks provides the overall ranking of each country for the InCiSE
+Index and each of the 12 indicators. @tbl-incise-scores provides the InCiSE
+Index and indicator scores for each country.
+
+```{r}
+#| label: tbl-incise-ranks
+#| tbl-cap: InCiSE 2019 Index and Indicator country rankings
+
+tbl_rank |>
+  gt::gt() |>
+  gt::cols_label(
+    CC_ISO3C = "Country",
+    INDEX = "Index"
+  ) |>
+  gt::fmt_markdown(columns = -CC_ISO3C) |>
+  strip_gt()
+
+```
+
+```{r}
+#| label: tbl-incise-scores
+#| tbl-cap: InCiSE 2019 Index and Indicator country scores
+
+tbl_scores |>
+  gt::gt() |>
+  gt::cols_label(
+    CC_ISO3C = "Country",
+    INDEX = "Index"
+  ) |>
+  gt::fmt_markdown(columns = -CC_ISO3C) |>
+  strip_gt()
+
+```

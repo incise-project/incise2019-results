@@ -1,0 +1,123 @@
+---
+execute:
+  echo: false
+---
+
+# Introduction {#sec-introduction}
+
+## Why we need civil service effectiveness indicators {#sec-why-need}
+
+It is widely recognised that an effective civil service can play an important
+role in determining a country's progress and prosperity. But what constitutes
+an "effective civil service"? This has long been the subject of debate. Even
+when a consensus is reached on definitions, how do civil service leaders know
+whether their organisations are effective – and how do they know in which
+areas are they performing more strongly than others? The InCiSE Index seeks to
+answer these questions.
+
+As discussed in the 2017 report, a comprehensive set of international
+indicators of civil service effectiveness does not currently exist but various
+organisations have sought to develop reliable measurement systems, often
+focused on specific areas. This subject area is also well recognised in
+academic, international and practitioner communities as a highly complex area
+for analysis. This is partly because of data limitations, different views on
+the definitions of "civil service" and "effectiveness", and the need to take
+account of country context factors when looking at performance issues.
+
+Nevertheless, there are many existing data collections and indices available
+globally that can be pulled together to provide a realistic set of information
+on a regular basis. This is what the InCiSE framework aims to do.
+
+Experience and feedback so far have confirmed that the InCiSE Index and
+indicators have the following uses:
+
+* As a performance improvement tool: enabling senior decision makers to see
+  which countries perform best in which areas, and to learn from them.
+* As an accountability tool: allowing citizens, government officials and
+  politicians to establish clearly and concisely how well their civil service
+  is performing.
+
+The InCiSE indicators also have the potential to help countries measure and
+report on progress towards achievement of international standards, for example
+some aspects of the United Nations (UN) Sustainable Development Goal 16. This
+Goal focuses on a range of governance issues, including promoting stronger
+government institutions, and all UN members are required to report on progress
+on a regular basis.
+
+The InCiSE project continues to be a collaboration between the Blavatnik School
+of Government and the Institute for Government. It is supported by the UK Civil
+Service and has been funded by theOpen Society Foundations. All have a strong
+interest in civil service effectiveness issues.
+
+## How InCiSE has been further developed {#sec-how-developed}
+
+The InCiSE framework covers many aspects of civil service performance that
+earlier initiatives of this type have sought to cover but it does not
+duplicate them. InCiSE also aims to define "effectiveness"  more extensively
+than previously. It draws on a wide range of existing international data
+sources and brings together a set of indicators – each measuring a different
+dimension of civil service effectiveness – to produce an overall score for each
+country.
+
+Whilst there are alternative ways to define civil service effectiveness, the
+InCiSE framework, with its various themes and measurements, has the potential
+to make valid judgments about whether a country's civil service is performing
+well relative to its international counterparts.
+
+InCiSE was originally developed following a literature review and in
+consultation with many experts, including academics from schools of government,
+think tanks, senior civil servants (past and present) from several countries,
+as well as subject experts. The 2017 Pilot was also the subject of an
+independent, international peer review process.
+
+Since 2017 the project has consulted with a wide range of actors to refine the
+methodology and approach, strengthen the indicator metrics, increase the range
+of data sources and explore ways of expanding the country coverage without
+risking data quality. An independent peer review of the 2017 Pilot results was
+conducted ahead of their publication and academic engagement has continued
+during the development of the 2019 edition. In addition, two in-depth country
+case studies have been completed to assess whether and how InCiSE can be
+applied to contexts where obtaining good quality, reliable data remains a
+key challenge.
+
+The accompanying Technical Report outlines in more detail how the methodology
+for the 2019 edition of InCiSE has developed since the Pilot.
+
+## What InCiSE is not aiming to do {#sec-not-aiming}
+
+It is important to reiterate the scope of InCiSE:
+
+* InCiSE is focused on the central government civil service in the countries
+  covered – not the public service more generally. It is recognised that this
+  is not without challenges, particularly given the varying sizes and shapes
+  of public administrations internationally, as well as different systems of
+  government. It is also recognised that well performing civil servants are a
+  necessary – but not sufficient – condition for better government.
+* InCiSE is not seeking to measure service delivery outcomes for citizens,
+  for example in areas like health care and education. Although in many
+  countries the central government civil service plays an important role in
+  determining the performance of key public services, their effectiveness is
+  driven by other parts of the sector as well – for example, teachers, doctors
+  and the police. Local government effectiveness is also excluded from the
+  InCiSE framework.
+* InCiSE does not aim to be definitive. It is one of a wide range of tools
+  currently available to measure civil service effectiveness globally. Users
+  should consider the results of the InCiSE Index alongside an analysis of
+  the original source data as well as domestic analysis and management
+  information, which may or may not have international comparisons.
+
+## Who InCiSE is for {#sec-who-for}
+
+The pilot phase confirmed that InCiSE is of interest to a wide-ranging
+audience, most notably governments (especially senior leaders and civil service
+training and research institutes) – as well as think tanks, academics and civil
+society organisations with a strong interest in governance issues. Specialist
+media have also shown interest in the InCiSE results.
+
+InCiSE was welcomed not only by countries which featured in the Index but also
+by many who did not. A range of non-OECD and developing countries who were not
+listed remain keen to engage with the project, so that they can learn from
+others and take part in broader discussions on civil service performance
+issues. The InCiSE team will continue to explore ways of involving these
+countries in the project, for example through learning workshops and other
+public events.

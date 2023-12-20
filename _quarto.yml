@@ -1,0 +1,87 @@
+project:
+  type: book
+  output-dir: docs
+  pre-render: prepare.R
+
+book:
+  title: "InCiSE 2019: Results Report"
+  date: "25 April 2019"
+  date-format: "D MMMM YYYY"
+  chapters:
+    - index.qmd
+    - 00_contents.qmd
+    - 00_readers_guide.qmd
+    - 00_foreword.qmd
+    - 00_exec_summary.qmd
+    - 01_introduction.qmd
+    - 02_incise_framework.qmd
+    - 03_results.qmd
+    - part: 04_00_country_profiles.qmd
+      chapters:
+        - 04_01_AUS.qmd
+        - 04_02_AUT.qmd
+        - 04_03_BEL.qmd
+        - 04_04_BGR.qmd
+        - 04_05_CAN.qmd
+        - 04_06_CHL.qmd
+        - 04_07_CZE.qmd
+        - 04_08_DEU.qmd
+        - 04_09_DNK.qmd
+        - 04_10_ESP.qmd
+        - 04_11_EST.qmd
+        - 04_12_FIN.qmd
+        - 04_13_FRA.qmd
+        - 04_14_GRC.qmd
+        - 04_15_HRV.qmd
+        - 04_16_HUN.qmd
+        - 04_17_IRL.qmd
+        - 04_18_ISL.qmd
+        - 04_19_ISR.qmd
+        - 04_20_ITA.qmd
+        - 04_21_JPN.qmd
+        - 04_22_KOR.qmd
+        - 04_23_LTU.qmd
+        - 04_24_LVA.qmd
+        - 04_25_MEX.qmd
+        - 04_26_NLD.qmd
+        - 04_27_NOR.qmd
+        - 04_28_NZL.qmd
+        - 04_29_POL.qmd
+        - 04_30_PRT.qmd
+        - 04_31_ROU.qmd
+        - 04_32_SVK.qmd
+        - 04_33_SVN.qmd
+        - 04_34_SWE.qmd
+        - 04_35_CHE.qmd
+        - 04_36_TUR.qmd
+        - 04_37_GBR.qmd
+        - 04_38_USA.qmd
+    - 05_next_steps.qmd
+  appendices:
+    - A_indicator_definitions.qmd
+    - B_data_sources.qmd
+    - C_scores_rankings.qmd
+  cover-image: incise2019_results_cover.png
+  favicon: incise2019_results_cover.png
+  url: https://incise-project.github.io/incise2019-results/
+  repo-url: https://github.com/incise-project/incise2019-results/
+  downloads: pdf
+  pdf-url: incise2019_results_report.pdf
+  keyword: international civil service effectiveness, civil service, government,
+    effectiveness, performance, public management, public governance
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    fig-cap-location: top
+    fig-format: svg
+    fig-responsive: true
+    tbl-cap-location: top
+    reference-location: margin
+    strip-comments: true
+    number-depth: 2

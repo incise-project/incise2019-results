@@ -1,0 +1,55 @@
+---
+execute:
+  echo: false
+---
+
+# InCiSE 2019 indicator definitions {#sec-definitions}
+
+**Functions:**
+
+* *Policy making*: the quality of the policymaking process, including how policy
+  is developed and coordinated across government, and how policy is monitored
+  during implementation.
+* *Fiscal and financial management*: the quality of the budgeting process and
+  the extent to which spending decisions are informed through economic
+  appraisal and evaluation.
+* *Regulation*: the extent and quality of regulatory impact assessments and the
+  degree of stakeholder engagement involved in them.
+* *Crisis and risk management* (revised 2019): the effectiveness with which the
+  government engages the whole of society to better assess, prevent, respond
+  to and recover from the effects of extreme events.
+* *Procurement* (new for 2019): the extent to which the government’s
+  procurement processes are efficient, competitive, fair, and pursue value for
+  money.
+* *Human resources management* (revised 2019): the meritocracy of recruitment,
+  and the extent to which civil servants are effectively attracted to the
+  service, managed and developed.
+* Tax administration: the efficiency and effectiveness of tax collection (at
+  the central/federal level).
+* *Digital services* (revised 2019): the availability and usability of national
+  level digital services.
+* *IT for officials* (not measured in 2019): the extent to which civil servants
+  have the digital tools to work efficiently.
+* *Internal finance* (not measured in 2019): the extent to which operations are
+  supported by well-managed, efficient finance systems, particularly on the
+  alignment of finance with the business strategy and the level of civil
+  servant satisfaction with finance support.
+* *Social security administration* (not measured in 2019): the efficiency and
+  effectiveness of social security administration (at the central/federal
+  level).
+
+**Attributes:**
+
+* *Integrity*: the extent to which civil servants behave with integrity, make
+  decisions impartially and fairly, and strive to serve both citizens and
+  ministers.
+* *Openness*: the regular practice and degree of consultation with citizens to
+  help guide the decisions made and extent of transparency in decision-making.
+* *Capabilities* (revised 2019): the extent to which the workforce has the right
+  mix of skills.
+* *Inclusiveness*: the extent to which the civil service is representative of
+  the citizens it serves.
+* *Staff engagement* (not measured in 2019): staff levels of pride, attachment
+  and motivation to work for their organisation.
+* *Innovation* (not measured in 2019): the degree to which new ideas, policies,
+  and ways of operating are free and able to develop.
