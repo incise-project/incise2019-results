@@ -54,3 +54,14 @@ strip_gt <- function(x) {
     gsub(".*?<table.+?>", "<table class=\"table\">", x = _) |>
     gsub("</table>.*", "</table>", x = _)
 }
+
+fmt_maxmin <- function(x, accuracy = 0.001) {
+  out <- dplyr::case_when(
+    x == max(x, na.rm = TRUE) ~
+      paste0("<strong>", scales::comma(x, accuracy = accuracy), "</strong>"),
+    x == min(x, na.rm = TRUE) ~
+      paste0("<strong>", scales::comma(x, accuracy = accuracy), "</strong>"),
+    TRUE ~ scales::comma(x, accuracy = accuracy)
+  )
+  purrr::map(out, htmltools::HTML)
+}

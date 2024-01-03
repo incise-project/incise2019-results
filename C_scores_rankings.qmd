@@ -11,15 +11,10 @@ source("R/tbl_helpers.R")
 incise2019 <- readr::read_csv("tables/incise2019_long.csv")
 
 tbl_rank <- incise2019 |>
+  dplyr::filter(cc_iso3c != "InCiSE") |>
   dplyr::mutate(
-    rank = rank(-value, ties.method = "min"),
+    cell_output = rank(-value, ties.method = "min"),
     .by = "indicator"
-  ) |>
-  dplyr::mutate(
-    cell_output = dplyr::case_when(
-      rank == 1 | rank == 38 ~ paste0("**", rank, "**"),
-      TRUE ~ as.character(rank)
-    )
   ) |>
   dplyr::select(cc_iso3c, indicator, cell_output) |>
   tidyr::pivot_wider(names_from = indicator, values_from = cell_output) |>
@@ -31,13 +26,8 @@ tbl_rank <- incise2019 |>
   dplyr::rename_with(~toupper(gsub("ind_", "", .x)))
 
 tbl_scores <- incise2019 |>
-  dplyr::mutate(
-    cell_output = dplyr::case_when(
-      round(value,3) == 1.000 | round(value,3) == 0.000 ~ 
-        paste0("**", scales::number(value, 0.001), "**"),
-      TRUE ~ scales::number(value, 0.001)
-    )
-  ) |>
+  dplyr::filter(cc_iso3c != "InCiSE") |>
+  dplyr::mutate(cell_output = round(value, 3)) |>
   dplyr::select(cc_iso3c, indicator, cell_output) |>
   tidyr::pivot_wider(names_from = indicator, values_from = cell_output) |>
   dplyr::mutate(
@@ -65,9 +55,10 @@ tbl_rank |>
     CC_ISO3C = "Country",
     INDEX = "Index"
   ) |>
-  gt::fmt_markdown(columns = -CC_ISO3C) |>
+  gt::fmt(columns = where(is.numeric),
+          fns = function(x) fmt_maxmin(x, accuracy = 1)) |>
   strip_gt()
-
+ 
 ```
 
 ```{r}
@@ -80,7 +71,8 @@ tbl_scores |>
     CC_ISO3C = "Country",
     INDEX = "Index"
   ) |>
-  gt::fmt_markdown(columns = -CC_ISO3C) |>
+  gt::fmt(columns = where(is.numeric),
+          fns = fmt_maxmin) |>
   strip_gt()
 
 ```
