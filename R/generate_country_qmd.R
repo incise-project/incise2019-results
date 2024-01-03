@@ -119,5 +119,6 @@ for (i in seq_along(countries)) {
 
 }
 
-fssnap <- utils::fileSnapshot(path = "country_narratives")
+nf <- fs::dir_ls("country_narratives/")
+fssnap <- tools::md5sum(nf)
 saveRDS(fssnap, "country_narratives/.fs_snap")
