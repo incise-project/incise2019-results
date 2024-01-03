@@ -1,5 +1,5 @@
 /*-- font import --*/
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&family=Inter:wght@300;400;600');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&family=Inter:wght@300;400;600;800');
 
 /*-- scss:defaults --*/
 $incise-blue:             #0082c2;
@@ -537,3 +537,10 @@ div.callout-important.callout {
   padding-right: 0.5rem;
 }
 
+#tbl-incise-ranks strong, #tbl-incise-scores strong {
+  font-weight: 800;
+}
+
+svg text[style*="bold"] {
+  font-weight: 600 !important;
+}
