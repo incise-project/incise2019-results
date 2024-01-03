@@ -125,7 +125,7 @@ updated and if they have to re-run the creation of the country profile pages.
 
 ```r
 > sessioninfo::session_info()
-#> ─ Session info ──────────────────────────────────────────────────────────────────────────
+#> ─ Session info ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.3.1 (2023-06-16)
 #>  os       macOS Ventura 13.6.1
@@ -139,7 +139,7 @@ updated and if they have to re-run the creation of the country profile pages.
 #>  rstudio  2023.09.1+494 Desert Sunflower (desktop)
 #>  pandoc   3.1.1 @ /Applications/RStudio.app/Contents/Resources/app/quarto/bin/tools/ (via rmarkdown)
 #> 
-#> ─ Packages ──────────────────────────────────────────────────────────────────────────────
+#> ─ Packages ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 #>  package      * version date (UTC) lib source
 #>  bib2df         1.1.1   2019-05-22 [1] CRAN (R 4.3.0)
 #>  bit            4.0.5   2022-11-15 [1] CRAN (R 4.3.0)
@@ -155,6 +155,7 @@ updated and if they have to re-run the creation of the country profile pages.
 #>  fastmap        1.1.1   2023-02-24 [1] CRAN (R 4.3.0)
 #>  forcats        1.0.0   2023-01-29 [1] CRAN (R 4.3.0)
 #>  formattable    0.2.1   2021-01-07 [1] CRAN (R 4.3.0)
+#>  fs             1.6.3   2023-07-20 [1] CRAN (R 4.3.0)
 #>  generics       0.1.3   2022-07-05 [1] CRAN (R 4.3.0)
 #>  ggplot2      * 3.4.4   2023-10-12 [1] CRAN (R 4.3.0)
 #>  glue           1.6.2   2022-02-24 [1] CRAN (R 4.3.0)
@@ -172,7 +173,6 @@ updated and if they have to re-run the creation of the country profile pages.
 #>  later          1.3.1   2023-05-02 [1] CRAN (R 4.3.0)
 #>  lifecycle      1.0.3   2022-10-07 [1] CRAN (R 4.3.0)
 #>  magrittr       2.0.3   2022-03-30 [1] CRAN (R 4.3.0)
-#>  mattR          0.1.0   2023-11-08 [1] Github (mattkerlogue/mattR@fabbb14)
 #>  munsell        0.5.0   2018-06-12 [1] CRAN (R 4.3.0)
 #>  patchwork    * 1.1.3   2023-08-14 [1] CRAN (R 4.3.0)
 #>  pillar         1.9.0   2023-03-22 [1] CRAN (R 4.3.0)
@@ -211,5 +211,4 @@ updated and if they have to re-run the creation of the country profile pages.
 #> 
 #>  [1] /Users/bsog0576/Library/R/x86_64/4.3/library
 #>  [2] /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library
-#> 
 ```
