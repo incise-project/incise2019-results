@@ -1,7 +1,12 @@
 ## Welcome {.unnumbered}
 
-This is an HTML version of the InCiSE 2019 Technical Report, originally
+This is an HTML version of the InCiSE 2019 Results Report, originally
 published in [April 2019](https://www.bsg.ox.ac.uk/news/new-index-ranks-uk-civil-service-top-followed-new-zealand-and-canada).
+
+This report summarises the results of the 2019 InCiSE Index, for the index
+overall, its constituent indicators and summaries of country performance. For
+details on the methodology behind the InCiSE Index please see the
+[Technical Report](https://incise-project.github.io/incise2019-techreport/).
 
 From 2016 to 2019, the
 [International Civil Service Effectiveness (InCiSE) project](https://www.bsg.ox.ac.uk/incise)

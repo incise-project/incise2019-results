@@ -6,6 +6,11 @@ book [here](https://incise-project.github.io/incise2019-results). You
 can also download the
 [original PDF publication](https://incise-project.github.io/incise2019-results/incise2019_results_report.pdf).
 
+This repo relates to the InCiSE Index 2019 Results Report, there is a separate
+[repo](https://github.com/incise-project/incise2019-techreport) and
+[HTML book](https://incise-project.github.io/incise2019-techreport/) for the
+Technical Report which discusses the methodology behind the InCiSE Index.
+
 ## About
 
 From 2016 to 2019, the
