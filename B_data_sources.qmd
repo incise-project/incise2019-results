@@ -81,6 +81,9 @@ htmltools::HTML(out_tbl)
 
 ```
 
+::: {#data-source-refs .references .hanging-indent}
 ```{r, ds_refs}
+#| output: asis
 gen_ds_refs("tables/data_sources.bib")
 ```
+:::
