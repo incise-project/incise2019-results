@@ -137,9 +137,9 @@ indicator_bar <- function(df, ind) {
               family = "Inter", fontface = "bold", hjust = 0, size = 4) +
     scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
     scale_fill_manual(values = c(
-      "other" = "#cccccc",
+      "other" = "#dddddd",
       "top5" = "#009d94",
-      "InCiSE" = "#666666"
+      "InCiSE" = "#999999"
     )) +
     scale_colour_manual(values = c(
       "other" = "#444444",
@@ -188,8 +188,8 @@ country_summary <- function(df, country, imputation = NULL) {
     scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
     scale_fill_manual(values = c(
       "country" = "#009d94",
-      "InCiSE" = "#444444",
-      "other" = "#cccccc"
+      "InCiSE" = "#999999",
+      "other" = "#dddddd"
     )) +
     scale_colour_manual(values = c(
       "country" = "#009d94",

@@ -187,7 +187,7 @@ bar_plot <- ggplot(bar_df, aes(x = score, y = cc_iso3c)) +
             nudge_x = 0.02, hjust = 0, size = 4) +
   scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
   scale_fill_manual(values = c(
-    "country" = "#cccccc",
+    "country" = "#dddddd",
     "InCiSE" = "#009d94"
   )) +
   scale_colour_manual(values = c(
