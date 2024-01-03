@@ -129,7 +129,7 @@ updated and if they have to re-run the creation of the country profile pages.
 ### Session info
 
 ```r
-> sessioninfo::session_info()
+sessioninfo::session_info()
 #> ─ Session info ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 #>  setting  value
 #>  version  R version 4.3.1 (2023-06-16)
@@ -214,6 +214,9 @@ updated and if they have to re-run the creation of the country profile pages.
 #>  xml2           1.3.5   2023-07-06 [1] CRAN (R 4.3.0)
 #>  yaml           2.3.7   2023-01-23 [1] CRAN (R 4.3.0)
 #> 
-#>  [1] /Users/bsog0576/Library/R/x86_64/4.3/library
+#>  [1] $USER_LIBRARY
 #>  [2] /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/library
+
+quarto::quarto_version()
+#> [1] ‘1.3.433’
 ```
