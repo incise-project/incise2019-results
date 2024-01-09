@@ -30,8 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./Z_00_country_profiles_old.html" rel="next">
 <link href="./B_data_sources.html" rel="prev">
-<link href="./incise2019_results_cover.png" rel="icon" type="image/png">
+<link href="./figures/incise_logo_green.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -42,11 +43,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -65,10 +66,55 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./figures/incise_wordmark_green.png" alt="InCiSE project logo" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">InCiSE 2019: Results Report</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">More</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
+        <li>
+    <a class="dropdown-item" href="https://incise-project.github.io/incise2019-techreport/" rel="" target=""><i class="bi bi-gear-wide-connected" role="img">
+</i> 
+ <span class="dropdown-text">Read the InCiSE 2019 Technical Report</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./incise2019_results_report.pdf" rel="" target=""><i class="bi bi-file-earmark-pdf" role="img">
+</i> 
+ <span class="dropdown-text">Download the PDF of this report</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://github.com/incise-project/incise2019-results/" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="dropdown-text">View the source code of this report</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -84,18 +130,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">InCiSE 2019: Results Report</a> 
-        <div class="sidebar-tools-main">
-    <a href="https://github.com/incise-project/incise2019-results/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./InCiSE-2019--Results-Report.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
-</div>
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -112,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./00_contents.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contents</span></a>
+ <span class="menu-text">Contents, figures and tables</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -151,260 +188,27 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results of the 2019 InCiSE Index</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_00_country_profiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Country profiles of the 2019 InCiSE results</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_next_steps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Next steps and conclusions</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./04_00_country_profiles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Country profiles of the 2019 InCiSE results</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_01_AUS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Australia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_02_AUT.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Austria</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_03_BEL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Belgium</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_04_BGR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bulgaria</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_05_CAN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Canada</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_06_CHL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Chile</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_07_CZE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Czechia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_08_DEU.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Germany</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_09_DNK.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Denmark</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_10_ESP.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spain</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_11_EST.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Estonia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_12_FIN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Finland</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_13_FRA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">France</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_14_GRC.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Greece</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_15_HRV.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Croatia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_16_HUN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hungary</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_17_IRL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ireland</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_18_ISL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Iceland</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_19_ISR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Israel</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_20_ITA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Italy</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_21_JPN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Japan</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_22_KOR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Republic of Korea</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_23_LTU.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lithuania</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_24_LVA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Latvia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_25_MEX.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Mexico</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_26_NLD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Netherlands</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_27_NOR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Norway</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_28_NZL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">New Zealand</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_29_POL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Poland</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_30_PRT.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Portugal</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_31_ROU.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Romania</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_32_SVK.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Slovakia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_33_SVN.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Slovenia</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_34_SWE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sweden</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_35_CHE.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Switzerland</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_36_TUR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Turkey</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_37_GBR.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">United Kingdom</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04_38_USA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">United States of America</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05_next_steps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Next steps and conclusions</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./A_indicator_definitions.html" class="sidebar-item-text sidebar-link">
@@ -423,6 +227,251 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">InCiSE 2019 country scores and rankings</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./Z_00_country_profiles_old.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Country profiles of the 2019 InCiSE results</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_01_AUS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Australia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_01_AUS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Australia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_02_AUT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Austria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_03_BEL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Belgium</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_04_BGR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bulgaria</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_05_CAN.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Canada</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_06_CHL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chile</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_07_CZE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Czechia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_08_DEU.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Germany</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_09_DNK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Denmark</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_10_ESP.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_11_EST.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Estonia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_12_FIN.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Finland</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_13_FRA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">France</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_14_GRC.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Greece</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_15_HRV.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Croatia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_16_HUN.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hungary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_17_IRL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ireland</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_18_ISL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Iceland</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_19_ISR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Israel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_20_ITA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Italy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_21_JPN.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Japan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_22_KOR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Republic of Korea</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_23_LTU.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lithuania</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_24_LVA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Latvia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_25_MEX.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mexico</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_26_NLD.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Netherlands</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_27_NOR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Norway</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_28_NZL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">New Zealand</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_29_POL.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Poland</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_30_PRT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portugal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_31_ROU.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Romania</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_32_SVK.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slovakia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_33_SVN.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Slovenia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_34_SWE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sweden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_35_CHE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Switzerland</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_36_TUR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Turkey</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_37_GBR.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">United Kingdom</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Z_38_USA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">United States of America</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -1972,6 +2021,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./Z_00_country_profiles_old.html" class="pagination-link">
+        <span class="nav-page-text">Country profiles of the 2019 InCiSE results</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
