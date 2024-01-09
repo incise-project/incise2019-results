@@ -1,11 +1,11 @@
 # code to generate the country results pages
-# country results quarto documents (04_99_XXX.qmd) are generated using this
+# country results quarto documents (Z_99_XXX.qmd) are generated using this
 # script
 #
 # inputs:
 #   1.  the `countries` vector defines the country names and ordering to use
 #       in the report
-#   2.  `04_000_country_template.qmd provides` the skeleton for documents, the
+#   2.  `Z_000_country_template.qmd provides` the skeleton for documents, the
 #       country charts are produced via the `country_summary()` function in
 #       R/gg_helpers.R
 #   3.  `tables/imputation.csv` provides information on the indicators that
@@ -64,19 +64,20 @@ countries <- c(
 )
 
 # get common source materials
-country_template <- readLines("04_000_country_template.qmd")
+country_template <- readLines("Z_000_country_template.qmd")
 imputation <- readr::read_csv("tables/imputation.csv")
 
 # split the template
 title_pos <- which(grepl("!!COUNTRY_TITLE!!", country_template))
 template_head <- country_template[1:(title_pos-1)]
-code_chunk <- country_template[(title_pos+1):length(country_template)]
 
 for (i in seq_along(countries)) {
 
+  code_chunk <- country_template[(title_pos+1):length(country_template)]
+
   cc_iso3c <- names(countries[i])
 
-  out_path <- paste0("04_", sprintf("%02g", i), "_", cc_iso3c, ".qmd")
+  out_path <- paste0("Z_", sprintf("%02g", i), "_", cc_iso3c, ".qmd")
 
   country_narrative <- readr::read_lines(
     file.path("country_narratives", paste0(cc_iso3c, ".md"))

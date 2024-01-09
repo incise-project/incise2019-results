@@ -6,12 +6,12 @@ execute:
 
 # Country profiles of the 2019 InCiSE results {#sec-country-profiles}
 
-This chapter provides a visual summary of each country's results from the 2019
-edition  of the InCiSE Index. For each country, there is a bar chart showing
-its position in the overall Index, as well as a ‘radar chart’ showing their
-scores for each indicator compared with the InCiSE average. The radar charts
-highlight where a country performs particularly well compared to the average
-and where further analysis or attention may be beneficial.
+This chapter provides an interactive summary of each country's results from the
+2019 edition  of the InCiSE Index. For each country, there is a bar chart
+showing its position in the overall Index, as well as a ‘radar chart’ showing
+their scores for each indicator compared with the InCiSE average. The radar
+charts highlight where a country performs particularly well compared to the
+average and where further analysis or attention may be beneficial.
 
 As discussed at the start of @sec-index-results, all scores in the InCiSE
 results are relative, meaning that the highest scoring country is assigned
@@ -29,7 +29,7 @@ details about the methodological approach, including the construction of each
 indicator, can be found in the
 [Technical Report](http://incise-project.github.io/incise2019-techreport/).
 
-## Key to reading country graphs
+::: {.callout-note title="Key to reading country graphs" icon="false" collapse="true"}
 
 Each country section includes a figure with two charts: a bar chart on the
 left hand side showing the results of the InCiSE Index and a radar chart on
@@ -49,8 +49,234 @@ coloured in teal, a point with a white centre is used to indicate where the
 data for that indicator has completely missing data and their result for that
 indicator is fully estimated using statistical imputation. The InCiSE average
 for each indicator is shown in dark grey.
+:::
 
-::: {.callout-note .crf title="Cross-referencing note" icon="false"}
-This content was presented as the introduction to chapter 4 in the original
-2019 publication.
+```{ojs, setup}
+//| output: false
+
+Plot = import("https://esm.sh/@observablehq/plot")
+
+/* source data */
+narrative_data = FileAttachment("country_visuals/country_narratives.csv").csv({ "typed": true });
+bar_data = FileAttachment("country_visuals/bar_data.csv").csv({ "typed": true });
+radar_grid = FileAttachment("country_visuals/radar_grid.csv").csv({ "typed": true });
+radar_axes = FileAttachment("country_visuals/radar_axes.csv").csv({ "typed": true });
+radar_data = FileAttachment("country_visuals/radar_data_full.csv").csv({ "typed": true });
+radar_imputed = FileAttachment("country_visuals/radar_imputed.csv").csv({ "typed": true });
+
+/* country selectors */
+country_codes =  [
+  "AUS", "AUT", "BEL", "BGR", "CAN", "CHL", "HRV", "CZE", "DNK", "EST", "FIN",
+  "FRA", "DEU", "GRC", "HUN", "ISL", "IRL", "ISR", "ITA", "JPN", "LVA", "LTU",
+  "MEX", "NLD", "NZL", "NOR", "POL", "PRT", "ROU", "SVK", "SVN", "KOR", "ESP",
+  "SWE", "CHE", "TUR", "GBR", "USA"
+]
+
+countries = [
+  "Australia", "Austria", "Belgium", "Bulgaria", "Canada", "Chile", "Croatia",
+  "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+  "Hungary", "Iceland", "Ireland", "Israel", "Italy", "Japan", "Latvia",
+  "Lithuania", "Mexico", "Netherlands", "New Zealand", "Norway", "Poland",
+  "Portugal", "Romania",  "Slovakia",  "Slovenia", "South Korea", "Spain",
+  "Sweden", "Switzerland", "Turkey", "United Kingdom",
+  "United States of America"
+]
+
+/* InCiSE data points */
+incise_bar = bar_data.filter(function(df){
+  return "InCiSE" == df.cc_iso3c
+});
+
+incise_radar = radar_data.filter(function(df){
+  return "InCiSE" == df.cc_iso3c
+});
+
+```
+
+```{ojs, country_selection}
+
+viewof usr_country = Inputs.select(
+  countries,
+  {label: "Select a country:", unique: true}
+)
+
+my_country = country_codes[countries.indexOf(usr_country)]
+
+my_narrative = narrative_data.filter(function(df){
+  return my_country == df.cc_iso3c
+})[0];
+
+country_bar = bar_data.filter(function(df){
+  return my_country == df.cc_iso3c
+});
+
+country_radar = radar_data.filter(function(df){
+  return my_country == df.cc_iso3c
+});
+
+country_impute = radar_imputed.filter(function(df){
+  return my_country == df.cc_iso3c
+});
+
+```
+
+```{ojs, lead_text}
+html`<p class="lead">${my_narrative.lead_text}</p>`
+```
+
+::: {.column-screen-inset-right layout="[ [4,8] ]"}
+
+```{ojs, bar_plot}
+
+bar_plot = Plot.plot({
+  width: 250,
+  height: 500,
+  style: {fontSize: 11},
+  x: {label: null, grid: true, domain: [0, 1.4]},
+  y: {label: null},
+  marks: [
+    Plot.barX(bar_data, {
+      x: "value",
+      y: "cc_iso3c",
+      sort: {y: "x", reverse: true},
+      fill: "#dddddd"
+    }),
+    Plot.barX(incise_bar, {
+      x: "value",
+      y: "cc_iso3c",
+      sort: {y: "x", reverse: true},
+      fill: "#999999"
+    }),
+    Plot.barX(country_bar, {
+      x: "value",
+      y: "cc_iso3c",
+      sort: {y: "x", reverse: true},
+      fill: "#009d94"
+    }),
+    Plot.text(incise_bar, {
+      x: (d) => d.value + 0.05,
+      y: "cc_iso3c",
+      text: "hover_label",
+      fill: "#999999",
+      fontWeight: "bold",
+      textAnchor: "start",
+      sort: {y: "x", reverse: true}
+    }),
+    Plot.text(country_bar, {
+      x: (d) => d.value + 0.05,
+      y: "cc_iso3c",
+      text: "hover_label",
+      fill: "#009d94",
+      fontWeight: "bold",
+      textAnchor: "start",
+      sort: {y: "x", reverse: true}
+    }),
+    Plot.tip(bar_data,
+      Plot.pointerY({
+        x: "value",
+        y: "cc_iso3c",
+        filter: (d) => d.hover_label,
+        title: (d) => d.hover_label,
+        frameAnchor: "left"
+      })
+    )
+  ]
+});
+
+```
+
+```{ojs, radar_plot}
+
+chart_curve = "catmull-rom-closed"
+
+radar_plot = Plot.plot({
+  width: 500,
+  height: 500,
+  style: {fontSize: 11},
+  x: {domain: [-1.5, 1.5], label: "", axis: null},
+  y: {domain: [-1.5, 1.5], label: "", axis: null},
+  marks: [
+    Plot.line(radar_grid, {
+      x: "grid_x",
+      y: "grid_y",
+      z: "grid",
+      stroke: "#dddddd",
+      curve: chart_curve
+    }),
+    Plot.link(radar_axes, {
+      x1: 0,
+      y1: 0,
+      x2: "axis_x",
+      y2: "axis_y",
+      z: "indicator",
+      stroke: "#dddddd",
+      curve: "linear"
+    }),
+    Plot.line(incise_radar, {
+      x: "new_x",
+      y: "new_y",
+      stroke: "#999999",
+      strokeWidth: 2,
+      curve: chart_curve
+    }),
+    Plot.dot(incise_radar, {
+      x: "new_x",
+      y: "new_y",
+      fill: "#999999",
+      symbol: "circle-stroke",
+      strokeWidth: 2
+    }),
+    Plot.line(country_radar, {
+      x: "new_x",
+      y: "new_y",
+      stroke: "#009d94",
+      fill: "#ccebea33",
+      strokeWidth: 2,
+      curve: chart_curve
+    }),
+    Plot.dot(country_radar, {
+      x: "new_x",
+      y: "new_y",
+      radius: 3,
+      fill: "#009d94",
+      symbol: "circle-stroke",
+      strokeWidth: 2
+    }),
+    Plot.dot(country_impute, {
+      x: "new_x",
+      y: "new_y",
+      radius: 3,
+      stroke: "#009d94",
+      fill: "#ffffff",
+      symbol: "circle-stroke",
+      strokeWidth: 2
+    }),
+    Plot.text(radar_axes, {
+      x: "label_x",
+      y: "label_y",
+      text: "indicator"
+    }),
+    Plot.tip(country_radar,
+      Plot.pointer({
+        x: "new_x",
+        y: "new_y",
+        filter: (d) => d.data_label,
+        title: (d) => d.data_label
+      })
+    )
+  ]
+});
+
+```
+
+:::
+
+```{ojs}
+html`<p>${my_narrative.body_text}</p>`
+```
+
+::: {.callout-note .crf .profile-crf title="Cross-referencing note" icon="false"}
+```{ojs}
+html`The content for ${usr_country} was presented as ${my_narrative.xref_note} in the original 2019 publication.`
+```
 :::

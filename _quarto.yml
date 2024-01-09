@@ -16,53 +16,53 @@ book:
     - 01_introduction.qmd
     - 02_incise_framework.qmd
     - 03_results.qmd
-    - part: 04_00_country_profiles.qmd
-      chapters:
-        - 04_01_AUS.qmd
-        - 04_02_AUT.qmd
-        - 04_03_BEL.qmd
-        - 04_04_BGR.qmd
-        - 04_05_CAN.qmd
-        - 04_06_CHL.qmd
-        - 04_07_CZE.qmd
-        - 04_08_DEU.qmd
-        - 04_09_DNK.qmd
-        - 04_10_ESP.qmd
-        - 04_11_EST.qmd
-        - 04_12_FIN.qmd
-        - 04_13_FRA.qmd
-        - 04_14_GRC.qmd
-        - 04_15_HRV.qmd
-        - 04_16_HUN.qmd
-        - 04_17_IRL.qmd
-        - 04_18_ISL.qmd
-        - 04_19_ISR.qmd
-        - 04_20_ITA.qmd
-        - 04_21_JPN.qmd
-        - 04_22_KOR.qmd
-        - 04_23_LTU.qmd
-        - 04_24_LVA.qmd
-        - 04_25_MEX.qmd
-        - 04_26_NLD.qmd
-        - 04_27_NOR.qmd
-        - 04_28_NZL.qmd
-        - 04_29_POL.qmd
-        - 04_30_PRT.qmd
-        - 04_31_ROU.qmd
-        - 04_32_SVK.qmd
-        - 04_33_SVN.qmd
-        - 04_34_SWE.qmd
-        - 04_35_CHE.qmd
-        - 04_36_TUR.qmd
-        - 04_37_GBR.qmd
-        - 04_38_USA.qmd
+    - 04_00_country_profiles.qmd
     - 05_next_steps.qmd
   appendices:
     - A_indicator_definitions.qmd
     - B_data_sources.qmd
     - C_scores_rankings.qmd
-  cover-image: incise2019_results_cover.png
-  favicon: incise2019_results_cover.png
+    - part: Z_00_country_profiles_old.qmd
+      chapters:
+        - Z_01_AUS.qmd
+        - Z_01_AUS.qmd
+        - Z_02_AUT.qmd
+        - Z_03_BEL.qmd
+        - Z_04_BGR.qmd
+        - Z_05_CAN.qmd
+        - Z_06_CHL.qmd
+        - Z_07_CZE.qmd
+        - Z_08_DEU.qmd
+        - Z_09_DNK.qmd
+        - Z_10_ESP.qmd
+        - Z_11_EST.qmd
+        - Z_12_FIN.qmd
+        - Z_13_FRA.qmd
+        - Z_14_GRC.qmd
+        - Z_15_HRV.qmd
+        - Z_16_HUN.qmd
+        - Z_17_IRL.qmd
+        - Z_18_ISL.qmd
+        - Z_19_ISR.qmd
+        - Z_20_ITA.qmd
+        - Z_21_JPN.qmd
+        - Z_22_KOR.qmd
+        - Z_23_LTU.qmd
+        - Z_24_LVA.qmd
+        - Z_25_MEX.qmd
+        - Z_26_NLD.qmd
+        - Z_27_NOR.qmd
+        - Z_28_NZL.qmd
+        - Z_29_POL.qmd
+        - Z_30_PRT.qmd
+        - Z_31_ROU.qmd
+        - Z_32_SVK.qmd
+        - Z_33_SVN.qmd
+        - Z_34_SWE.qmd
+        - Z_35_CHE.qmd
+        - Z_36_TUR.qmd
+        - Z_37_GBR.qmd
+        - Z_38_USA.qmd
   url: https://incise-project.github.io/incise2019-results/
   repo-url: https://github.com/incise-project/incise2019-results/
   downloads: pdf

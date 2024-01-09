@@ -112,7 +112,3 @@ collaboration is essential to help strengthen InCiSE.
 Feedback remains vitally important to help improve the Index. The project team
 would welcome feedback from country governments, policy and learning networks,
 think tanks and academia.
-
-::: {.callout-note .crf title="Cross-referencing note" icon="false"}
-This content was presented as chapter 5 in the original 2019 publication.
-:::
