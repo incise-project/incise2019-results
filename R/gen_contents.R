@@ -209,11 +209,15 @@ get_book_parts <- function(what = c("sec", "tbl", "fig"), input = ".",
 
 # generate a markdown list for inclusion in a document
 get_content_list <- function(what = c("sec", "tbl", "fig"), input = ".",
-                             insert_breaks = TRUE) {
+                             insert_breaks = TRUE, max_depth = NULL) {
 
   what <- match.arg(what)
 
   x <- get_book_parts(what, input, insert_breaks)
+
+  if (!is.null(max_depth) & rlang::is_bare_integerish(max_depth)) {
+    x <- x |> dplyr::filter(full_depth <= max_depth)
+  }
 
   return(x$output)
 

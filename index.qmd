@@ -35,8 +35,9 @@ Footnotes have been added to charts, tables and chapters to indicate changes
 in content and differences in numbering.
 
 Please note that @sec-country-profiles of this web book provides an
-interactive version of the report content - non-interactive versions of the
-country profiles are available ...
+interactive version of the report content which may not be fully accessible,
+[static versions](Z_00_country_profiles_old.qmd) of the country profiles are
+available in the Appendices to this report.
 
 You can also download and read the
 [original PDF publication](incise2019_results_report.pdf).

@@ -51,6 +51,12 @@ indicator is fully estimated using statistical imputation. The InCiSE average
 for each indicator is shown in dark grey.
 :::
 
+::: {.callout-caution title="Interactive content" icon="false"}
+The following content is interactive and may not be fully accessible,
+[static versions](Z_00_country_profiles_old.qmd) of the country profiles are
+available in the Appendices to this report.
+:::
+
 ```{ojs, setup}
 //| output: false
 

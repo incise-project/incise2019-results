@@ -8,8 +8,6 @@ execute:
 source("R/gen_contents.R")
 ```
 
-# Contents {.unnumbered}
-
 # Contents, figures and tables {.unnumbered}
 
 ## Contents of the report
@@ -21,7 +19,7 @@ appendices.
 
 ```{r, list-sections}
 #| output: asis
-cat(get_content_list("sec"), sep = "\n")
+cat(get_content_list("sec", max_depth = 1), sep = "\n")
 ```
 
 :::
@@ -29,8 +27,9 @@ cat(get_content_list("sec"), sep = "\n")
 ### Changes compared to the original 2019 publication
 
 Please note that @sec-country-profiles of this web book provides an
-interactive version of the report content - non-interactive versions of the
-country profiles are available ...
+interactive version of the report content which may not be fully accessible,
+[static versions](Z_00_country_profiles_old.qmd) of the country profiles are
+available in the Appendices to this report.
 
 ## List of figures
 
