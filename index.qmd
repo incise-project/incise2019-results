@@ -1,7 +1,9 @@
 ## Welcome {.unnumbered}
 
-This is an HTML version of the InCiSE 2019 Results Report, originally
-published in [April 2019](https://www.bsg.ox.ac.uk/news/new-index-ranks-uk-civil-service-top-followed-new-zealand-and-canada).
+This is an HTML version of the International Civil Service Effectiveness
+(InCiSE) Index 2019 Results Report,
+[originally published](https://www.bsg.ox.ac.uk/news/new-index-ranks-uk-civil-service-top-followed-new-zealand-and-canada)
+in April 2019 by the InCiSE Partners.
 
 This report summarises the results of the 2019 InCiSE Index, for the index
 overall, its constituent indicators and summaries of country performance. For
@@ -45,9 +47,9 @@ Two reports have been published covering the 2019 edition of the InCiSE Index:
 
 * The Results Report (this report) provides an overview of the overall results
   of the InCiSE Index, and a summary for each country covered by the Index.
-* The Technical Report provides the methodology of the InCiSE Index, it
-  includes details fo the data sources, transformations, imputation,
-  and weightings.
+* The [Technical Report](https://incise-project.github.io/incise2019-techreport/)
+  provides the methodology of the InCiSE Index, it includes details fo the data
+  sources, transformations, imputation, and weightings.
 
 Users are free to copy, download and print InCiSE content and findings for
 their own use. Excerpts from InCiSE reports and publications may also be used,
@@ -70,8 +72,9 @@ in the InCiSE Index, as well as their ideas and support for the overall project.
 
 ## Citation
 
-Please refer to and cite the original PDF publication:
+Please continue to refer to and cite the original 2019 publication as the
+canonical version of the report:
 
 > InCiSE Partners (2019) The International Civil Service Effectiveness (InCiSE)
-> Index: Technical Report 2019, Oxford: Blavatnik School of Government,
-> University of Oxford, https://www.bsg.ox.ac.uk/incise
+> Index: Results Report 2019, Oxford: Blavatnik School of Government,
+> University of Oxford, [https://www.bsg.ox.ac.uk/incise](https://www.bsg.ox.ac.uk/incise)
