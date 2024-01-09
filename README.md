@@ -30,15 +30,15 @@ visualisations) in more modern and user friendly formats.
 
 ### Differences from the original 2019 publication
 
+Some typographic errors have been corrected as part of the re-publication of
+this report. There have also been some changes to the tables and figures when
+compared to the original report, these are largely for layout purposes.
+Footnotes have been added to charts, tables and chapters to indicate changes in
+content and differences in numbering.
+
 Please note, as part of the re-publication of this report into a web format
-Chapter 4 of the original report has had its constituent sections split into
-individual chapters to improve readability and navigation. Some typographic
-errors have been corrected as part of the re-publication of this report. There
-have also been some changes to the tables and figures when compared to the
-original report, these are largely for layout purposes (except in the case of
-one chart where external source data availability has changed). Footnotes have
-been added to charts, tables and chapters to indicate changes in content and
-differences in numbering.
+Chapter 4 of the original report has been reproduced as interactive content,
+static versions of this content are also provided in the Appendices.
 
 ## Citation
 
@@ -111,10 +111,14 @@ and render tables in the book:
 
 #### Processing scripts
 
+[`country_visuals.R`](R/country_visuals.R) is a script to produce the CSV files
+that are used by the interactive charts in
+[`04_00_country_profiles.qmd`](04_00_country_profiles.qmd).
+
 [`generate_country_qmd.R`](R/generate_country_qmd.R) is a script to
 programmatically generate the the country profile pages of the report
-(`04_99_XXX.qmd` files). This uses the country template file
-([`04_000_country_template.qmd`](04_000_country_template.qmd)) and inserts
+(`Z_99_XXX.qmd` files). This uses the country template file
+([`Z_000_country_template.qmd`](04_000_country_template.qmd)) and inserts
 the relevant country parameters for creating the chart output and appends the
 narrative information included in the country narrative markdown documents
 stored in the [`country_narratives`](country_narratives) folder.
