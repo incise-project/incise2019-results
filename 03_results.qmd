@@ -4,139 +4,6 @@ execute:
   warning: false
 ---
 
-```{r, setup}
-#| output: false
-
-library(ggplot2)
-library(patchwork)
-source("R/gg_helpers.R")
-
-incise2019 <- readr::read_csv("tables/incise2019_results.csv")
-
-bar_df <- incise2019 |>
-  dplyr::select(cc_iso3c, score = incise_index) |>
-  tibble::add_row(
-    cc_iso3c = "InCiSE",
-    score = mean(incise2019$incise_index)
-  ) |>
-  dplyr::mutate(
-    label = dplyr::if_else(cc_iso3c == "InCiSE",
-                           scales::number(score, accuracy = 0.001),
-                           NA_character_),
-    cc_iso3c = forcats::fct_reorder(cc_iso3c, score),
-    group = dplyr::if_else(cc_iso3c == "InCiSE", "InCiSE", "country"),
-    axis_text = dplyr::if_else(cc_iso3c == "InCiSE", NA_character_, cc_iso3c)
-  ) |>
-  dplyr::arrange(cc_iso3c)
-
-bar_overlay <- bar_df |>
-  dplyr::filter(cc_iso3c == "InCiSE")
-
-radar_df <- incise2019 |>
-  tidyr::pivot_longer(cols = c(-cc_iso3c, -cc_name), names_to = "indicator") |>
-  dplyr::filter(indicator != "incise_index") |>
-  dplyr::summarise(
-    lower_quartile = quantile(value, 0.25),
-    average = mean(value),
-    upper_quartile = quantile(value, 0.75),
-    .by = "indicator"
-  ) |>
-  dplyr::mutate(
-    indicator = dplyr::case_match(
-      indicator,
-      "ind_cap" ~ "Capabilities",
-      "ind_crm" ~ "Crisis and risk management",
-      "ind_dig" ~ "Digital services",
-      "ind_ffm" ~ "Fiscal and financial management",
-      "ind_hrm" ~ "HR management",
-      "ind_inc" ~ "Inclusiveness",
-      "ind_int" ~ "Integrity",
-      "ind_opn" ~ "Openness",
-      "ind_pol" ~ "Policy making",
-      "ind_pro" ~ "Procurement",
-      "ind_reg" ~ "Regulation",
-      "ind_tax" ~ "Tax administration",
-    ),
-    indicator = stringr::str_wrap(indicator, 13),
-    indicator = forcats::as_factor(indicator)
-  ) |>
-  tidyr::pivot_longer(cols = -indicator, names_to = "variable") |>
-  dplyr::mutate(
-    theta = as.numeric(indicator),
-    theta = (360*(theta/max(theta))-105) * pi / 180,
-    new_x = cos(theta) * value,
-    new_y = sin(theta) * -value,
-    legend_group = dplyr::if_else(variable == "average", "average", "quartile")
-  )
-
-radar_axes <- radar_df |>
-  dplyr::distinct(indicator) |>
-  dplyr::mutate(
-    theta = as.numeric(indicator),
-    theta = (360*(theta/max(theta))-105) * pi / 180,
-    label_x = cos(theta) * 1.2,
-    label_y = sin(theta) * -1.2,
-    axis_x = cos(theta) * 1.05,
-    axis_y = sin(theta) * -1.05,
-  )
-
-radar_grid <- radar_df |>
-  dplyr::distinct(indicator) |>
-  dplyr::mutate(
-    theta = as.numeric(indicator),
-    theta = (360*(theta/max(theta))-105) * pi / 180,
-    grids = 4
-  ) |>
-  tidyr::uncount(grids) |>
-  dplyr::mutate(
-    grid = seq(1, 4)/4,
-    .by = "indicator"
-  ) |>
-  dplyr::mutate(
-    grid_x = cos(theta) * grid,
-    grid_y = sin(theta) * grid
-  )
-
-distribution_df <- incise2019 |>
-  dplyr::select(-incise_index, -cc_name) |>
-  tidyr::pivot_longer(cols = -cc_iso3c, names_to = "indicator") |>
-  dplyr::mutate(
-    indicator = dplyr::case_match(
-      indicator,
-      "ind_cap" ~ "Capabilities",
-      "ind_crm" ~ "Crisis and risk management",
-      "ind_dig" ~ "Digital services",
-      "ind_ffm" ~ "Fiscal and financial management",
-      "ind_hrm" ~ "HR management",
-      "ind_inc" ~ "Inclusiveness",
-      "ind_int" ~ "Integrity",
-      "ind_opn" ~ "Openness",
-      "ind_pol" ~ "Policy making",
-      "ind_pro" ~ "Procurement",
-      "ind_reg" ~ "Regulation",
-      "ind_tax" ~ "Tax administration",
-    ),
-    indicator = stringr::str_wrap(indicator, width = 20),
-    indicator = forcats::fct_rev(indicator)
-  )
-
-distribution_av <- distribution_df |>
-  dplyr::summarise(value = mean(value), .by = "indicator")
-
-distribution_max <- distribution_df |>
-  dplyr::filter(value == max(value), .by = "indicator")
-
-distribution_with_av <- incise2019 |>
-  dplyr::bind_rows(
-    incise2019 |>
-      dplyr::summarise(across(where(is.numeric), mean)) |>
-      dplyr::mutate(cc_iso3c = "InCiSE")
-  ) |>
-  dplyr::select(-cc_name, -incise_index) |>
-  tidyr::pivot_longer(cols = -cc_iso3c, names_to = "indicator")
-
-```
-
 # Results of the 2019 InCiSE Index {#sec-index-results}
 
 This chapter presents the overall results of the 2019 edition of the InCiSE
@@ -162,198 +29,333 @@ performing. Rather, of the 38 countries selected they have the highest and
 lowest performance within that group of countries. The methodology used to
 explain these scores is explained in the Technical Report.
 
+::: {.callout-caution title="Interactive content" icon="false"}
+The following content is interactive and may not be fully accessible,
+a [static version](Y_results_static.qmd) of this chapter is available in the
+Appendices to this report.
+:::
+
 ## Overall scores and rankings for the InCiSE Index {#sec-rankings}
 
-@fig-incise-results shows the overall InCiSE Index scores,
-@fig-indicator-summary shows the distribution of country scores for each
-indicator. The following sections of this chapter provide a summary of country
-performance for each indicator, including a bar chart showing country rankings.
+The charts shows the overall InCiSE Index scores. The bar chart on the left
+shows the results of the InCiSE Index for all 38 countries. The radar chart
+on the right shows the InCiSE average score (in green) and the upper and lower
+quartile country scores (in grey) for each of the 12 InCiSE Indicators.
 
-```{r}
-#| label: fig-incise-results
-#| fig-cap: Overall results of the 2019 InCiSE Index
+```{ojs, setup}
+//| output: false
 
-bar_plot <- ggplot(bar_df, aes(x = score, y = cc_iso3c)) +
-  geom_col(aes(fill = group)) +
-  geom_text(aes(label = axis_text, x = -0.01, colour = group),
-            family = "Inter",
-            hjust = 1, size = 4) +
-  geom_text(data = bar_overlay,
-            aes(label = cc_iso3c, x = -0.01, colour = group),
-            fontface = "bold", family = "Inter",
-            hjust = 1, size = 4) +
-  geom_text(aes(label = label, colour = group),
-            fontface = "bold", family = "Inter",
-            nudge_x = 0.02, hjust = 0, size = 4) +
-  scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
-  scale_fill_manual(values = c(
-    "country" = "#dddddd",
-    "InCiSE" = "#009d94"
-  )) +
-  scale_colour_manual(values = c(
-    "country" = "#444444",
-    "InCiSE" = "#009d94"
-  )) +
-  theme_void() +
-  theme(
-    legend.position = "none"
-  )
+Plot = import("https://esm.sh/@observablehq/plot")
 
-radar_plot <- ggplot(radar_df, aes(x = new_x, y = new_y, group = variable, colour = legend_group)) +
-  geom_polygon(data = radar_grid, aes(x = grid_x, y = grid_y, group = grid),
-               inherit.aes = FALSE, fill = NA, colour = "#dddddd") +
-  geom_segment(data = radar_axes,
-               aes(x = 0, y = 0, xend = axis_x, yend = axis_y),
-               inherit.aes = FALSE, colour = "#dddddd") +
-  geom_polygon(aes(linewidth = legend_group, linetype = legend_group), fill = NA,
-               key_glyph = "path") +
-  geom_point(size = 3.25) +
-  geom_text(data = radar_axes,
-            aes(x = label_x, y = label_y, label = indicator, group = indicator),
-            colour = "#444444", size = 4) +
-  scale_colour_manual(
-    values = c(
-      "average" = "#009d94",
-      "quartile" = "#999999"
-    ),
-    labels = c("InCiSE average", "Upper/lower quartile")
-  ) +
-  scale_linewidth_manual(
-    values = c(
-      "average" = 1.5,
-      "quartile" = 0.75
-    ),
-    labels = c("InCiSE average", "Upper/lower quartile")
-  ) +
-  scale_linetype_manual(
-    values = c(
-      "average" = "solid",
-      "quartile" = "dashed"
-    ),
-    labels = c("InCiSE average", "Upper/lower quartile")
-  ) +
-  coord_fixed(xlim = c(-1.25, 1.25), ylim = c(-1.25, 1.25)) +
-  theme_void() +
-  theme(
-    text = element_text(family = "Inter", colour = "#444444", size = 14),
-    legend.position = "top",
-    legend.title = element_blank()
-  )
+bar_data = FileAttachment("country_visuals/bar_data_full.csv").csv({ "typed": true });
+radar_grid = FileAttachment("country_visuals/radar_grid.csv").csv({ "typed": true });
+radar_axes = FileAttachment("country_visuals/radar_axes.csv").csv({ "typed": true });
+radar_data = FileAttachment("country_visuals/radar_incise.csv").csv({ "typed": true });
+radar_full = FileAttachment("country_visuals/radar_data_full.csv").csv({ "typed": true });
 
-combined_plot <- bar_plot + radar_plot +
-  plot_layout(widths = c(1, 2))
+bar_index = bar_data.filter(function(df){
+  return "incise_index" == df.indicator
+});
 
-render_svg(
-  combined_plot, width = 700, height = 600,
-  alt_text = paste(
-    "Two charts summarising the results of the 2019 InCiSE Index. The bar",
-    "chart on the left shows the overall Index results for the 38 countries",
-    "covered by the Index as well as a bar to indicate the average score",
-    "across the 38 countries. The radar chart on the right shows for each of",
-    "the 12 InCiSE indicators, the InCiSE average score, as well as the upper",
-    "and lower quartile scores across the 38 countries covered by the Index."
-  ),
-  source_note = "Presented as part of Figure 3 in the original 2019 publication."
-)
+bar_incise = bar_index.filter(function(df){
+  return "InCiSE" == df.cc_iso3c
+});
 
-```
+country_radar = radar_full.filter(function(df){
+  return "incise_index" != df.indicator && "InCiSE" != df.cc_iso3c
+});
 
+chart_curve = "catmull-rom-closed"
 
-```{r}
-#| label: fig-indicator-summary
-#| fig-cap: Overall results for the 2019 InCiSE indicators
-
-indicator_summary_polot <- ggplot(distribution_df,
-                                  aes(x = value, y = indicator)) +
-  geom_vline(xintercept = c(0.25, 0.5, 0.75), colour = "#999999",
-             linetype = "dashed") +
-  geom_segment(aes(x = 0, xend = 1, y = indicator, yend = indicator),
-               linewidth = 6, colour = "#e6f6f5") +
-  geom_text(data = distribution_av,
-            aes(label = "I"), family = "Inter",
-            colour = "#666666", size = 10) +
-  geom_text(aes(label = "I"), fontface = "bold", family = "Inter",
-            colour = "#009d94", size = 5) +
-  geom_text(data = distribution_max,
-            aes(label = cc_iso3c), family = "Inter",
-            colour = "#444444", size = 4, hjust = 0, nudge_x = 0.01) +
-  annotate(
-    geom = "rect", xmin = 0.24, xmax = 0.76, ymin = 12.75, ymax = 14.25,
-    colour = "#ffffff", fill = "#ffffff"
-  ) +
-  annotate(
-    geom = "rect", xmin = 0.24, xmax = 0.76, ymin = 0, ymax = 0.25,
-    colour = "#ffffff", fill = "#ffffff"
-  ) +
-  annotate(
-    geom = "text", x = c(rep(0, 12), rep(1, 12)), y = rep(1:12, 2), label = "I",
-    size = 10, family = "Inter", fontface = "bold", colour = "#009d94"
-  ) +
-  annotate(
-    geom = "text",
-    x = distribution_av$value[distribution_av$indicator == "Capabilities"],
-    y = 12.75, label = "InCiSE\naverage", vjust = 0,
-    size = 4, family = "Inter", colour = "#444444"
-  ) +
-  annotate(
-    geom = "text", x = 1, y = 12.75, label = "Highest\nscoring\ncountry",
-    hjust = 0, size = 4, family = "Inter", vjust = 0, colour = "#444444"
-  ) +
-  theme_void() +
-  scale_x_continuous(expand = expansion(add = c(0.01, 0.1)),
-                     breaks = c(0, 0.25, 0.5, 0.75, 1)) +
-  scale_y_discrete(expand = expansion(add = c(0, 2.25))) +
-  theme(
-    text = element_text(family = "Inter", size = 10),
-    axis.text.y = element_text(colour = "#444444", hjust = 1, size = 12),
-    axis.text.x = element_text(colour = "#444444", hjust = 0.5, size = 12)
-  )
-
-render_svg(
-  indicator_summary_polot, width = 700, height = 600,
-  alt_text = paste(
-    "A bar chart summarising the distribution of country scores across the 12",
-    "InCiSE indicators. Green vertical bars show the individual scores of the",
-    "38 countries for each of the 12 indciators from 0 on the left to 1 on",
-    "the right. A grey vertical bar shows the InCiSE average for each",
-    "indicator. The 3-letter code for the highest scoring country for each",
-    "indicator is shown on the right hand vertical axis."
-  ),
-  source_note = "Presented as part of Figure 3 in the original 2019 publication."
-)
+indicator_bar = function(ind) {
+  
+  var ind_bar_df = bar_data.filter(function(df){
+    return ind == df.indicator
+  });
+  
+  var ind_bar_incise = ind_bar_df.filter(function(df){
+    return "InCiSE" == df.cc_iso3c
+  });
+  
+  var ind_plot = Plot.plot({
+    width: 300,
+    height: 600,
+    marginLeft: 50,
+    marginTop: 0,
+    style: {fontSize: 11},
+    x: {label: null, grid: true, domain: [0, 1.1]},
+    y: {label: null, axis: null},
+    color: {type: "identity"},
+    marks: [
+      Plot.barX(ind_bar_df, {
+        x: "value",
+        y: "cc_iso3c",
+        sort: {y: "x", reverse: true},
+        fill: "colour_group"
+      }),
+      Plot.text(ind_bar_df, {
+        x: -0.05,
+        y: "cc_iso3c",
+        text: "cc_iso3c",
+        fill: "text_colour",
+        textAnchor: "end",
+        fontWeight: "600",
+        filter: (d) => "bold" == d.text_weight,
+        sort: {y: "x", reverse: true}
+      }),
+      Plot.text(ind_bar_df, {
+        x: -0.05,
+        y: "cc_iso3c",
+        text: "cc_iso3c",
+        fill: "text_colour",
+        textAnchor: "end",
+        filter: (d) => "normal" == d.text_weight,
+        sort: {y: "x", reverse: true}
+      }),
+      Plot.text(ind_bar_incise, {
+        x: (d) => d.value + 0.05,
+        y: "cc_iso3c",
+        text: "value_label",
+        fill: "#999999",
+        fontWeight: "600",
+        textAnchor: "start",
+        sort: {y: "x", reverse: true}
+      }),
+      Plot.tip(ind_bar_df,
+        Plot.pointerY({
+          x: "value",
+          y: "cc_iso3c",
+          filter: (d) => d.hover_label,
+          title: (d) => d.hover_label,
+          frameAnchor: "left"
+        })
+      )
+    ]
+  });
+  
+  return ind_plot
+  
+}
 
 ```
 
-As with the 2017 results, the four Commonwealth countries in the Index
-(Australia, Canada, New Zealand and the UK) continue to rank in the top 5
-countries. The Nordic countries (Denmark, Finland, Iceland, Norway, Sweden)
-also rank highly, with all but Iceland in the top 10. The remaining countries
-of northern and western Europe tend to rank more highly than countries in
-southern and eastern Europe. Countries from outside Europe are distributed
-throughout the ranking.
+::: {layout="[ [4,8] ]"}
+```{ojs, incise_bar}
+bar_plot = Plot.plot({
+  width: 250,
+  height: 500,
+  marginLeft: 50,
+  style: {fontSize: 11},
+  x: {label: null, grid: true, domain: [-0.2, 1.1]},
+  y: {label: null, axis: null},
+  color: {type: "identity"},
+  marks: [
+    Plot.barX(bar_index, {
+      x: "value",
+      y: "cc_iso3c",
+      fill: "colour_group",
+      sort: {y: "x", reverse: true}
+    }),
+    Plot.text(bar_index, {
+      x: -0.05,
+      y: "cc_iso3c",
+      text: "cc_iso3c",
+      fill: "text_colour",
+      textAnchor: "end",
+      fontWeight: "600",
+      filter: (d) => "bold" == d.text_weight,
+      sort: {y: "x", reverse: true}
+    }),
+    Plot.text(bar_index, {
+      x: -0.05,
+      y: "cc_iso3c",
+      text: "cc_iso3c",
+      fill: "text_colour",
+      textAnchor: "end",
+      filter: (d) => "normal" == d.text_weight,
+      sort: {y: "x", reverse: true}
+    }),
+    Plot.text(bar_incise, {
+      x: (d) => d.value + 0.05,
+      y: "cc_iso3c",
+      text: "value_label",
+      fill: "#009d94",
+      fontWeight: "600",
+      textAnchor: "start",
+      sort: {y: "x", reverse: true}
+    }),
+    Plot.tip(bar_index,
+      Plot.pointerY({
+        x: "value",
+        y: "cc_iso3c",
+        filter: (d) => d.hover_label,
+        title: (d) => d.hover_label,
+        frameAnchor: "left"
+      })
+    )
+  ]
+});
 
-The top 5 scores across some core function indicators vary significantly,
-making the rankings more noteworthy, while all the attribute scores are
-generally closer. Where there is a greater variation in scores, rankings are
-more significant in terms of helping countries to learn from each other.
-The attribute rankings show some clear country patterns emerging, with Canada
-and Denmark appearing in three out of the four tables. Scandinavian countries
-generally perform well against three of the attributes – openness, integrity
-and capabilities. New Zealand's top score for the integrity attribute stands
-out from the rest of the table.
+```
+
+```{ojs, incise_radar}
+radar_plot = Plot.plot({
+  width: 500,
+  height: 500,
+  style: {fontSize: 11},
+  x: {domain: [-1.5, 1.5], label: null, axis: null},
+  y: {domain: [-1.5, 1.5], label: null, axis: null},
+  color: {
+    type: "categorical",
+    domain: ["InCiSE average", "Lower quartile", "Upper quartile"],
+    range: ["#009d94", "#bbbbbb", "#bbbbbb"]
+  },
+  marks: [
+    Plot.line(radar_grid, {
+      x: "grid_x",
+      y: "grid_y",
+      z: "grid",
+      stroke: "#dddddd",
+      curve: chart_curve
+    }),
+    Plot.link(radar_axes, {
+      x1: 0,
+      y1: 0,
+      x2: "axis_x",
+      y2: "axis_y",
+      z: "indicator",
+      stroke: "#dddddd",
+      curve: "linear"
+    }),
+    Plot.line(radar_data, {
+      x: "new_x",
+      y: "new_y",
+      z: "cc_iso3c",
+      stroke: "cc_iso3c",
+      strokeWidth: 2,
+      curve: chart_curve
+    }),
+    Plot.dot(radar_data, {
+      x: "new_x",
+      y: "new_y",
+      z: "cc_iso3c",
+      fill: "cc_iso3c",
+      symbol: "circle-stroke",
+      strokeWidth: 2
+    }),
+    Plot.text(radar_axes, {
+      x: "label_x",
+      y: "label_y",
+      text: "indicator"
+    }),
+    Plot.tip(radar_data,
+      Plot.pointer({
+        x: "new_x",
+        y: "new_y",
+        filter: (d) => d.data_label,
+        title: (d) => d.data_label
+      })
+    )
+  ]
+});   
+
+```
+
+:::
+
+The chart below shows the distribution of country scores for each indicator.
+
+```{ojs, indicator_summary}
+
+indicator_summary = Plot.plot({
+  width: 750,
+  height: 500,
+  marginLeft: 100,
+  marginRight: 100,
+  style: {fontSize: 11},
+  x: {domain: [0, 1.1], grid: true, label: null},
+  y: {label: null},
+  marks: [
+    Plot.gridY(country_radar, {
+      x1: 0,
+      x2: 1,
+      y: "indicator",
+      z: "indicator",
+      stroke: "#eeeeee",
+      strokeWidth: 10
+    }),
+    Plot.text(radar_data, {
+      x: "value",
+      y: "indicator",
+      text: ["|", "|", "|", "|", "|", "|", "|", "|", "|", "|", "|", "|"],
+      filter: (d) => "InCiSE average" == d.cc_iso3c,
+      stroke: "#cccccc"
+    }),
+    Plot.dot(country_radar, {
+      x: "value",
+      y: "indicator",
+      symbol: "circle",
+      fill: "#009d94",
+      opacity: 0.25
+    }),
+    Plot.dot(country_radar, {
+      x: "value",
+      y: "indicator",
+      symbol: "circle",
+      stroke: "#009d94",
+      strokeWidth: 0.5,
+      opacity: 1
+    }),
+    Plot.dot(country_radar,
+      Plot.groupY ({x: "min"}, {
+        x: "value",
+        y: "indicator",
+        z: "indicator",
+        symbol: "circle",
+        fill: "#009d94",
+        opacity: 1
+      })
+    ),
+    Plot.dot(country_radar,
+      Plot.groupY ({x: "max"}, {
+        x: "value",
+        y: "indicator",
+        z: "indicator",
+        symbol: "circle",
+        fill: "#009d94",
+        opacity: 1
+      })
+    ),
+    Plot.text(country_radar,
+      Plot.selectMaxX ({
+        x: "value",
+        y: "indicator",
+        z: "indicator",
+        text: "cc_iso3c",
+        textAnchor: "start",
+        fill: "#009d94",
+        dx: 10,
+      })
+    ),
+    Plot.tip(country_radar,
+      Plot.pointer({
+        x: "value",
+        y: "indicator",
+        filter: (d) => d.data_label,
+        title: (d) => d.data_label
+      })
+    )
+  ]
+});
+
+```
+
 
 ## Policy making {#sec-policy-making}
 
-::: {layout="[30,70]"}
-```{r, ind-pol}
-pol_plot <- indicator_bar(distribution_with_av, "POL")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the policy making indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+::: {layout="[35,60]"}
+```{ojs, ind-pol}
+indicator_bar("ind_pol")
 ```
 
 This indicator has 4 themes: the quality of policy advice; the degree of
@@ -371,9 +373,10 @@ countries ranked for the policy making indicator also feature in the top 5 of
 the main InCiSE Index, while Denmark is ranked 6th overall.
 :::
 
+
 ## Fiscal and financial management {#sec-fiscal}
 
-::: {layout="[70,30]"}
+::: {layout="[65,35]"}
 
 This indicator has 3 themes: the effectiveness of public spending; the
 transparency of public spending; and budget practices. There are 6 metrics
@@ -389,31 +392,17 @@ New Zealand comes top for the metric looking at the openness of the budgeting
 process. Sweden's highest scores are for open budgeting and performance
 budgeting, while the UK's scores for performance budgeting are high as well.
 
-```{r, ind-ffm}
-ffm_plot <- indicator_bar(distribution_with_av, "FFM")
-
-render_svg(
-  ffm_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the fiscal and financial management indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+```{ojs, ind-ffm}
+indicator_bar("ind_ffm")
 ```
 
 :::
 
 ## Regulation {#sec-regulation}
 
-::: {layout="[30,70]"}
-```{r, ind-reg}
-pol_plot <- indicator_bar(distribution_with_av, "REG")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the regulation indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+::: {layout="[35,65]"}
+```{ojs, ind-reg}
+indicator_bar("ind_reg")
 ```
 
 This indicator has 3 themes relating to regulation policies and management:
@@ -435,7 +424,7 @@ as well.
 
 ## Crisis and risk management {#sec-crisis-risk}
 
-::: {layout="[70,30]"}
+::: {layout="[65,35]"}
 
 This indicator has 4 themes regarding disaster risk reduction and management
 issues most relevant for the civil service: the degree of strategic approach to
@@ -453,31 +442,17 @@ score well. The Netherlands' top position reflects consistently strong scores
 across almost all metrics, ranking joint top for 10 metrics. Sweden ranks joint
 top for 9 metrics, while Finland ranks joint top for 11 metrics.
 
-```{r, ind-crm}
-pol_plot <- indicator_bar(distribution_with_av, "CRM")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the crisis and risk indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+```{ojs, ind-crm}
+indicator_bar("ind_crm")
 ```
 
 :::
 
 ## Human resource management {#sec-hrm}
 
-::: {layout="[30,70]"}
-```{r, ind-hrm}
-pol_plot <- indicator_bar(distribution_with_av, "HRM")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the human resource management indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+::: {layout="[35,65]"}
+```{ojs, ind-hrm}
+indicator_bar("ind_hrm")
 ```
 
 This indicator now measures 4 themes, an increase of 2 since 2017: the extent
@@ -500,7 +475,7 @@ used in HR decision making.
 
 ## Tax administration {#sec-tax}
 
-::: {layout="[70,30]"}
+::: {layout="[65,35]"}
 This indicator measures 3 themes: the overall efficiency of tax collection;
 the extent to which services are user focused; and the extent and the quality
 of digital provision. The data sources are the OECD's Tax Administration Survey
@@ -517,30 +492,16 @@ corporate tax returns. The UK and the Netherlands achieve very high scores for
 these three metrics as well, while Norway achieves very high scores for two of
 them (tax debt proportion and online VAT returns).
 
-```{r, ind-tax}
-pol_plot <- indicator_bar(distribution_with_av, "TAX")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the tax administration indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+```{ojs, ind-tax}
+indicator_bar("ind_tax")
 ```
 :::
 
 ## Digital Services {#sec-digital-services}
 
-::: {layout="[30,70]"}
-```{r, ind-dig}
-pol_plot <- indicator_bar(distribution_with_av, "DIG")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the digital services indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+::: {layout="[35,65]"}
+```{ojs, ind-dig}
+indicator_bar("ind_dig")
 ```
 
 This indicator measures 3 themes: user experience; cross-border availability of
@@ -563,7 +524,7 @@ theme.
 
 ## Procurement {#sec-procurement}
 
-::: {layout="[70,30]"}
+::: {layout="[65,35]"}
 This indicator is a new addition to the Index. There are two themes:
 procurement systems and procurement practices. It is comprised of 6 metrics
 and 2 data sources: the OECD's Public Procurement Survey; and analysis of
@@ -579,30 +540,16 @@ SME participation metric as well, while Denmark achieves the maximum score
 for the metric assessing the role of its central purchasing body. The Republic
 of Korea's highest score is for the e-procurement metric.
 
-```{r, ind-pro}
-pol_plot <- indicator_bar(distribution_with_av, "PRO")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the procurement indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+```{ojs, ind-pro}
+indicator_bar("ind_pro")
 ```
 :::
 
 ## Integrity {#sec-integrity}
 
-::: {layout="[30,70]"}
-```{r, ind-int}
-pol_plot <- indicator_bar(distribution_with_av, "INT")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the integrity indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+::: {layout="[35,65]"}
+```{ojs, ind-int}
+indicator_bar("ind_int")
 ```
 
 This indicator covers 6 themes: corruption level perceptions; adherence to
@@ -625,7 +572,7 @@ noticeably ahead of all other countries in the top 5 table.
 
 ## Openness {#sec-openness}
 
-::: {layout="[70,30]"}
+::: {layout="[65,35]"}
 This indicator has 5 themes: the degree and quality of consultation with
 society; the existence and quality of complaint mechanisms; government data
 availability and accessibility; government data impact; right to information;
@@ -642,31 +589,17 @@ maximum score for the metric on citizens' access to official information.
 Denmark achieves the maximum score for 2 of the 3 metrics assessing the degree
 and quality of government consultation with society on policy issues.
 
-```{r, ind-opn}
-pol_plot <- indicator_bar(distribution_with_av, "OPN")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the openness indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+```{ojs, ind-opn}
+indicator_bar("ind_opn")
 ```
 
 :::
 
 ## Capabilities {#sec-capabilities}
 
-::: {layout="[30,70]"}
-```{r, ind-cap}
-pol_plot <- indicator_bar(distribution_with_av, "CAP")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the capabilities indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+::: {layout="[35,65]"}
+```{ojs, ind-cap}
+indicator_bar("ind_cap")
 ```
 
 This attribute measures four themes: core capability (eg. problem solving,
@@ -689,7 +622,7 @@ while New Zealand performs very strongly.
 
 ## Inclusiveness {#sec-inclusiveness}
 
-::: {layout="[70,30]"}
+::: {layout="[65,35]"}
 This indicator has two themes: proportionate gender representation in the
 civil service; and proportionate ethnic minority representation. There are 5
 metrics and 3 data sources: the OECD's Government at a Glance (GaaG) survey
@@ -708,15 +641,8 @@ the proportion of women in senior government positions. Canada's score for
 this metric is very strong as well and both countries' scores stand out from
 the rest of the top 5 countries.
 
-```{r, ind-inc}
-pol_plot <- indicator_bar(distribution_with_av, "INC")
-
-render_svg(
-  pol_plot, width = 300, height = 500,
-  alt_text = paste("Bar chart showing the distribution of country scores",
-                   "for the inclusiveness indicator."),
-  source_note = "Presented as part of Figure 4 in the original 2019 publication."
-)
+```{ojs, ind-inc}
+indicator_bar("ind_inc")
 ```
 
 :::

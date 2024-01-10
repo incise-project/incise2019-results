@@ -1,0 +1,728 @@
+---
+execute:
+  echo: false
+  warning: false
+---
+
+```{r, setup}
+#| output: false
+
+library(ggplot2)
+library(patchwork)
+source("R/gg_helpers.R")
+
+incise2019 <- readr::read_csv("tables/incise2019_results.csv")
+
+bar_df <- incise2019 |>
+  dplyr::select(cc_iso3c, score = incise_index) |>
+  tibble::add_row(
+    cc_iso3c = "InCiSE",
+    score = mean(incise2019$incise_index)
+  ) |>
+  dplyr::mutate(
+    label = dplyr::if_else(cc_iso3c == "InCiSE",
+                           scales::number(score, accuracy = 0.001),
+                           NA_character_),
+    cc_iso3c = forcats::fct_reorder(cc_iso3c, score),
+    group = dplyr::if_else(cc_iso3c == "InCiSE", "InCiSE", "country"),
+    axis_text = dplyr::if_else(cc_iso3c == "InCiSE", NA_character_, cc_iso3c)
+  ) |>
+  dplyr::arrange(cc_iso3c)
+
+bar_overlay <- bar_df |>
+  dplyr::filter(cc_iso3c == "InCiSE")
+
+radar_df <- incise2019 |>
+  tidyr::pivot_longer(cols = c(-cc_iso3c, -cc_name), names_to = "indicator") |>
+  dplyr::filter(indicator != "incise_index") |>
+  dplyr::summarise(
+    lower_quartile = quantile(value, 0.25),
+    average = mean(value),
+    upper_quartile = quantile(value, 0.75),
+    .by = "indicator"
+  ) |>
+  dplyr::mutate(
+    indicator = dplyr::case_match(
+      indicator,
+      "ind_cap" ~ "Capabilities",
+      "ind_crm" ~ "Crisis and risk management",
+      "ind_dig" ~ "Digital services",
+      "ind_ffm" ~ "Fiscal and financial management",
+      "ind_hrm" ~ "HR management",
+      "ind_inc" ~ "Inclusiveness",
+      "ind_int" ~ "Integrity",
+      "ind_opn" ~ "Openness",
+      "ind_pol" ~ "Policy making",
+      "ind_pro" ~ "Procurement",
+      "ind_reg" ~ "Regulation",
+      "ind_tax" ~ "Tax administration",
+    ),
+    indicator = stringr::str_wrap(indicator, 13),
+    indicator = forcats::as_factor(indicator)
+  ) |>
+  tidyr::pivot_longer(cols = -indicator, names_to = "variable") |>
+  dplyr::mutate(
+    theta = as.numeric(indicator),
+    theta = (360*(theta/max(theta))-105) * pi / 180,
+    new_x = cos(theta) * value,
+    new_y = sin(theta) * -value,
+    legend_group = dplyr::if_else(variable == "average", "average", "quartile")
+  )
+
+radar_axes <- radar_df |>
+  dplyr::distinct(indicator) |>
+  dplyr::mutate(
+    theta = as.numeric(indicator),
+    theta = (360*(theta/max(theta))-105) * pi / 180,
+    label_x = cos(theta) * 1.2,
+    label_y = sin(theta) * -1.2,
+    axis_x = cos(theta) * 1.05,
+    axis_y = sin(theta) * -1.05,
+  )
+
+radar_grid <- radar_df |>
+  dplyr::distinct(indicator) |>
+  dplyr::mutate(
+    theta = as.numeric(indicator),
+    theta = (360*(theta/max(theta))-105) * pi / 180,
+    grids = 4
+  ) |>
+  tidyr::uncount(grids) |>
+  dplyr::mutate(
+    grid = seq(1, 4)/4,
+    .by = "indicator"
+  ) |>
+  dplyr::mutate(
+    grid_x = cos(theta) * grid,
+    grid_y = sin(theta) * grid
+  )
+
+distribution_df <- incise2019 |>
+  dplyr::select(-incise_index, -cc_name) |>
+  tidyr::pivot_longer(cols = -cc_iso3c, names_to = "indicator") |>
+  dplyr::mutate(
+    indicator = dplyr::case_match(
+      indicator,
+      "ind_cap" ~ "Capabilities",
+      "ind_crm" ~ "Crisis and risk management",
+      "ind_dig" ~ "Digital services",
+      "ind_ffm" ~ "Fiscal and financial management",
+      "ind_hrm" ~ "HR management",
+      "ind_inc" ~ "Inclusiveness",
+      "ind_int" ~ "Integrity",
+      "ind_opn" ~ "Openness",
+      "ind_pol" ~ "Policy making",
+      "ind_pro" ~ "Procurement",
+      "ind_reg" ~ "Regulation",
+      "ind_tax" ~ "Tax administration",
+    ),
+    indicator = stringr::str_wrap(indicator, width = 20),
+    indicator = forcats::fct_rev(indicator)
+  )
+
+distribution_av <- distribution_df |>
+  dplyr::summarise(value = mean(value), .by = "indicator")
+
+distribution_max <- distribution_df |>
+  dplyr::filter(value == max(value), .by = "indicator")
+
+distribution_with_av <- incise2019 |>
+  dplyr::bind_rows(
+    incise2019 |>
+      dplyr::summarise(across(where(is.numeric), mean)) |>
+      dplyr::mutate(cc_iso3c = "InCiSE")
+  ) |>
+  dplyr::select(-cc_name, -incise_index) |>
+  tidyr::pivot_longer(cols = -cc_iso3c, names_to = "indicator")
+
+```
+
+# Results of the 2019 InCiSE Index (accessible version) {.unnumbered}
+
+::: {.callout-note .crf title="Accessible version" icon="false"}
+This section provides static versions of the interactive summary of the 2019
+InCiSE Index results in @sec-index-results - it is equivalent to the content
+provided in Chapter 3 of the original 2019 PDF publication.
+:::
+
+This chapter presents the overall results of the 2019 edition of the InCiSE
+Index. In addition, it provides a summary of results for each of the 12
+indicators, including the top five country rankings. The
+[country profiles](04_00_country_profiles.qmd) part provides a summary of
+each country's results, while tables of country scores
+and rankings are provided at @sec-scores-rankings.
+
+Developing a comprehensive range of indicators means that there is often a wide
+variation in how countries perform against each of them. The overall scores for
+the top 3 countries in the Index are very close. No country consistently
+appears in the top 5 positions for every indicator, although there are some good
+all-round performers. These are highlighted in the individual country
+assessments. There are also some stand-out country scores for specific
+indicators and these have been highlighted.
+
+All scores in the InCiSE results are relative, meaning that the highest scoring
+country is assigned 1.0 and the lowest scoring country is assigned 0.0.
+Relative scores do not directly translate to absolute performance; a score of
+1.0 or 0.0 does not mean in absolute terms that a country is high or low
+performing. Rather, of the 38 countries selected they have the highest and
+lowest performance within that group of countries. The methodology used to
+explain these scores is explained in the Technical Report.
+
+## Overall scores and rankings for the InCiSE Index {#sec-rankings}
+
+@fig-incise-results shows the overall InCiSE Index scores,
+@fig-indicator-summary shows the distribution of country scores for each
+indicator. The following sections of this chapter provide a summary of country
+performance for each indicator, including a bar chart showing country rankings.
+
+```{r}
+#| label: fig-incise-results
+#| fig-cap: Overall results of the 2019 InCiSE Index
+
+bar_plot <- ggplot(bar_df, aes(x = score, y = cc_iso3c)) +
+  geom_col(aes(fill = group)) +
+  geom_text(aes(label = axis_text, x = -0.01, colour = group),
+            family = "Inter",
+            hjust = 1, size = 4) +
+  geom_text(data = bar_overlay,
+            aes(label = cc_iso3c, x = -0.01, colour = group),
+            fontface = "bold", family = "Inter",
+            hjust = 1, size = 4) +
+  geom_text(aes(label = label, colour = group),
+            fontface = "bold", family = "Inter",
+            nudge_x = 0.02, hjust = 0, size = 4) +
+  scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
+  scale_fill_manual(values = c(
+    "country" = "#dddddd",
+    "InCiSE" = "#009d94"
+  )) +
+  scale_colour_manual(values = c(
+    "country" = "#444444",
+    "InCiSE" = "#009d94"
+  )) +
+  theme_void() +
+  theme(
+    legend.position = "none"
+  )
+
+radar_plot <- ggplot(radar_df, aes(x = new_x, y = new_y, group = variable, colour = legend_group)) +
+  geom_polygon(data = radar_grid, aes(x = grid_x, y = grid_y, group = grid),
+               inherit.aes = FALSE, fill = NA, colour = "#dddddd") +
+  geom_segment(data = radar_axes,
+               aes(x = 0, y = 0, xend = axis_x, yend = axis_y),
+               inherit.aes = FALSE, colour = "#dddddd") +
+  geom_polygon(aes(linewidth = legend_group, linetype = legend_group), fill = NA,
+               key_glyph = "path") +
+  geom_point(size = 3.25) +
+  geom_text(data = radar_axes,
+            aes(x = label_x, y = label_y, label = indicator, group = indicator),
+            colour = "#444444", size = 4) +
+  scale_colour_manual(
+    values = c(
+      "average" = "#009d94",
+      "quartile" = "#999999"
+    ),
+    labels = c("InCiSE average", "Upper/lower quartile")
+  ) +
+  scale_linewidth_manual(
+    values = c(
+      "average" = 1.5,
+      "quartile" = 0.75
+    ),
+    labels = c("InCiSE average", "Upper/lower quartile")
+  ) +
+  scale_linetype_manual(
+    values = c(
+      "average" = "solid",
+      "quartile" = "dashed"
+    ),
+    labels = c("InCiSE average", "Upper/lower quartile")
+  ) +
+  coord_fixed(xlim = c(-1.25, 1.25), ylim = c(-1.25, 1.25)) +
+  theme_void() +
+  theme(
+    text = element_text(family = "Inter", colour = "#444444", size = 14),
+    legend.position = "top",
+    legend.title = element_blank()
+  )
+
+combined_plot <- bar_plot + radar_plot +
+  plot_layout(widths = c(1, 2))
+
+render_svg(
+  combined_plot, width = 700, height = 600,
+  alt_text = paste(
+    "Two charts summarising the results of the 2019 InCiSE Index. The bar",
+    "chart on the left shows the overall Index results for the 38 countries",
+    "covered by the Index as well as a bar to indicate the average score",
+    "across the 38 countries. The radar chart on the right shows for each of",
+    "the 12 InCiSE indicators, the InCiSE average score, as well as the upper",
+    "and lower quartile scores across the 38 countries covered by the Index."
+  ),
+  source_note = "Presented as part of Figure 3 in the original 2019 publication."
+)
+
+```
+
+
+```{r}
+#| label: fig-indicator-summary
+#| fig-cap: Overall results for the 2019 InCiSE indicators
+
+indicator_summary_polot <- ggplot(distribution_df,
+                                  aes(x = value, y = indicator)) +
+  geom_vline(xintercept = c(0.25, 0.5, 0.75), colour = "#999999",
+             linetype = "dashed") +
+  geom_segment(aes(x = 0, xend = 1, y = indicator, yend = indicator),
+               linewidth = 6, colour = "#e6f6f5") +
+  geom_text(data = distribution_av,
+            aes(label = "I"), family = "Inter",
+            colour = "#666666", size = 10) +
+  geom_text(aes(label = "I"), fontface = "bold", family = "Inter",
+            colour = "#009d94", size = 5) +
+  geom_text(data = distribution_max,
+            aes(label = cc_iso3c), family = "Inter",
+            colour = "#444444", size = 4, hjust = 0, nudge_x = 0.01) +
+  annotate(
+    geom = "rect", xmin = 0.24, xmax = 0.76, ymin = 12.75, ymax = 14.25,
+    colour = "#ffffff", fill = "#ffffff"
+  ) +
+  annotate(
+    geom = "rect", xmin = 0.24, xmax = 0.76, ymin = 0, ymax = 0.25,
+    colour = "#ffffff", fill = "#ffffff"
+  ) +
+  annotate(
+    geom = "text", x = c(rep(0, 12), rep(1, 12)), y = rep(1:12, 2), label = "I",
+    size = 10, family = "Inter", fontface = "bold", colour = "#009d94"
+  ) +
+  annotate(
+    geom = "text",
+    x = distribution_av$value[distribution_av$indicator == "Capabilities"],
+    y = 12.75, label = "InCiSE\naverage", vjust = 0,
+    size = 4, family = "Inter", colour = "#444444"
+  ) +
+  annotate(
+    geom = "text", x = 1, y = 12.75, label = "Highest\nscoring\ncountry",
+    hjust = 0, size = 4, family = "Inter", vjust = 0, colour = "#444444"
+  ) +
+  theme_void() +
+  scale_x_continuous(expand = expansion(add = c(0.01, 0.1)),
+                     breaks = c(0, 0.25, 0.5, 0.75, 1)) +
+  scale_y_discrete(expand = expansion(add = c(0, 2.25))) +
+  theme(
+    text = element_text(family = "Inter", size = 10),
+    axis.text.y = element_text(colour = "#444444", hjust = 1, size = 12),
+    axis.text.x = element_text(colour = "#444444", hjust = 0.5, size = 12)
+  )
+
+render_svg(
+  indicator_summary_polot, width = 700, height = 600,
+  alt_text = paste(
+    "A bar chart summarising the distribution of country scores across the 12",
+    "InCiSE indicators. Green vertical bars show the individual scores of the",
+    "38 countries for each of the 12 indciators from 0 on the left to 1 on",
+    "the right. A grey vertical bar shows the InCiSE average for each",
+    "indicator. The 3-letter code for the highest scoring country for each",
+    "indicator is shown on the right hand vertical axis."
+  ),
+  source_note = "Presented as part of Figure 3 in the original 2019 publication."
+)
+
+```
+
+As with the 2017 results, the four Commonwealth countries in the Index
+(Australia, Canada, New Zealand and the UK) continue to rank in the top 5
+countries. The Nordic countries (Denmark, Finland, Iceland, Norway, Sweden)
+also rank highly, with all but Iceland in the top 10. The remaining countries
+of northern and western Europe tend to rank more highly than countries in
+southern and eastern Europe. Countries from outside Europe are distributed
+throughout the ranking.
+
+The top 5 scores across some core function indicators vary significantly,
+making the rankings more noteworthy, while all the attribute scores are
+generally closer. Where there is a greater variation in scores, rankings are
+more significant in terms of helping countries to learn from each other.
+The attribute rankings show some clear country patterns emerging, with Canada
+and Denmark appearing in three out of the four tables. Scandinavian countries
+generally perform well against three of the attributes – openness, integrity
+and capabilities. New Zealand's top score for the integrity attribute stands
+out from the rest of the table.
+
+## Policy making {#sec-policy-making}
+
+::: {layout="[30,70]"}
+```{r, ind-pol}
+pol_plot <- indicator_bar(distribution_with_av, "POL")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the policy making indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+This indicator has 4 themes: the quality of policy advice; the degree of
+strategic planning; the coordination of policy proposals across government;
+and the degree of policy monitoring during implementation. This indicator is
+comprised of 8 metrics and its structure is unchanged from 2017. It uses a
+single data source, the Bertelsmann Stiftung's Sustainable Government
+Indicators (SGI). The policy making scores for all countries in the top 5 are
+very close. The UK's and Canada's scores are highest out of the top 5 on the
+quality of policy advice theme, while Finland's and Denmark's scores are
+highest on strategic planning. There is greater variation between these
+countries for the policy monitoring theme, with Denmark and Canada scoring
+highest for 2 out of the 3 metrics. It is noteworthy that 4 out of the top 5
+countries ranked for the policy making indicator also feature in the top 5 of
+the main InCiSE Index, while Denmark is ranked 6th overall.
+:::
+
+## Fiscal and financial management {#sec-fiscal}
+
+::: {layout="[70,30]"}
+
+This indicator has 3 themes: the effectiveness of public spending; the
+transparency of public spending; and budget practices. There are 6 metrics
+(an increase of 3 since 2017) and 4 data sources: the World Economic Forum's
+Global Competitiveness Index (GCI); the OECD's Medium-Term Budgeting Index
+and PerformanceBudgeting Index; The World Bank's Financial Management
+Information Systems and OpenBudget Data; and the International Budget
+Partnership's Open Budget Survey. The top 2 country scores are very close,
+with the Republic of Korea edging ahead because of its very high scores for the
+transparency of public spending and budget practices themes. Germany has the
+highest score out of the top 5 for the effectiveness of public spending theme.
+New Zealand comes top for the metric looking at the openness of the budgeting
+process. Sweden's highest scores are for open budgeting and performance
+budgeting, while the UK's scores for performance budgeting are high as well.
+
+```{r, ind-ffm}
+ffm_plot <- indicator_bar(distribution_with_av, "FFM")
+
+render_svg(
+  ffm_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the fiscal and financial management indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+:::
+
+## Regulation {#sec-regulation}
+
+::: {layout="[30,70]"}
+```{r, ind-reg}
+pol_plot <- indicator_bar(distribution_with_av, "REG")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the regulation indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+This indicator has 3 themes relating to regulation policies and management:
+the use of appraisal and evaluation; the extent of stakeholder engagement;
+and the nature of impact assessment. There are 9 metrics (an increase of 3
+since 2017) and 2 data sources: the OECD's Indicators of Regulatory Policy
+and Governance; and the Bertelsmann Stiftung's Sustainable Governance
+Indicators (SGI). Amongst the top 5 countries for this indicator, the UK
+achieves the maximum score for 4 metrics. These are spread across all themes,
+suggesting a strong performance across the board for this core function. New
+Zealand achieves the maximum score for 2 metrics: the use of impact assessments
+in regulatory work; and the quality of impact assessments. As in 2017, Mexico's
+strong performance may reflect the country's long-standing focus on regulatory
+policy reforms. It achieves the maximum score for one of the two stakeholder
+engagement metrics and scores very highly against the other one. Mexico
+achieves very high scores for two of the appraisal and evaluation metrics
+as well.
+:::
+
+## Crisis and risk management {#sec-crisis-risk}
+
+::: {layout="[70,30]"}
+
+This indicator has 4 themes regarding disaster risk reduction and management
+issues most relevant for the civil service: the degree of strategic approach to
+risk; the degree of preparedness; communications; and evaluation. This
+indicator has been significantly restructured to take account of feedback
+following the pilot report. There are now 13 metrics (an increase of 4 since
+2017) and 2 data sources (one more than in 2017): the UN Hyogo Framework for
+Action monitoring reports; and the OECD's Survey on the Governance of Critical
+Risk. The top 3 country scores for this indicator are all very close while the
+other 2 countries are not far behind. Scores for the metrics in this indicator
+are close for many countries, which is largely because of the nature of the
+source data. This also means that for some metrics a large number of countries
+score highly. Conversely, for a few metrics only a small number of countries
+score well. The Netherlands' top position reflects consistently strong scores
+across almost all metrics, ranking joint top for 10 metrics. Sweden ranks joint
+top for 9 metrics, while Finland ranks joint top for 11 metrics.
+
+```{r, ind-crm}
+pol_plot <- indicator_bar(distribution_with_av, "CRM")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the crisis and risk indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+:::
+
+## Human resource management {#sec-hrm}
+
+::: {layout="[30,70]"}
+```{r, ind-hrm}
+pol_plot <- indicator_bar(distribution_with_av, "HRM")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the human resource management indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+This indicator now measures 4 themes, an increase of 2 since 2017: the extent
+to which civil service recruitment systems are meritocratic; attracting and
+retaining talent; performance management systems and practices; and the extent
+of human resources (HR) data collection. There are now 9 metrics, an increase
+of 4 since 2017, and 2 data sources (previously just one): the Quality of
+Government expert survey by the University of Gothenburg's Quality of
+Government survey; and the OECD's survey on Strategic Human Resources
+Management. The indicator scores for the first 4 countries are all very close,
+although specific metrics scores vary widely. Canada only just surpasses
+Ireland for the top position. This is mainly because of its relatively higher
+score for the metric which assesses the extent to which separate HR management
+practices are in place for senior civil servants. The Republic of Korea's score
+is the highest out of the top 5 countries for the metric which assesses the
+extent to which databases are used for HR management. Of this group, Japan
+achieves the top score for the extent to which performance assessments are
+used in HR decision making.
+:::
+
+## Tax administration {#sec-tax}
+
+::: {layout="[70,30]"}
+This indicator measures 3 themes: the overall efficiency of tax collection;
+the extent to which services are user focused; and the extent and the quality
+of digital provision. The data sources are the OECD's Tax Administration Survey
+and The World Bank's Doing Business Index (DBI). This indicator is comprised
+of 6 metrics and its structure is unchanged from the 2017 Pilot. Estonia's
+indicator score is noticeably ahead of the other countries in this table and
+it consistently achieves very high scores across all 6 metrics. Within the
+top 5 countries, Estonia achieves the top score for the metrics assessing
+the volume of online VAT and personal tax returns, as well as for the metric
+on the extent to which services are user focused. Ireland achieves a very
+high score for one of the efficiency metrics (total tax debt as a proportion
+of net revenue), as well as metrics measuring the volume of online VAT and
+corporate tax returns. The UK and the Netherlands achieve very high scores for
+these three metrics as well, while Norway achieves very high scores for two of
+them (tax debt proportion and online VAT returns).
+
+```{r, ind-tax}
+pol_plot <- indicator_bar(distribution_with_av, "TAX")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the tax administration indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+:::
+
+## Digital Services {#sec-digital-services}
+
+::: {layout="[30,70]"}
+```{r, ind-dig}
+pol_plot <- indicator_bar(distribution_with_av, "DIG")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the digital services indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+This indicator measures 3 themes: user experience; cross-border availability of
+services; and the availability of "key enablers" (the enabling infrastructure
+for digital service provision, such as electronic ID cards). The sole data
+source is the European Commission's E-Government Benchmark Report. Significant
+changes have been made to the way in which the data for this indicator has
+been compiled. In addition, it is now composed of 13 metrics – there were only
+4 metrics in the 2017 Pilot. The indicator scores for the top 4 countries are
+all very close, with Denmark and Latvia achieving the same overall score.
+Estonia's top position may reflect consistently high scores across most
+metrics. Amongst the top 5 countries, Austria achieves the highest scores for
+the metrics focusing on the availability and accessibility of online small
+claims procedures, including for non-nationals. Denmark achieves the maximum
+score for six metrics and these are spread across all themes, while Portugal
+achieves the maximum score for four metrics. Latvia's results are all above
+average and it achieves the maximum score for a metric within the "key enabler"
+theme.
+:::
+
+## Procurement {#sec-procurement}
+
+::: {layout="[70,30]"}
+This indicator is a new addition to the Index. There are two themes:
+procurement systems and procurement practices. It is comprised of 6 metrics
+and 2 data sources: the OECD's Public Procurement Survey; and analysis of
+European public procurement data from the Opentender project of the
+Digiwhist collaboration. The indicator scores for the top 3 countries in this
+table are significantly ahead of the others. New Zealand's top position is
+primarily because it achieves the maximum score for three metrics: the extent
+of e-procurement functions within its overall procurement system; the role of
+its central purchasing body; and the extent to which policies are in place to
+enable small and medium-sized enterprises (SME) to take part in central
+government procurement. The UK and Israel achieve the maximum score for the
+SME participation metric as well, while Denmark achieves the maximum score
+for the metric assessing the role of its central purchasing body. The Republic
+of Korea's highest score is for the e-procurement metric.
+
+```{r, ind-pro}
+pol_plot <- indicator_bar(distribution_with_av, "PRO")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the procurement indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+:::
+
+## Integrity {#sec-integrity}
+
+::: {layout="[30,70]"}
+```{r, ind-int}
+pol_plot <- indicator_bar(distribution_with_av, "INT")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the integrity indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+This indicator covers 6 themes: corruption level perceptions; adherence to
+rules and procedures; work ethics; fairness and impartiality; striving to
+serve citizens and ministers; and processes in place to preserve integrity and
+prevent conflicts of interest. There are 17 metrics (one more than in 2017)
+and 5 data sources: the Bertelsmann Stiftung's SGIs; Transparency
+International's Global Corruption Barometer; the World Economic Forum's
+Global Competitiveness Report Executive Opinion Survey; the University of
+Gothenburg's Quality of Government Expert Survey Data; and results from two
+OECD surveys published in their Government at a Glance report. New Zealand's
+overall score is well ahead of all other countries, reflecting a strong
+performance against most metrics. It achieves the maximum score for 8 of the
+metrics. Canada achieves the maximum score for the metric which assesses public
+perceptions of impartiality in the civil service. It also achieves the maximum
+score for having a post-employment cooling off period. Sweden's score for the
+metric which assesses the degree of whistle-blower protection for employees is
+noticeably ahead of all other countries in the top 5 table.
+:::
+
+## Openness {#sec-openness}
+
+::: {layout="[70,30]"}
+This indicator has 5 themes: the degree and quality of consultation with
+society; the existence and quality of complaint mechanisms; government data
+availability and accessibility; government data impact; right to information;
+and publication of laws. There are 10 metrics (one more than in2017) and 6
+data sources: the World Justice Project's Rule of Law Index (open government
+theme); the UN E-Participation Index; the Bertelsmann Stiftung's SGIs; the
+World Wide Web Foundation's Open DataBarometer; Open Knowledge International's
+Global Open Data Index; and the OECD's OUR Government Data Index. It is
+noteworthy that all 5 countries in this table are in Northern Europe. Norway's
+top position reflects strong scores for most metrics. It achieves the maximum
+score for the metric which assesses the extent to which governments consult
+and negotiate with the public on policy issues. Norway also achieves the
+maximum score for the metric on citizens' access to official information.
+Denmark achieves the maximum score for 2 of the 3 metrics assessing the degree
+and quality of government consultation with society on policy issues.
+
+```{r, ind-opn}
+pol_plot <- indicator_bar(distribution_with_av, "OPN")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the openness indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+:::
+
+## Capabilities {#sec-capabilities}
+
+::: {layout="[30,70]"}
+```{r, ind-cap}
+pol_plot <- indicator_bar(distribution_with_av, "CAP")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the capabilities indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+This attribute measures four themes: core capability (eg. problem solving,
+numeracy and literacy skills); the use of core skills at work; organisational
+skills (eg influencing and planning skills); and learning and development.
+This attribute has 14 metrics – an increase of 10 since 2017. The sole data
+source is the OECD's Programme for the International Assessment of Adult
+Competencies (PIAAC) survey. It is notable that 3 of the top 5 countries for
+this indicator are also in the top 5 for the entire InCiSE Index. New Zealand's
+top position for this indicator reflects very strong scores for many of the
+relevant metrics. This includes maximum scores for the metrics which assess
+the use of IT skills and influencing skills in the workplace. The USA's score
+for influencing skills is very strong as well, and both countries are well
+ahead of the others in the top 5 for this metric. It is interesting to note
+that all the top 5 countries' scores are very high for the readiness to
+learn metric, most notably the USA, Denmark and Canada. Denmark also
+achieves the maximum score for the degree of job-related learning metric,
+while New Zealand performs very strongly.
+:::
+
+## Inclusiveness {#sec-inclusiveness}
+
+::: {layout="[70,30]"}
+This indicator has two themes: proportionate gender representation in the
+civil service; and proportionate ethnic minority representation. There are 5
+metrics and 3 data sources: the OECD's Government at a Glance (GaaG) survey
+data on the share of women in central government and top management positions;
+the University of Gothenburg's Quality of Government survey; and figures on
+women's representation in government which are compared with statistics
+collected and produced by the International Labour Organisation (ILO) on
+women's participation in the labour force as a whole. To ensure relevant
+comparison with the other metrics, ILO statistics and estimates for 2015
+are used. Greece's very strong performance for this indicator reflects
+high scores for the metric which assesses the proportion of women working in
+the public sector. For the representation of ethnic and religious minorities
+metric Poland has the highest score amongst the top 5 countries, while Romania
+is only just behind. Poland also achieves the maximum score for the metric on
+the proportion of women in senior government positions. Canada's score for
+this metric is very strong as well and both countries' scores stand out from
+the rest of the top 5 countries.
+
+```{r, ind-inc}
+pol_plot <- indicator_bar(distribution_with_av, "INC")
+
+render_svg(
+  pol_plot, width = 300, height = 500,
+  alt_text = paste("Bar chart showing the distribution of country scores",
+                   "for the inclusiveness indicator."),
+  source_note = "Presented as part of Figure 4 in the original 2019 publication."
+)
+```
+
+:::
