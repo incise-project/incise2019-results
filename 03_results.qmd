@@ -135,7 +135,35 @@ indicator_bar = function(ind) {
   
   return ind_plot
   
-}
+};
+
+viewof hover_country = Inputs.input(null);
+
+hover_data = country_radar.filter(function(df){
+  return hover_country == df.cc_iso3c
+});
+
+viewof hover_value = Inputs.input(null);
+viewof hover_ind = Inputs.input(null);
+
+set_val = function(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input"))
+};
+
+indicator_summary.addEventListener("input", (event) => {
+  if (indicator_summary.value != null) {
+    if (indicator_summary.value.cc_iso3c != "InCiSE") {
+      set_val(viewof hover_country, indicator_summary.value.cc_iso3c)
+      set_val(viewof hover_value, indicator_summary.value.raw_value)
+      set_val(viewof hover_ind, indicator_summary.value.indicator)
+    }
+  }
+});
+
+incise_radar = radar_full.filter(function(df){
+  return "InCiSE" == df.cc_iso3c
+})
 
 ```
 
@@ -264,6 +292,10 @@ radar_plot = Plot.plot({
 :::
 
 The chart below shows the distribution of country scores for each indicator.
+Country scores are shown as green dots, the lowest scoring country is on the
+left hand-side and the highest scoring country on the right hand-side (the
+country code is also shown to the right of each line). The InCiSE average for
+each indicator is shown by a grey bar.
 
 ```{ojs, indicator_summary}
 
@@ -284,22 +316,21 @@ indicator_summary = Plot.plot({
       stroke: "#eeeeee",
       strokeWidth: 10
     }),
-    Plot.text(radar_data, {
-      x: "value",
+    Plot.text(incise_radar, {
+      x: "raw_value",
       y: "indicator",
       text: ["|", "|", "|", "|", "|", "|", "|", "|", "|", "|", "|", "|"],
-      filter: (d) => "InCiSE average" == d.cc_iso3c,
-      stroke: "#cccccc"
+      stroke: "#999999"
     }),
     Plot.dot(country_radar, {
-      x: "value",
+      x: "raw_value",
       y: "indicator",
       symbol: "circle",
       fill: "#009d94",
       opacity: 0.25
     }),
     Plot.dot(country_radar, {
-      x: "value",
+      x: "raw_value",
       y: "indicator",
       symbol: "circle",
       stroke: "#009d94",
@@ -308,7 +339,7 @@ indicator_summary = Plot.plot({
     }),
     Plot.dot(country_radar,
       Plot.groupY ({x: "min"}, {
-        x: "value",
+        x: "raw_value",
         y: "indicator",
         z: "indicator",
         symbol: "circle",
@@ -318,7 +349,7 @@ indicator_summary = Plot.plot({
     ),
     Plot.dot(country_radar,
       Plot.groupY ({x: "max"}, {
-        x: "value",
+        x: "raw_value",
         y: "indicator",
         z: "indicator",
         symbol: "circle",
@@ -328,7 +359,7 @@ indicator_summary = Plot.plot({
     ),
     Plot.text(country_radar,
       Plot.selectMaxX ({
-        x: "value",
+        x: "raw_value",
         y: "indicator",
         z: "indicator",
         text: "cc_iso3c",
@@ -337,14 +368,36 @@ indicator_summary = Plot.plot({
         dx: 10,
       })
     ),
-    Plot.tip(country_radar,
+    Plot.dot(hover_data, {
+      x: "raw_value",
+      y: "indicator",
+      symbol: "circle",
+      stroke: "#c24113",
+      r: 6
+    }),
+    Plot.text(hover_data, {
+      x: "raw_value",
+      y: "indicator",
+      text: "cc_iso3c",
+      filter: (d) => hover_value == d.raw_value && hover_ind == d.indicator,
+      fill: "#c24113",
+      dy: -15
+    }),
+    Plot.dot(country_radar, 
       Plot.pointer({
-        x: "value",
+        x: "raw_value",
         y: "indicator",
-        filter: (d) => d.data_label,
-        title: (d) => d.data_label
+        opacity: 0
       })
-    )
+    )//,
+//    Plot.tip(country_radar,
+//      Plot.pointer({
+//        x: "value",
+//        y: "indicator",
+//        filter: (d) => d.data_label,
+//        title: (d) => d.data_label
+//      })
+//    )
   ]
 });
 

@@ -97,6 +97,18 @@ incise_radar = radar_data.filter(function(df){
   return "InCiSE" == df.cc_iso3c
 });
 
+set_val = function(input, value) {
+  input.value = value;
+  input.dispatchEvent(new Event("input"))
+};
+
+bar_plot.addEventListener("mousedown", (event) => {
+  if (bar_plot.value != null) {
+    var sel_country = countries[country_codes.indexOf(bar_plot.value.cc_iso3c)]
+    set_val(viewof usr_country, sel_country)
+  }
+});
+
 ```
 
 ```{ojs, country_selection}
@@ -135,8 +147,9 @@ html`<p class="lead">${my_narrative.lead_text}</p>`
 ```{ojs, bar_plot}
 
 bar_plot = Plot.plot({
-  width: 250,
+  width: 300,
   height: 500,
+  marginLeft: 75,
   style: {fontSize: 11},
   x: {label: null, grid: true, domain: [0, 1.4]},
   y: {label: null},

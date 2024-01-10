@@ -64,6 +64,7 @@ radar_df <- incise2019_long |>
   dplyr::filter(indicator != "incise_index") |>
   dplyr::left_join(imputatation_df, by = c("cc_iso3c", "indicator")) |>
   dplyr::mutate(
+    raw_value = value,
     imputed = value * imputed,
     indicator = dplyr::case_match(
       indicator,
