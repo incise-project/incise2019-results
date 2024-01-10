@@ -79,3 +79,9 @@ canonical version of the report:
 > InCiSE Partners (2019) The International Civil Service Effectiveness (InCiSE)
 > Index: Results Report 2019, Oxford: Blavatnik School of Government,
 > University of Oxford, [https://www.bsg.ox.ac.uk/incise](https://www.bsg.ox.ac.uk/incise)
+
+The original report content and data are the joint copyright of the InCiSE
+Partners - the Blavatnik School of Government (University of Oxford),
+the Institute for Government, and the UK Civil Service (through the Cabinet
+Office). The report content contained in this reproduction is released under
+the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license.
