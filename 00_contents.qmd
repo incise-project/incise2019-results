@@ -8,9 +8,7 @@ execute:
 source("R/gen_contents.R")
 ```
 
-# Contents, figures and tables {.unnumbered}
-
-## Contents of the report
+# Contents {.unnumbered}
 
 This web book version of the report is structured into 17 chapters and two
 appendices.
@@ -26,30 +24,7 @@ cat(get_content_list("sec", max_depth = 1), sep = "\n")
 
 ### Changes compared to the original 2019 publication
 
-Please note that @sec-country-profiles of this web book provides an
-interactive version of the report content which may not be fully accessible,
-[static versions](Z_00_country_profiles_old.qmd) of the country profiles are
-available in the Appendices to this report.
-
-## List of figures
-
-:::{.custom-toc .list-of-figures}
-
-```{r, list-figures}
-#| output: asis
-cat(get_content_list("fig", insert_breaks = FALSE), sep = "\n")
-```
-
-:::
-
-## List of tables
-
-:::{.custom-toc .list-of-tables}
-
-```{r, list-tables}
-#| output: asis
-cat(get_content_list("tbl"), sep = "\n")
-```
-
-:::
-
+Please note that @sec-index-results and @sec-country-profiles of this web book
+provide interactive versions of the report content which may not be fully
+accessible, [static versions](X_static_content.qmd) are available in the
+Appendices to this report.

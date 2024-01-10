@@ -22,7 +22,9 @@ book:
     - A_indicator_definitions.qmd
     - B_data_sources.qmd
     - C_scores_rankings.qmd
+    - X_static_content.qmd
     - Y_results_static.qmd
+    - part: Z_00_country_profiles_static.qmd
       chapters:
         - Z_01_AUS.qmd
         - Z_01_AUS.qmd

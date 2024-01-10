@@ -1,0 +1,15 @@
+---
+execute:
+  echo: false
+  warning: false
+---
+
+# Accessible content {#sec-accessible-content}
+
+@sec-index-results and @sec-country-profiles include interactive charts and
+text content using JavaScript, this content may not be fully accessible.
+
+You can find non-interactive versions of these chapters here:
+
+* [Results of the 2019 InCiSE Index (accessible version)]("Y_results_static.qmd")
+* [Country profiles (accessible version)]("Z_00_country_profiles_static.qmd")

@@ -4,9 +4,9 @@ execute:
   warning: false
 ---
 
-# Country profiles of the 2019 InCiSE results {#sec-country-profiles}
+# Country profiles of the 2019 InCiSE results (accessible version) {.unnumbered}
 
-::: {.callout-note .crf title="Cross-referencing note" icon="false"}
+::: {.callout-note .crf title="Accessible version" icon="false"}
 This section provides static versions of the interactive country profile
 content in @sec-country-profiles - it is equivalent to the content provided
 in Chapter 4 of the original 2019 PDF publication.

@@ -53,7 +53,7 @@ for each indicator is shown in dark grey.
 
 ::: {.callout-caution title="Interactive content" icon="false"}
 The following content is interactive and may not be fully accessible,
-[static versions](Z_00_country_profiles_old.qmd) of the country profiles are
+[static versions](Z_00_country_profiles_static.qmd) of the country profiles are
 available in the Appendices to this report.
 :::
 
@@ -64,7 +64,7 @@ Plot = import("https://esm.sh/@observablehq/plot")
 
 /* source data */
 narrative_data = FileAttachment("country_visuals/country_narratives.csv").csv({ "typed": true });
-bar_data = FileAttachment("country_visuals/bar_data.csv").csv({ "typed": true });
+bar_data = FileAttachment("country_visuals/bar_data_index.csv").csv({ "typed": true });
 radar_grid = FileAttachment("country_visuals/radar_grid.csv").csv({ "typed": true });
 radar_axes = FileAttachment("country_visuals/radar_axes.csv").csv({ "typed": true });
 radar_data = FileAttachment("country_visuals/radar_data_full.csv").csv({ "typed": true });
@@ -164,7 +164,7 @@ bar_plot = Plot.plot({
       y: "cc_iso3c",
       text: "hover_label",
       fill: "#999999",
-      fontWeight: "bold",
+      fontWeight: "600",
       textAnchor: "start",
       sort: {y: "x", reverse: true}
     }),
@@ -173,7 +173,7 @@ bar_plot = Plot.plot({
       y: "cc_iso3c",
       text: "hover_label",
       fill: "#009d94",
-      fontWeight: "bold",
+      fontWeight: "600",
       textAnchor: "start",
       sort: {y: "x", reverse: true}
     }),
