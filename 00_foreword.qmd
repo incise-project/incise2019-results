@@ -41,7 +41,7 @@ this second version. We are also grateful to the many organisations who have
 allowed us to use their data, some for the first time. It remains our goal to
 continue refining and expanding InCiSE, and to publish the Index regularly.
 
-::: {.callout-important collapse="false"}
+::: {.jh-note}
 Lord Heywood of Whitehall, lately the UK's Cabinet Secretary and Head of the
 Civil Service, championed InCiSE from the outset and continued to support the
 project following its launch in 2017, Lord Heywood died in November 2018 and we

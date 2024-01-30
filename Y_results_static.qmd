@@ -21,7 +21,7 @@ bar_df <- incise2019 |>
   ) |>
   dplyr::mutate(
     label = dplyr::if_else(cc_iso3c == "InCiSE",
-                           scales::number(score, accuracy = 0.001),
+                           scales::number(score, accuracy = 0.01),
                            NA_character_),
     cc_iso3c = forcats::fct_reorder(cc_iso3c, score),
     group = dplyr::if_else(cc_iso3c == "InCiSE", "InCiSE", "country"),
@@ -182,23 +182,23 @@ performance for each indicator, including a bar chart showing country rankings.
 bar_plot <- ggplot(bar_df, aes(x = score, y = cc_iso3c)) +
   geom_col(aes(fill = group)) +
   geom_text(aes(label = axis_text, x = -0.01, colour = group),
-            family = "Inter",
+            family = "Open Sans",
             hjust = 1, size = 4) +
   geom_text(data = bar_overlay,
             aes(label = cc_iso3c, x = -0.01, colour = group),
-            fontface = "bold", family = "Inter",
+            fontface = "bold", family = "Open Sans",
             hjust = 1, size = 4) +
   geom_text(aes(label = label, colour = group),
-            fontface = "bold", family = "Inter",
+            fontface = "bold", family = "Open Sans",
             nudge_x = 0.02, hjust = 0, size = 4) +
   scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
   scale_fill_manual(values = c(
     "country" = "#dddddd",
-    "InCiSE" = "#009d94"
+    "InCiSE" = "#C4622D"
   )) +
   scale_colour_manual(values = c(
     "country" = "#444444",
-    "InCiSE" = "#009d94"
+    "InCiSE" = "#C4622D"
   )) +
   theme_void() +
   theme(
@@ -216,10 +216,10 @@ radar_plot <- ggplot(radar_df, aes(x = new_x, y = new_y, group = variable, colou
   geom_point(size = 3.25) +
   geom_text(data = radar_axes,
             aes(x = label_x, y = label_y, label = indicator, group = indicator),
-            colour = "#444444", size = 4) +
+            colour = "#444444", size = 4, family = "Open Sans") +
   scale_colour_manual(
     values = c(
-      "average" = "#009d94",
+      "average" = "#C4622D",
       "quartile" = "#999999"
     ),
     labels = c("InCiSE average", "Upper/lower quartile")
@@ -241,7 +241,7 @@ radar_plot <- ggplot(radar_df, aes(x = new_x, y = new_y, group = variable, colou
   coord_fixed(xlim = c(-1.25, 1.25), ylim = c(-1.25, 1.25)) +
   theme_void() +
   theme(
-    text = element_text(family = "Inter", colour = "#444444", size = 14),
+    text = element_text(family = "Open Sans", colour = "#444444", size = 14),
     legend.position = "top",
     legend.title = element_blank()
   )
@@ -269,20 +269,20 @@ render_svg(
 #| label: fig-indicator-summary
 #| fig-cap: Overall results for the 2019 InCiSE indicators
 
-indicator_summary_polot <- ggplot(distribution_df,
+indicator_summary_plot <- ggplot(distribution_df,
                                   aes(x = value, y = indicator)) +
   geom_vline(xintercept = c(0.25, 0.5, 0.75), colour = "#999999",
              linetype = "dashed") +
   geom_segment(aes(x = 0, xend = 1, y = indicator, yend = indicator),
-               linewidth = 6, colour = "#e6f6f5") +
+               linewidth = 6, colour = "#e6f0f6") +
   geom_text(data = distribution_av,
-            aes(label = "I"), family = "Inter",
-            colour = "#666666", size = 10) +
-  geom_text(aes(label = "I"), fontface = "bold", family = "Inter",
-            colour = "#009d94", size = 5) +
+            aes(label = "I"), family = "Open Sans",
+            colour = "#C4622D", size = 10) +
+  geom_text(aes(label = "I"), fontface = "bold", family = "Open Sans",
+            colour = "#00629B", size = 5) +
   geom_text(data = distribution_max,
-            aes(label = cc_iso3c), family = "Inter",
-            colour = "#444444", size = 4, hjust = 0, nudge_x = 0.01) +
+            aes(label = cc_iso3c), family = "Open Sans",
+            colour = "#00629B", size = 4, hjust = 0, nudge_x = 0.01) +
   annotate(
     geom = "rect", xmin = 0.24, xmax = 0.76, ymin = 12.75, ymax = 14.25,
     colour = "#ffffff", fill = "#ffffff"
@@ -293,33 +293,33 @@ indicator_summary_polot <- ggplot(distribution_df,
   ) +
   annotate(
     geom = "text", x = c(rep(0, 12), rep(1, 12)), y = rep(1:12, 2), label = "I",
-    size = 10, family = "Inter", fontface = "bold", colour = "#009d94"
+    size = 10, family = "Open Sans", fontface = "bold", colour = "#00629B"
   ) +
   annotate(
     geom = "text",
     x = distribution_av$value[distribution_av$indicator == "Capabilities"],
     y = 12.75, label = "InCiSE\naverage", vjust = 0,
-    size = 4, family = "Inter", colour = "#444444"
+    size = 4, family = "Open Sans", colour = "#C4622D"
   ) +
   annotate(
     geom = "text", x = 1, y = 12.75, label = "Highest\nscoring\ncountry",
-    hjust = 0, size = 4, family = "Inter", vjust = 0, colour = "#444444"
+    hjust = 0, size = 4, family = "Open Sans", vjust = 0, colour = "#00629B"
   ) +
   theme_void() +
   scale_x_continuous(expand = expansion(add = c(0.01, 0.1)),
                      breaks = c(0, 0.25, 0.5, 0.75, 1)) +
   scale_y_discrete(expand = expansion(add = c(0, 2.25))) +
   theme(
-    text = element_text(family = "Inter", size = 10),
+    text = element_text(family = "Open Sans", size = 10),
     axis.text.y = element_text(colour = "#444444", hjust = 1, size = 12),
     axis.text.x = element_text(colour = "#444444", hjust = 0.5, size = 12)
   )
 
 render_svg(
-  indicator_summary_polot, width = 700, height = 600,
+  indicator_summary_plot, width = 700, height = 600,
   alt_text = paste(
     "A bar chart summarising the distribution of country scores across the 12",
-    "InCiSE indicators. Green vertical bars show the individual scores of the",
+    "InCiSE indicators. Blue vertical bars show the individual scores of the",
     "38 countries for each of the 12 indciators from 0 on the left to 1 on",
     "the right. A grey vertical bar shows the InCiSE average for each",
     "indicator. The 3-letter code for the highest scoring country for each",
@@ -468,6 +468,7 @@ render_svg(
                    "for the crisis and risk indicator."),
   source_note = "Presented as part of Figure 4 in the original 2019 publication."
 )
+
 ```
 
 :::

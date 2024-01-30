@@ -149,17 +149,17 @@ bar_df <- incise2019_long |>
     value_label = scales::comma(value, accuracy = 0.01),
     hover_label = paste0(cc_iso3c, ": ", value_label),
     colour_group = dplyr::case_when(
-      cc_iso3c == "InCiSE" & indicator == "incise_index" ~ "#009d94",
-      cc_iso3c == "InCiSE" ~ "#999999",
+      cc_iso3c == "InCiSE" & indicator == "incise_index" ~ "#C4622D",
+      cc_iso3c == "InCiSE" ~ "#C4622D",
       indicator == "incise_index" ~ "#dddddd",
-      rank_value <= 5 ~ "#009d94",
+      rank_value <= 5 ~ "#00629B",
       TRUE ~ "#dddddd"
     ),
     text_colour = dplyr::case_when(
-      cc_iso3c == "InCiSE" & indicator == "incise_index" ~ "#009d94",
-      cc_iso3c == "InCiSE" ~ "#444444",
+      cc_iso3c == "InCiSE" & indicator == "incise_index" ~ "#C4622D",
+      cc_iso3c == "InCiSE" ~ "#C4622D",
       indicator == "incise_index" ~ "#444444",
-      rank_value <= 5 ~ "#009d94",
+      rank_value <= 5 ~ "#00629B",
       TRUE ~ "#444444"
     ),
     text_weight = dplyr::case_when(
@@ -216,7 +216,7 @@ incise_radar <- incise2019_long |>
       cc_iso3c,
       "upper" ~ "#999999",
       "lower" ~ "#999999",
-      "InCISE" ~ "#009d94"
+      "InCISE" ~ "#C4622D"
     ),
     cc_iso3c = dplyr::case_match(
       cc_iso3c,

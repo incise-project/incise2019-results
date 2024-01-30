@@ -1,47 +1,104 @@
 /*-- font import --*/
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300&family=Inter:wght@300;400;600;800');
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/*-- Blavatnik corporate font --*/
+@font-face {
+    font-family: "Brandon Text";
+    src: url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Regular.eot) format("eot"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Regular.woff) format("woff"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Regular.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brandon Text";
+    src: url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Thin.eot) format("eot"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Thin.woff) format("woff"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Thin.woff2) format("woff2");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brandon Text";
+    src: url(https://www.bsg.ox.ac.uk//themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Light.eot) format("eot"), url(https://www.bsg.ox.ac.uk//themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Light.woff) format("woff"), url(https://www.bsg.ox.ac.uk//themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Light.woff2) format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brandon Text";
+    src: url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Medium.eot) format("eot"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Medium.woff) format("woff"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Medium.woff2) format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brandon Text";
+    src: url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Regular-Italic.eot) format("eot"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Regular-Italic.woff) format("woff"), url(https://www.bsg.ox.ac.uk/themes/custom/olamalu_bsg_emulsify/font/bsg/fonts/Brandon-Text-Web-Regular-Italic.woff2) format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
 /*-- scss:defaults --*/
+
+$bsg-dark-blue:           #002147;
+$bsg-mid-blue:            #00629B;
+$bsg-light-blue:          #41B6E6;
+$bsg-warm-grey6:          #A59C94;
+$bsg-warm-grey1:          #D7D2CB;
+$bsg-beige:               #C6AA76;
+$bsg-orange:              #C4622D;
+$bsg-purple:              #833177;
+$bsg-burgundy:            #76232F;
+$bsg-green:               #719949;
+
+$bsg-bg-beige:            #f7f5f4;
+$bsg-bg-section:          #e5e5e5;
+
+$bsg-bg-blue:        tint-color($bsg-mid-blue, 95%) !default;
+
+/*
 $incise-blue:             #0082c2;
 $incise-blue-tint:        tint-color($incise-blue, 95%) !default;
 $incise-green:            #009d94;
 $incise-green-tint:        tint-color($incise-green, 95%) !default;
-$note-color:              #848484;
+*/
+
+$note-color:              #666666;
 
 $h2-font-size:            1.25rem !default;
 $h3-font-size:            1.1rem !default;
-$headings-font-weight:    600 !default;
+$headings-font-weight:    400 !default;
 $body-color:              #444444 !default;
 
-$headings-font-family:    "Inter", "Helvetica Neue", "Noto Sans", "Arial", sans-serif !default;
+$headings-font-family:    "Brandon Text", "Open Sans", "Lato", "Helvetica Neue", Helvetica, sans-serif !default;
 $headings-font-style:     null !default;
 $headings-font-weight:    600 !default;
 $headings-line-height:    1.2 !default;
-$headings-color:          $incise-green !default;
+$headings-color:          $bsg-dark-blue !default;
 
-$font-family-sans-serif:  "Inter", "Helvetica Neue", "Noto Sans", "Arial", sans-serif !default;
+$font-family-sans-serif:  "Open Sans", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-weight-normal:      400 !default;
 $font-size-base:          0.9rem !default;
 
-$table-th-font-weight:    600 !default;
-$table-striped-bg:        $incise-green-tint;
+$table-th-font-weight:    700 !default;
+$table-striped-bg:        $bsg-bg-blue;
 
 /*-- scss:rules --*/
 
 strong {
-  color: $incise-green;
+  color: $bsg-mid-blue;
   font-weight: 600;
 }
 
 em {
-  color: $incise-green;
+  color: $bsg-mid-blue;
   font-style: normal;
 }
 
 h1, h2, h3, h4 {
-  font-weight: 600;
+  font-weight: 400;
 }
-
 
 h4 {
   margin-top: 0.25rem;
@@ -49,9 +106,36 @@ h4 {
   font-size: calc(var(--bs-body-font-size) * 1.1);
 }
 
-h1 .chapter-number, h2 .header-section-number, h3 .header-section-number {
-  color: $incise-green;
+h1 .chapter-number {
+  color: $bsg-dark-blue;
 }
+
+h2 .header-section-number, h3 .header-section-number {
+  color: $bsg-warm-grey6;
+}
+
+h1 .chapter-number::after, h2 .header-section-number::after,
+h3 .header-section-number::after {
+  content: ".";
+}
+
+main h2 {
+  border-bottom: 1px solid $bsg-warm-grey1;
+}
+
+main a {
+  color: $bsg-mid-blue;
+}
+
+main a:hover {
+  background-color: $bsg-bg-blue;
+  color: $bsg-mid-blue;
+}
+
+a.anchorjs-link:hover {
+  background-color: unset;
+}
+
 
 .lead{
   font-weight:  600;
@@ -63,30 +147,55 @@ h1 .chapter-number, h2 .header-section-number, h3 .header-section-number {
 }
 
 .sidebar-title {
-  color: $incise-green;
+  color: $bsg-dark-blue;
   font-weight: 600;
 }
 
 .sidebar .chapter-title, .sidebar .chapter-number, .sidebar .menu-text {
-  color: $body-color;
+  color: $note-color;
+  font-weight: 400;
+  font-size: 0.85rem;
 }
 
 .sidebar .active .chapter-title, .sidebar .active .chapter-number,
 .sidebar .active .menu-text {
-  color: $incise-green;
+  color: $bsg-mid-blue;
+  font-weight: 500;
 }
+
+nav[role=doc-toc] {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $bsg-warm-grey6;
+}
+
+nav[role=doc-toc] a {
+  border-left: 1px solid $bsg-warm-grey1 !important;
+  color: $bsg-warm-grey6 !important;
+  font-weight: 400;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active,
+.sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+  padding-left: calc(.6rem - 1px);
+  border-left: 2px solid $bsg-dark-blue !important;
+  color: $bsg-dark-blue !important;
+  font-weight: 400;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a:hover,
+.sidebar nav[role=doc-toc] ul>li>ul>li>a:hover,
+.sidebar nav[role=doc-toc] a.active:hover,
+.sidebar nav[role=doc-toc] a span:hover {
+  background-color: unset;
+  color: $bsg-dark-blue !important;
+  font-weight: 500;
+}
+
 
 h2#toc-title {
   color: $body-color;
   font-weight: 400;
-}
-
-.header-section-number {
-  color: $body-color;
-}
-
-.active .header-section-number {
-  color: $incise-green;
 }
 
 .img_h15 {
@@ -99,7 +208,7 @@ main ul {
 
 main ul li::before {
   content: "▪";
-  color: $incise-green;
+  color: $bsg-mid-blue;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
@@ -112,7 +221,7 @@ main ol {
 
 main ol li::before {
   content: counters(li, ".") ".";
-  color: $incise-green;
+  color: $bsg-mid-blue;
   display: inline-block;
   width: 1.75em;
   margin-left: -1.75em;
@@ -143,17 +252,6 @@ main ol ol, main ul ul {
 main ol ol li::before {
   width: 2.25rem;
   margin-left: -2.25rem;
-}
-
-#incise-project-note {
-  border: 1px solid $incise-green;
-  display: table-cell;
-  background-color: $incise-green-tint;
-  padding: 1rem;
-}
-
-#incise-project-note p:last-child {
-  margin-bottom: 0px;
 }
 
 .incise-separator {
@@ -202,7 +300,7 @@ svg text {
 
 .source-note {
   color: $note-color;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-align: left !important;
   padding-top: 0.2rem;
 }
@@ -210,10 +308,10 @@ svg text {
 /* table formatting */
 
 table.table caption, figcaption.figure-caption, .quarto-dt-caption {
-  color: $incise-green;
+  color: $bsg-mid-blue;
   text-align: left;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 table.table td {
@@ -221,7 +319,7 @@ table.table td {
 }
 
 table.table th {
-  color: $incise-green;
+  color: $bsg-mid-blue;
   vertical-align: top;
   border-top-width: 0px !important;
   border-bottom-width: 0px !important;
@@ -238,8 +336,8 @@ table.table thead {
 }
 
 table.table td, table.table th, table.table tr, table.table thead {
-  border-color: $incise-green !important;
-  border-bottom-color: $incise-green !important;
+  border-color: $bsg-mid-blue !important;
+  border-bottom-color: $bsg-mid-blue !important;
 }
 
 table.table td img {
@@ -251,19 +349,21 @@ table.table td, table.table th {
 }
 
 table.table tbody tr.odd {
-  background-color: $incise-green-tint;
+  background-color: $bsg-bg-beige;
 }
 
 .no-stripe table.table.table-striped tbody tr.odd,
 .no-stripe table.table.table-striped tbody tr.odd td {
   --bs-table-striped-bg: transparent;
+  background-color: #fff !important;
 }
 
 /* gt classes */
 
-.gt_group_heading {
-  background-color: $incise-green-tint !important;
-  color: $incise-green !important;
+.gt_group_heading,
+.no-stripe table.table.table-striped tbody tr.odd td.gt_group_heading {
+  background-color: $bsg-bg-blue !important;
+  color: $bsg-mid-blue !important;
   font-weight: 600;
 }
 
@@ -293,7 +393,7 @@ table.table tbody tr.odd {
 
 .gt_footnote {
   color: $note-color;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   border-bottom: none;
 }
 
@@ -312,7 +412,7 @@ table.table tbody tr.odd {
 #tbl-sens-weight table tbody tr:last-child td,
 #tbl-sens-adjust table tbody tr:last-child td,
 #tbl-sens-impute table tbody tr:last-child td, {
-  color: $incise-green;
+  color: $bsg-mid-blue;
   font-weight: 600;
 }
 
@@ -339,220 +439,51 @@ table.table.composite-metrics-tbl td {
   color: $body-color;
 }
 
-main a {
-  color: $incise-green;
-}
-
-main a:hover {
-  background-color: $incise-green-tint;
-  color: shade-color($incise-green, 20);
-}
-
-.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
-  border-left: 1px solid $incise-green !important;
-  color: $incise-green !important;
-}
-
-.sidebar nav[role=doc-toc] ul>li>a:hover, .sidebar nav[role=doc-toc] ul>li>ul>li>a:hover {
-  color: $incise-green !important;
-}
-
 .references li::before {
   display: none;
 }
 
-/*-- callout boxes --*/
-
-.callout {
-  margin: 0px;
-  margin-top: 0.25rem;
-  margin-bottom: 1.25rem;
+nav.navbar {
+  background-color: $bsg-dark-blue;
 }
 
-
-.callout.callout-style-default .callout-body {
-  font-size: 0.65rem;
+nav.navbar {
+  font-family: $headings-font-family;
+  font-weight: 500;
 }
 
-.callout.callout-style-default {
-    border-left: 3px solid;
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 0px;
+.navbar-title {
+  color: #ffffff;
 }
 
-
-.callout .callout-title-container {
-  font-size: 0.65rem;
+.navbar-nav {
   text-transform: uppercase;
+  font-weight: 500;
 }
 
-.callout {
-  border-radius: unset;
+nav.navbar ul.dropdown-menu {
+  background-color: $bsg-dark-blue;
 }
 
-.callout li::before {
-  color: $note-color;
+nav.navbar .dropdown-item {
+  text-transform: none;
+  color: #ffffff;
 }
 
-div.callout.callout-style-default.callout-note>.callout-header {
-  background-color: unset;
+nav.navbar .nav-item, nav.navbar .nav-link {
+  color: #ffffff;
 }
 
-div.callout-note.callout {
-  border-left-color: #dddddd;
-  background-color: unset;
-  color: $note-color;
+nav.navbar .dropdown-item:hover, .dropdown-item:focus {
+  background-color: $bsg-mid-blue;
 }
 
-div.callout-tip.callout {
-  border-left-color: $incise-green;
-  background-color: $incise-green-tint;
-  color: $incise-green;
+nav.navbar .dropdown-menu {
+  border-top: 3px solid $bsg-orange;
 }
 
-div.callout-important.callout {
-  border-left-color: $incise-green;
-  background-color: unset;
-  color: $incise-green;
-  font-size: 1rem;
-}
-
-.crf {
-  margin-top: 2rem;
-}
-
-.crf a {
-  color: $note-color;
-}
-
-#preface h2 {
-  width: 60%;
-}
-
-@media (min-width: 768px) {
-  .two-col {
-    column-count: 2;
-  }
-}
-
-.datatables {
-  font-size: 0.8rem;
-}
-
-.datatables .table-sm th, .datatables .table-sm td {
-  padding: 0.25rem;
-}
-
-.datatables th {
-  border-left: 0px;
-}
-
-.datatables tbody tr.odd, .datatables tbody tr.odd td {
-  background-color: $incise-green-tint;
-}
-
-.datatables thead th {
-  border-top: 1px solid $incise-green !important;
-  border-bottom: 1px solid $incise-green !important;
-}
-
-.datatables table {
-  border-bottom: 0px !important;
-}
-
-.datatables .ui-toolbar {
-  min-height: 50px;
-  color: $note-color;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-}
-
-.rag-key ul {
-  display: inline-flex;
-  font-size: 0.7rem;
-  color: $note-color;
-  padding: 8px;
-  text-transform: uppercase;
-}
-
-.rag-key ul::before {
-  content: "Icon key: ";
-  padding-right: 1rem;
-}
-
-.rag-key li {
-  padding-right: 1rem;
-}
-
-.dataTables_paginate .previous.ui-state-disabled,
-.dataTables_paginate .next.ui-state-disabled {
-  display: none !important;
-}
-
-.dataTables_paginate .ui-button {
-  color: $body-color;
-  font-weight: 600;
-  margin: 0px 3px;
-}
-
-.dataTables_paginate .ui-button.ui-state-disabled {
-  color: $incise-green;
-  font-weight: 600;
-  border-bottom: 2px solid $incise-green !important;
-}
-
-.dataTables_paginate .ui-button:hover {
-  background-color: $incise-green;
-  color: #fff;
-  font-weight: 600;
-}
-
-.dataTables_filter label {
-  font-weight: 600;
-}
-
-.dataTables_filter input {
-  border: 1px solid #dddddd !important;
-  border-radius: 0px !important;
-  background-color: #fafafa !important;
-  color: $body-color !important;
-  font-weight: 600 !important;
-}
-
-.quarto-title-meta div {
-  margin-top: 0.25rem;
-  display: flex;
-}
-
-.quarto-title-meta-heading, .quarto-title-meta-contents {
-  opacity: 1.0 !important;
-  font-size: 0.8em !important;
-  color: $note-color !important;
-  text-transform: uppercase;
-  margin: 0px !important;
-}
-
-.quarto-title-meta-heading {
-  padding-right: 0.5rem;
-}
+/*-- specific tables --*/
 
 #tbl-incise-ranks strong, #tbl-incise-scores strong {
-  font-weight: 800;
-}
-
-svg text[style*="bold"] {
-  font-weight: 600 !important;
-}
-
-div.cell p.lead {
-  margin: 0px;
-}
-
-div.cell.quarto-layout-cell {
-  margin: 0px;
-}
-
-.profile-crf {
-  margin-top: 0px;
+  font-weight: 700;
 }

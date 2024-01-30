@@ -124,27 +124,27 @@ indicator_bar <- function(df, ind) {
   p <- ggplot(gdf, aes(x = value, y = cc_iso3c)) +
     geom_col(aes(fill = group)) +
     geom_text(aes(label = axis_text, x = -0.01, colour = group),
-              family = "Inter", hjust = 1, size = 4) +
+              family = "Open Sans", hjust = 1, size = 4) +
     geom_text(data = gdf_overlay,
               aes(label = cc_iso3c, colour = group, x = -0.01),
-              family = "Inter", fontface = "bold", hjust = 1, size = 4) +
+              family = "Open Sans", fontface = "bold", hjust = 1, size = 4) +
     geom_text(data = gdf_top5,
               aes(label = cc_iso3c, colour = group, x = -0.01),
-              family = "Inter", fontface = "bold", hjust = 1, size = 4) +
+              family = "Open Sans", fontface = "bold", hjust = 1, size = 4) +
     geom_text(data = gdf_overlay,
-              aes(label = scales::number(value, 0.001), colour = group),
+              aes(label = scales::number(value, 0.01), colour = group),
               nudge_x = 0.01,
-              family = "Inter", fontface = "bold", hjust = 0, size = 4) +
+              family = "Open Sans", fontface = "bold", hjust = 0, size = 4) +
     scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
     scale_fill_manual(values = c(
       "other" = "#dddddd",
-      "top5" = "#009d94",
-      "InCiSE" = "#999999"
+      "top5" = "#00629B",
+      "InCiSE" = "#C4622D"
     )) +
     scale_colour_manual(values = c(
       "other" = "#444444",
-      "top5" = "#009d94",
-      "InCiSE" = "#444444"
+      "top5" = "#00629B",
+      "InCiSE" = "#C4622D"
     )) +
     theme_void() +
     theme(
@@ -170,30 +170,30 @@ country_summary <- function(df, country, imputation = NULL) {
       axis_emphasis = dplyr::if_else(group == "other", NA_character_, cc_iso3c),
       value_label = dplyr::if_else(group == "other",
                                    NA_character_,
-                                   scales::number(value, 0.001)),
+                                   scales::number(value, 0.01)),
       cc_iso3c = forcats::fct_reorder(cc_iso3c, value)
     )
 
   bar_plot <- ggplot(bar_gdf, aes(x = value, y = cc_iso3c)) +
     geom_col(aes(fill = group)) +
     geom_text(aes(label = axis_text, x = -0.01, colour = group),
-              family = "Inter",
+              family = "Open Sans",
               hjust = 1, size = 4) +
     geom_text(aes(label = axis_emphasis, x = -0.01, colour = group),
-              family = "Inter", fontface = "bold",
+              family = "Open Sans", fontface = "bold",
               hjust = 1, size = 4) +
     geom_text(aes(label = value_label, colour = group),
-              fontface = "bold", family = "Inter",
+              fontface = "bold", family = "Open Sans",
               nudge_x = 0.02, hjust = 0, size = 4) +
     scale_x_continuous(expand = expansion(add = c(0.2, 0))) +
     scale_fill_manual(values = c(
-      "country" = "#009d94",
-      "InCiSE" = "#999999",
+      "country" = "#00629B",
+      "InCiSE" = "#C4622D",
       "other" = "#dddddd"
     )) +
     scale_colour_manual(values = c(
-      "country" = "#009d94",
-      "InCiSE" = "#444444",
+      "country" = "#00629B",
+      "InCiSE" = "#C4622D",
       "other" = "#444444"
     )) +
     theme_void() +
@@ -290,15 +290,15 @@ country_summary <- function(df, country, imputation = NULL) {
               colour = "#444444", size = 4) +
     scale_colour_manual(
       values = c(
-        "country" = "#009d94",
-        "InCiSE" = "#999999"
+        "country" = "#00629B",
+        "InCiSE" = "#C4622D"
       )
     ) +
     scale_fill_manual(
       values = c(
-        "country_full" = "#009d94",
+        "country_full" = "#00629B",
         "country_impute" = "#ffffff",
-        "InCiSE_full" = "#999999"
+        "InCiSE_full" = "#C4622D"
       )
     ) +
     scale_linewidth_manual(
@@ -316,7 +316,7 @@ country_summary <- function(df, country, imputation = NULL) {
     coord_fixed(xlim = c(-1.25, 1.25), ylim = c(-1.25, 1.25)) +
     theme_void() +
     theme(
-      text = element_text(family = "Inter", colour = "#444444", size = 14),
+      text = element_text(family = "Open Sans", colour = "#444444", size = 14),
       legend.position = "none"
     )
 

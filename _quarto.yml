@@ -65,16 +65,15 @@ book:
         - Z_36_TUR.qmd
         - Z_37_GBR.qmd
         - Z_38_USA.qmd
+  sidebar:
+    collapse-level: 1
   navbar:
-    background: "#e6f6f5"
-    foreground: "#009d94"
-    logo: figures/incise_wordmark_green.png
-    logo-alt: "InCiSE project logo"
+    background: dark
     right:
       - text: "More"
         menu:
           - text: "Read the InCiSE 2019 Technical Report"
-            icon: gear-wide-connected
+            icon: book-half
             href: https://incise-project.github.io/incise2019-techreport/
           - text: "Download the PDF of this report"
             icon: file-earmark-pdf
@@ -82,8 +81,10 @@ book:
           - text: "View the source code of this report"
             icon: github
             href: https://github.com/incise-project/incise2019-results/
+          - text: "Go to the InCiSE Project homepage"
+            icon: house-fill
+            href: https://incise-project.github.io/
   cover-image: figures/incise2019_results_cover.png
-  favicon: figures/incise_logo_green.png
   url: https://incise-project.github.io/incise2019-results/
   keyword: international civil service effectiveness, civil service, government,
     effectiveness, performance, public management, public governance

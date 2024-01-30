@@ -1,3 +1,8 @@
+---
+title-block-banner: true
+format: html
+---
+
 ## Welcome {.unnumbered}
 
 This is an HTML version of the International Civil Service Effectiveness

@@ -37,21 +37,21 @@ the right hand side showing the results of the 12 indicators that make up
 the Index.
 
 The bar chart on the left hand side of the figure shows the country's overall
-score and ranking in the InCiSE Index. The country's score is coloured in teal,
-the InCiSE average is coloured in dark grey, all other country scores are
-coloured in light grey.
+score and ranking in the InCiSE Index. The country's score is coloured in blue,
+the InCiSE average is coloured in orange, all other country scores are
+coloured in grey.
 
 The radar chart on the right hand side of the figure shows the country's scores
 for each of the 12 indicators. The centre of the radar indicates a score of 0
 and the outer edge indicates a score of 1, so the further out a data point is
 from the centre the higher the country's score. The country's scores are
-coloured in teal, a point with a white centre is used to indicate where the
+coloured in blue, a point with a white centre is used to indicate where the
 data for that indicator has completely missing data and their result for that
 indicator is fully estimated using statistical imputation. The InCiSE average
-for each indicator is shown in dark grey.
+for each indicator is shown in orange.
 :::
 
-::: {.callout-caution title="Interactive content" icon="false"}
+::: {.callout-tip title="Interactive content" icon="false"}
 The following content is interactive and may not be fully accessible,
 [static versions](Z_00_country_profiles_static.qmd) of the country profiles are
 available in the Appendices to this report.
@@ -164,19 +164,19 @@ bar_plot = Plot.plot({
       x: "value",
       y: "cc_iso3c",
       sort: {y: "x", reverse: true},
-      fill: "#999999"
+      fill: "#C4622D"
     }),
     Plot.barX(country_bar, {
       x: "value",
       y: "cc_iso3c",
       sort: {y: "x", reverse: true},
-      fill: "#009d94"
+      fill: "#00629B"
     }),
     Plot.text(incise_bar, {
       x: (d) => d.value + 0.05,
       y: "cc_iso3c",
       text: "hover_label",
-      fill: "#999999",
+      fill: "#C4622D",
       fontWeight: "600",
       textAnchor: "start",
       sort: {y: "x", reverse: true}
@@ -185,7 +185,7 @@ bar_plot = Plot.plot({
       x: (d) => d.value + 0.05,
       y: "cc_iso3c",
       text: "hover_label",
-      fill: "#009d94",
+      fill: "#00629B",
       fontWeight: "600",
       textAnchor: "start",
       sort: {y: "x", reverse: true}
@@ -231,25 +231,31 @@ radar_plot = Plot.plot({
       stroke: "#dddddd",
       curve: "linear"
     }),
+    Plot.line(country_radar, {
+      x: "new_x",
+      y: "new_y",
+      fill: "#cce0eb33",
+      strokeWidth: 2,
+      curve: chart_curve
+    }),
     Plot.line(incise_radar, {
       x: "new_x",
       y: "new_y",
-      stroke: "#999999",
+      stroke: "#C4622D",
       strokeWidth: 2,
       curve: chart_curve
     }),
     Plot.dot(incise_radar, {
       x: "new_x",
       y: "new_y",
-      fill: "#999999",
+      fill: "#C4622D",
       symbol: "circle-stroke",
       strokeWidth: 2
     }),
     Plot.line(country_radar, {
       x: "new_x",
       y: "new_y",
-      stroke: "#009d94",
-      fill: "#ccebea33",
+      stroke: "#00629B",
       strokeWidth: 2,
       curve: chart_curve
     }),
@@ -257,7 +263,7 @@ radar_plot = Plot.plot({
       x: "new_x",
       y: "new_y",
       radius: 3,
-      fill: "#009d94",
+      fill: "#00629B",
       symbol: "circle-stroke",
       strokeWidth: 2
     }),
@@ -265,7 +271,7 @@ radar_plot = Plot.plot({
       x: "new_x",
       y: "new_y",
       radius: 3,
-      stroke: "#009d94",
+      stroke: "#00629B",
       fill: "#ffffff",
       symbol: "circle-stroke",
       strokeWidth: 2

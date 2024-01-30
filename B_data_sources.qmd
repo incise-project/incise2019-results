@@ -30,7 +30,7 @@ refer to the [Technical Report](http://incise-project.github.io/incise2019-techr
 ```{r}
 #| label: tbl-data-sources
 #| tbl-cap: Data sources of the InCiSE indicators
-#| classes: .nostripe
+#| classes: .no-stripe
 
 out_tbl_body <- tbl_data_sources |>
   dplyr::add_count(indicator, name = "row_count") |>

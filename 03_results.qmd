@@ -116,7 +116,7 @@ indicator_bar = function(ind) {
         x: (d) => d.value + 0.05,
         y: "cc_iso3c",
         text: "value_label",
-        fill: "#999999",
+        fill: "#C4622D",
         fontWeight: "600",
         textAnchor: "start",
         sort: {y: "x", reverse: true}
@@ -207,7 +207,7 @@ bar_plot = Plot.plot({
       x: (d) => d.value + 0.05,
       y: "cc_iso3c",
       text: "value_label",
-      fill: "#009d94",
+      fill: "#C4622D",
       fontWeight: "600",
       textAnchor: "start",
       sort: {y: "x", reverse: true}
@@ -236,7 +236,7 @@ radar_plot = Plot.plot({
   color: {
     type: "categorical",
     domain: ["InCiSE average", "Lower quartile", "Upper quartile"],
-    range: ["#009d94", "#bbbbbb", "#bbbbbb"]
+    range: ["#C4622D", "#bbbbbb", "#bbbbbb"]
   },
   marks: [
     Plot.line(radar_grid, {
@@ -320,20 +320,20 @@ indicator_summary = Plot.plot({
       x: "raw_value",
       y: "indicator",
       text: ["|", "|", "|", "|", "|", "|", "|", "|", "|", "|", "|", "|"],
-      stroke: "#999999"
+      stroke: "#C4622D"
     }),
     Plot.dot(country_radar, {
       x: "raw_value",
       y: "indicator",
       symbol: "circle",
-      fill: "#009d94",
+      fill: "#00629B",
       opacity: 0.25
     }),
     Plot.dot(country_radar, {
       x: "raw_value",
       y: "indicator",
       symbol: "circle",
-      stroke: "#009d94",
+      stroke: "#00629B",
       strokeWidth: 0.5,
       opacity: 1
     }),
@@ -343,7 +343,7 @@ indicator_summary = Plot.plot({
         y: "indicator",
         z: "indicator",
         symbol: "circle",
-        fill: "#009d94",
+        fill: "#00629B",
         opacity: 1
       })
     ),
@@ -353,7 +353,7 @@ indicator_summary = Plot.plot({
         y: "indicator",
         z: "indicator",
         symbol: "circle",
-        fill: "#009d94",
+        fill: "#00629B",
         opacity: 1
       })
     ),
@@ -364,7 +364,7 @@ indicator_summary = Plot.plot({
         z: "indicator",
         text: "cc_iso3c",
         textAnchor: "start",
-        fill: "#009d94",
+        fill: "#00629B",
         dx: 10,
       })
     ),
@@ -372,7 +372,7 @@ indicator_summary = Plot.plot({
       x: "raw_value",
       y: "indicator",
       symbol: "circle",
-      stroke: "#c24113",
+      stroke: "#002147",
       r: 6
     }),
     Plot.text(hover_data, {
@@ -380,7 +380,7 @@ indicator_summary = Plot.plot({
       y: "indicator",
       text: "cc_iso3c",
       filter: (d) => hover_value == d.raw_value && hover_ind == d.indicator,
-      fill: "#c24113",
+      fill: "#002147",
       dy: -15
     }),
     Plot.dot(country_radar, 
@@ -389,15 +389,7 @@ indicator_summary = Plot.plot({
         y: "indicator",
         opacity: 0
       })
-    )//,
-//    Plot.tip(country_radar,
-//      Plot.pointer({
-//        x: "value",
-//        y: "indicator",
-//        filter: (d) => d.data_label,
-//        title: (d) => d.data_label
-//      })
-//    )
+    )
   ]
 });
 

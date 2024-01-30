@@ -43,15 +43,15 @@ the right hand side showing the results of the 12 indicators that make up
 the Index.
 
 The bar chart on the left hand side of the figure shows the country's overall
-score and ranking in the InCiSE Index. The country's score is coloured in teal,
-the InCiSE average is coloured in dark grey, all other country scores are
-coloured in light grey.
+score and ranking in the InCiSE Index. The country's score is coloured in blue,
+the InCiSE average is coloured in orange, all other country scores are
+coloured in grey.
 
 The radar chart on the right hand side of the figure shows the country's scores
 for each of the 12 indicators. The centre of the radar indicates a score of 0
 and the outer edge indicates a score of 1, so the further out a data point is
 from the centre the higher the country's score. The country's scores are
-coloured in teal, a point with a white centre is used to indicate where the
+coloured in blue, a point with a white centre is used to indicate where the
 data for that indicator has completely missing data and their result for that
 indicator is fully estimated using statistical imputation. The InCiSE average
-for each indicator is shown in dark grey.
+for each indicator is shown in orange.
