@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -96,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -112,9 +105,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">InCiSE 2019: Results Report</span>
     </a>
@@ -126,53 +119,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">More</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="https://incise-project.github.io/incise2019-techreport/"><i class="bi bi-book-half" role="img">
+    <a class="dropdown-item" href="https://incise-project.github.io/incise2019-techreport/" rel="" target=""><i class="bi bi-book-half" role="img">
 </i> 
  <span class="dropdown-text">Read the InCiSE 2019 Technical Report</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./incise2019_results_report.pdf"><i class="bi bi-file-earmark-pdf" role="img">
+    <a class="dropdown-item" href="./incise2019_results_report.pdf" rel="" target=""><i class="bi bi-file-earmark-pdf" role="img">
 </i> 
  <span class="dropdown-text">Download the PDF of this report</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/incise-project/incise2019-results/"><i class="bi bi-github" role="img">
+    <a class="dropdown-item" href="https://github.com/incise-project/incise2019-results/" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="dropdown-text">View the source code of this report</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://incise-project.github.io/"><i class="bi bi-house-fill" role="img">
+    <a class="dropdown-item" href="https://incise-project.github.io/" rel="" target=""><i class="bi bi-house-fill" role="img">
 </i> 
  <span class="dropdown-text">Go to the InCiSE Project homepage</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_00_country_profiles.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Country profiles of the 2019 InCiSE results</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_00_country_profiles.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Country profiles of the 2019 InCiSE results</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -524,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -547,14 +548,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
 
-
 <p>This chapter provides an interactive summary of each country’s results from the 2019 edition of the InCiSE Index. For the selected country, the bar chart shows the country’s score for the overall InCiSE Index (in blue) compared to the InCiSE average (in orange) and that of all other countries. The ‘radar chart’ highlights the selected country’s scores for each of the 12 indicators (in blue) compared with the InCiSE average (in orange), this chart highlights where a country performs particularly well compared to the average and where further analysis or attention may be beneficial.</p>
-<p>As discussed at the start of <a href="03_results.html" class="quarto-xref"><span>Chapter 3</span></a>, all scores in the InCiSE results are relative, meaning that the highest scoring country is assigned 1.0 and the lowest scoring country is assigned 0.0. Assessment of a country is therefore relative to others included in the Index only, and not an absolute measure.</p>
+<p>As discussed at the start of <a href="03_results.html"><span>Chapter&nbsp;3</span></a>, all scores in the InCiSE results are relative, meaning that the highest scoring country is assigned 1.0 and the lowest scoring country is assigned 0.0. Assessment of a country is therefore relative to others included in the Index only, and not an absolute measure.</p>
 <p>Weaker scores do not reflect a view on prioritisation within a country, but instead can highlight opportunities to learn from other countries.</p>
-<p><a href="C_scores_rankings.html" class="quarto-xref"><span>Appendix C</span></a> provides tables of the country scores for each indicator. More detailed results of country scores, including for the metrics which underlie each indicator result, can be found on the InCiSE website. Further details about the methodological approach, including the construction of each indicator, can be found in the <a href="http://incise-project.github.io/incise2019-techreport/">Technical Report</a>.</p>
+<p><a href="C_scores_rankings.html"><span>Appendix&nbsp;C</span></a> provides tables of the country scores for each indicator. More detailed results of country scores, including for the metrics which underlie each indicator result, can be found on the InCiSE website. Further details about the methodological approach, including the construction of each indicator, can be found in the <a href="http://incise-project.github.io/incise2019-techreport/">Technical Report</a>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="Key to reading country graphs">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -587,7 +586,7 @@ Interactive content
 <p>When this page is first loaded one of the 38 countries covered by the InCiSE Index is selected at random, to change the selection either use the drop down menu or click on the country’s position in the bar chat.</p>
 </div>
 </div>
-<div class="cell hidden">
+<div class="cell">
 <div class="sourceCode cell-code hidden" id="cb1" data-startfrom="70" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 69;"><span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>Plot <span class="op">=</span> <span class="im">import</span>(<span class="st">"https://esm.sh/@observablehq/plot"</span>)</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co">/* source data */</span></span>
@@ -813,6 +812,9 @@ Interactive content
 </div>
 </div>
 </div>
+<div class="column-screen-inset-right quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="sourceCode cell-code hidden" id="cb5" data-startfrom="159" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 158;"><span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>bar_plot <span class="op">=</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
 <span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
 <span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
@@ -867,102 +869,99 @@ Interactive content
 <span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>      })</span>
 <span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a>chart_curve <span class="op">=</span> <span class="st">"catmull-rom-closed"</span></span>
-<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>radar_plot <span class="op">=</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
-<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
-<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> {<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">11</span>}<span class="op">,</span></span>
-<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">""</span><span class="op">,</span> <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
-<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">""</span><span class="op">,</span> <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
-<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(radar_grid<span class="op">,</span> {</span>
-<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"grid_x"</span><span class="op">,</span></span>
-<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"grid_y"</span><span class="op">,</span></span>
-<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"grid"</span><span class="op">,</span></span>
-<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#dddddd"</span><span class="op">,</span></span>
-<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
-<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>(radar_axes<span class="op">,</span> {</span>
-<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="st">"axis_x"</span><span class="op">,</span></span>
-<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y2</span><span class="op">:</span> <span class="st">"axis_y"</span><span class="op">,</span></span>
-<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"indicator"</span><span class="op">,</span></span>
-<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#dddddd"</span><span class="op">,</span></span>
-<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> <span class="st">"linear"</span></span>
-<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(country_radar<span class="op">,</span> {</span>
-<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#cce0eb33"</span><span class="op">,</span></span>
-<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
-<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(incise_radar<span class="op">,</span> {</span>
-<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#C4622D"</span><span class="op">,</span></span>
-<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
-<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(incise_radar<span class="op">,</span> {</span>
-<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#C4622D"</span><span class="op">,</span></span>
-<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a>      <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle-stroke"</span><span class="op">,</span></span>
-<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
-<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(country_radar<span class="op">,</span> {</span>
-<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#00629B"</span><span class="op">,</span></span>
-<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
-<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(country_radar<span class="op">,</span> {</span>
-<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
-<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#00629B"</span><span class="op">,</span></span>
-<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>      <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle-stroke"</span><span class="op">,</span></span>
-<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
-<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(country_impute<span class="op">,</span> {</span>
-<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
-<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#00629B"</span><span class="op">,</span></span>
-<span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ffffff"</span><span class="op">,</span></span>
-<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a>      <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle-stroke"</span><span class="op">,</span></span>
-<span id="cb5-282"><a href="#cb5-282" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
-<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(radar_axes<span class="op">,</span> {</span>
-<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"label_x"</span><span class="op">,</span></span>
-<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"label_y"</span><span class="op">,</span></span>
-<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="st">"indicator"</span></span>
-<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">tip</span>(country_radar<span class="op">,</span></span>
-<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">pointer</span>({</span>
-<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
-<span id="cb5-292"><a href="#cb5-292" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
-<span id="cb5-293"><a href="#cb5-293" aria-hidden="true" tabindex="-1"></a>        <span class="dt">filter</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">data_label</span><span class="op">,</span></span>
-<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a>        <span class="dt">title</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">data_label</span></span>
-<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a>      })</span>
-<span id="cb5-296"><a href="#cb5-296" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-297"><a href="#cb5-297" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="column-screen-inset-right quarto-layout-panel" data-layout="[ [4,8] ]">
-<div class="quarto-layout-row">
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-<div class="cell quarto-layout-cell" style="flex-basis: 66.7%;justify-content: flex-start;">
+<div class="cell quarto-layout-cell" style="flex-basis: 66.7%;justify-content: center;">
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="221" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 220;"><span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>chart_curve <span class="op">=</span> <span class="st">"catmull-rom-closed"</span></span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>radar_plot <span class="op">=</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">500</span><span class="op">,</span></span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> {<span class="dt">fontSize</span><span class="op">:</span> <span class="dv">11</span>}<span class="op">,</span></span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">""</span><span class="op">,</span> <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">domain</span><span class="op">:</span> [<span class="op">-</span><span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">""</span><span class="op">,</span> <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(radar_grid<span class="op">,</span> {</span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"grid_x"</span><span class="op">,</span></span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"grid_y"</span><span class="op">,</span></span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"grid"</span><span class="op">,</span></span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#dddddd"</span><span class="op">,</span></span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">link</span>(radar_axes<span class="op">,</span> {</span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y1</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x2</span><span class="op">:</span> <span class="st">"axis_x"</span><span class="op">,</span></span>
+<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y2</span><span class="op">:</span> <span class="st">"axis_y"</span><span class="op">,</span></span>
+<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a>      <span class="dt">z</span><span class="op">:</span> <span class="st">"indicator"</span><span class="op">,</span></span>
+<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#dddddd"</span><span class="op">,</span></span>
+<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> <span class="st">"linear"</span></span>
+<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(country_radar<span class="op">,</span> {</span>
+<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#cce0eb33"</span><span class="op">,</span></span>
+<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
+<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(incise_radar<span class="op">,</span> {</span>
+<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#C4622D"</span><span class="op">,</span></span>
+<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
+<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(incise_radar<span class="op">,</span> {</span>
+<span id="cb6-261"><a href="#cb6-261" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-262"><a href="#cb6-262" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-263"><a href="#cb6-263" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#C4622D"</span><span class="op">,</span></span>
+<span id="cb6-264"><a href="#cb6-264" aria-hidden="true" tabindex="-1"></a>      <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle-stroke"</span><span class="op">,</span></span>
+<span id="cb6-265"><a href="#cb6-265" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb6-266"><a href="#cb6-266" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-267"><a href="#cb6-267" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(country_radar<span class="op">,</span> {</span>
+<span id="cb6-268"><a href="#cb6-268" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-269"><a href="#cb6-269" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-270"><a href="#cb6-270" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#00629B"</span><span class="op">,</span></span>
+<span id="cb6-271"><a href="#cb6-271" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb6-272"><a href="#cb6-272" aria-hidden="true" tabindex="-1"></a>      <span class="dt">curve</span><span class="op">:</span> chart_curve</span>
+<span id="cb6-273"><a href="#cb6-273" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-274"><a href="#cb6-274" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(country_radar<span class="op">,</span> {</span>
+<span id="cb6-275"><a href="#cb6-275" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-276"><a href="#cb6-276" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-277"><a href="#cb6-277" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb6-278"><a href="#cb6-278" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#00629B"</span><span class="op">,</span></span>
+<span id="cb6-279"><a href="#cb6-279" aria-hidden="true" tabindex="-1"></a>      <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle-stroke"</span><span class="op">,</span></span>
+<span id="cb6-280"><a href="#cb6-280" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb6-281"><a href="#cb6-281" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-282"><a href="#cb6-282" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(country_impute<span class="op">,</span> {</span>
+<span id="cb6-283"><a href="#cb6-283" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-284"><a href="#cb6-284" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-285"><a href="#cb6-285" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span></span>
+<span id="cb6-286"><a href="#cb6-286" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#00629B"</span><span class="op">,</span></span>
+<span id="cb6-287"><a href="#cb6-287" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#ffffff"</span><span class="op">,</span></span>
+<span id="cb6-288"><a href="#cb6-288" aria-hidden="true" tabindex="-1"></a>      <span class="dt">symbol</span><span class="op">:</span> <span class="st">"circle-stroke"</span><span class="op">,</span></span>
+<span id="cb6-289"><a href="#cb6-289" aria-hidden="true" tabindex="-1"></a>      <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span></span>
+<span id="cb6-290"><a href="#cb6-290" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-291"><a href="#cb6-291" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(radar_axes<span class="op">,</span> {</span>
+<span id="cb6-292"><a href="#cb6-292" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"label_x"</span><span class="op">,</span></span>
+<span id="cb6-293"><a href="#cb6-293" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"label_y"</span><span class="op">,</span></span>
+<span id="cb6-294"><a href="#cb6-294" aria-hidden="true" tabindex="-1"></a>      <span class="dt">text</span><span class="op">:</span> <span class="st">"indicator"</span></span>
+<span id="cb6-295"><a href="#cb6-295" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb6-296"><a href="#cb6-296" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">tip</span>(country_radar<span class="op">,</span></span>
+<span id="cb6-297"><a href="#cb6-297" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">pointer</span>({</span>
+<span id="cb6-298"><a href="#cb6-298" aria-hidden="true" tabindex="-1"></a>        <span class="dt">x</span><span class="op">:</span> <span class="st">"new_x"</span><span class="op">,</span></span>
+<span id="cb6-299"><a href="#cb6-299" aria-hidden="true" tabindex="-1"></a>        <span class="dt">y</span><span class="op">:</span> <span class="st">"new_y"</span><span class="op">,</span></span>
+<span id="cb6-300"><a href="#cb6-300" aria-hidden="true" tabindex="-1"></a>        <span class="dt">filter</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">data_label</span><span class="op">,</span></span>
+<span id="cb6-301"><a href="#cb6-301" aria-hidden="true" tabindex="-1"></a>        <span class="dt">title</span><span class="op">:</span> (d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">data_label</span></span>
+<span id="cb6-302"><a href="#cb6-302" aria-hidden="true" tabindex="-1"></a>      })</span>
+<span id="cb6-303"><a href="#cb6-303" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb6-304"><a href="#cb6-304" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb6-305"><a href="#cb6-305" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="declaration">
@@ -981,7 +980,7 @@ Interactive content
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="311" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 310;"><span id="cb6-311"><a href="#cb6-311" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;p&gt;</span><span class="sc">${</span>my_narrative<span class="op">.</span><span class="at">body_text</span><span class="sc">}</span><span class="vs">&lt;/p&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="311" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 310;"><span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;p&gt;</span><span class="sc">${</span>my_narrative<span class="op">.</span><span class="at">body_text</span><span class="sc">}</span><span class="vs">&lt;/p&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="expression">
 
@@ -999,7 +998,7 @@ Cross-referencing note
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="316" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 315;"><span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`The content for </span><span class="sc">${</span>usr_country<span class="sc">}</span><span class="vs"> was presented as </span><span class="sc">${</span>my_narrative<span class="op">.</span><span class="at">xref_note</span><span class="sc">}</span><span class="vs"> in the original 2019 publication.`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="316" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 315;"><span id="cb8-316"><a href="#cb8-316" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`The content for </span><span class="sc">${</span>usr_country<span class="sc">}</span><span class="vs"> was presented as </span><span class="sc">${</span>my_narrative<span class="op">.</span><span class="at">xref_note</span><span class="sc">}</span><span class="vs"> in the original 2019 publication.`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-7" data-nodetype="expression">
 
@@ -1013,7 +1012,7 @@ Cross-referencing note
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuUGxvdCA9IGltcG9ydChcImh0dHBzOi8vZXNtLnNoL0BvYnNlcnZhYmxlaHEvcGxvdFwiKVxuXG4vKiBzb3VyY2UgZGF0YSAqL1xubmFycmF0aXZlX2RhdGEgPSBGaWxlQXR0YWNobWVudChcImNvdW50cnlfdmlzdWFscy9jb3VudHJ5X25hcnJhdGl2ZXMuY3N2XCIpLmNzdih7IFwidHlwZWRcIjogdHJ1ZSB9KTtcbmJhcl9kYXRhID0gRmlsZUF0dGFjaG1lbnQoXCJjb3VudHJ5X3Zpc3VhbHMvYmFyX2RhdGFfaW5kZXguY3N2XCIpLmNzdih7IFwidHlwZWRcIjogdHJ1ZSB9KTtcbnJhZGFyX2dyaWQgPSBGaWxlQXR0YWNobWVudChcImNvdW50cnlfdmlzdWFscy9yYWRhcl9ncmlkLmNzdlwiKS5jc3YoeyBcInR5cGVkXCI6IHRydWUgfSk7XG5yYWRhcl9heGVzID0gRmlsZUF0dGFjaG1lbnQoXCJjb3VudHJ5X3Zpc3VhbHMvcmFkYXJfYXhlcy5jc3ZcIikuY3N2KHsgXCJ0eXBlZFwiOiB0cnVlIH0pO1xucmFkYXJfZGF0YSA9IEZpbGVBdHRhY2htZW50KFwiY291bnRyeV92aXN1YWxzL3JhZGFyX2RhdGFfZnVsbC5jc3ZcIikuY3N2KHsgXCJ0eXBlZFwiOiB0cnVlIH0pO1xucmFkYXJfaW1wdXRlZCA9IEZpbGVBdHRhY2htZW50KFwiY291bnRyeV92aXN1YWxzL3JhZGFyX2ltcHV0ZWQuY3N2XCIpLmNzdih7IFwidHlwZWRcIjogdHJ1ZSB9KTtcblxuLyogY291bnRyeSBzZWxlY3RvcnMgKi9cbmNvdW50cnlfY29kZXMgPSAgW1xuICBcIkFVU1wiLCBcIkFVVFwiLCBcIkJFTFwiLCBcIkJHUlwiLCBcIkNBTlwiLCBcIkNITFwiLCBcIkhSVlwiLCBcIkNaRVwiLCBcIkROS1wiLCBcIkVTVFwiLCBcIkZJTlwiLFxuICBcIkZSQVwiLCBcIkRFVVwiLCBcIkdSQ1wiLCBcIkhVTlwiLCBcIklTTFwiLCBcIklSTFwiLCBcIklTUlwiLCBcIklUQVwiLCBcIkpQTlwiLCBcIkxWQVwiLCBcIkxUVVwiLFxuICBcIk1FWFwiLCBcIk5MRFwiLCBcIk5aTFwiLCBcIk5PUlwiLCBcIlBPTFwiLCBcIlBSVFwiLCBcIlJPVVwiLCBcIlNWS1wiLCBcIlNWTlwiLCBcIktPUlwiLCBcIkVTUFwiLFxuICBcIlNXRVwiLCBcIkNIRVwiLCBcIlRVUlwiLCBcIkdCUlwiLCBcIlVTQVwiXG5dXG5cbmNvdW50cmllcyA9IFtcbiAgXCJBdXN0cmFsaWFcIiwgXCJBdXN0cmlhXCIsIFwiQmVsZ2l1bVwiLCBcIkJ1bGdhcmlhXCIsIFwiQ2FuYWRhXCIsIFwiQ2hpbGVcIiwgXCJDcm9hdGlhXCIsXG4gIFwiQ3plY2hpYVwiLCBcIkRlbm1hcmtcIiwgXCJFc3RvbmlhXCIsIFwiRmlubGFuZFwiLCBcIkZyYW5jZVwiLCBcIkdlcm1hbnlcIiwgXCJHcmVlY2VcIixcbiAgXCJIdW5nYXJ5XCIsIFwiSWNlbGFuZFwiLCBcIklyZWxhbmRcIiwgXCJJc3JhZWxcIiwgXCJJdGFseVwiLCBcIkphcGFuXCIsIFwiTGF0dmlhXCIsXG4gIFwiTGl0aHVhbmlhXCIsIFwiTWV4aWNvXCIsIFwiTmV0aGVybGFuZHNcIiwgXCJOZXcgWmVhbGFuZFwiLCBcIk5vcndheVwiLCBcIlBvbGFuZFwiLFxuICBcIlBvcnR1Z2FsXCIsIFwiUm9tYW5pYVwiLCAgXCJTbG92YWtpYVwiLCAgXCJTbG92ZW5pYVwiLCBcIlNvdXRoIEtvcmVhXCIsIFwiU3BhaW5cIixcbiAgXCJTd2VkZW5cIiwgXCJTd2l0emVybGFuZFwiLCBcIlR1cmtleVwiLCBcIlVuaXRlZCBLaW5nZG9tXCIsXG4gIFwiVW5pdGVkIFN0YXRlcyBvZiBBbWVyaWNhXCJcbl1cblxuLyogSW5DaVNFIGRhdGEgcG9pbnRzICovXG5pbmNpc2VfYmFyID0gYmFyX2RhdGEuZmlsdGVyKGZ1bmN0aW9uKGRmKXtcbiAgcmV0dXJuIFwiSW5DaVNFXCIgPT0gZGYuY2NfaXNvM2Ncbn0pO1xuXG5pbmNpc2VfcmFkYXIgPSByYWRhcl9kYXRhLmZpbHRlcihmdW5jdGlvbihkZil7XG4gIHJldHVybiBcIkluQ2lTRVwiID09IGRmLmNjX2lzbzNjXG59KTtcblxuc2V0X3ZhbCA9IGZ1bmN0aW9uKGlucHV0LCB2YWx1ZSkge1xuICBpbnB1dC52YWx1ZSA9IHZhbHVlO1xuICBpbnB1dC5kaXNwYXRjaEV2ZW50KG5ldyBFdmVudChcImlucHV0XCIpKVxufTtcblxuYmFyX3Bsb3QuYWRkRXZlbnRMaXN0ZW5lcihcIm1vdXNlZG93blwiLCAoZXZlbnQpID0+IHtcbiAgaWYgKGJhcl9wbG90LnZhbHVlICE9IG51bGwpIHtcbiAgICBpZiAoYmFyX3Bsb3QudmFsdWUuY2NfaXNvM2MgPT0gXCJJbkNpU0VcIikge1xuICAgICAgcmV0dXJuIG51bGxcbiAgICB9XG4gICAgdmFyIHNlbF9jb3VudHJ5ID0gY291bnRyaWVzW2NvdW50cnlfY29kZXMuaW5kZXhPZihiYXJfcGxvdC52YWx1ZS5jY19pc28zYyldXG4gICAgc2V0X3ZhbCh2aWV3b2YgdXNyX2NvdW50cnksIHNlbF9jb3VudHJ5KVxuICB9XG59KTtcblxuc2V0X3ZhbCh2aWV3b2YgdXNyX2NvdW50cnksIGNvdW50cmllc1tNYXRoLmZsb29yKE1hdGgucmFuZG9tKCkqMzgpXSlcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2YgdXNyX2NvdW50cnkgPSBJbnB1dHMuc2VsZWN0KFxuICBjb3VudHJpZXMsXG4gIHtsYWJlbDogXCJTZWxlY3QgYSBjb3VudHJ5OlwiLCB1bmlxdWU6IHRydWV9XG4pXG5cbm15X2NvdW50cnkgPSBjb3VudHJ5X2NvZGVzW2NvdW50cmllcy5pbmRleE9mKHVzcl9jb3VudHJ5KV1cblxubXlfbmFycmF0aXZlID0gbmFycmF0aXZlX2RhdGEuZmlsdGVyKGZ1bmN0aW9uKGRmKXtcbiAgcmV0dXJuIG15X2NvdW50cnkgPT0gZGYuY2NfaXNvM2Ncbn0pWzBdO1xuXG5jb3VudHJ5X2JhciA9IGJhcl9kYXRhLmZpbHRlcihmdW5jdGlvbihkZil7XG4gIHJldHVybiBteV9jb3VudHJ5ID09IGRmLmNjX2lzbzNjXG59KTtcblxuY291bnRyeV9yYWRhciA9IHJhZGFyX2RhdGEuZmlsdGVyKGZ1bmN0aW9uKGRmKXtcbiAgcmV0dXJuIG15X2NvdW50cnkgPT0gZGYuY2NfaXNvM2Ncbn0pO1xuXG5jb3VudHJ5X2ltcHV0ZSA9IHJhZGFyX2ltcHV0ZWQuZmlsdGVyKGZ1bmN0aW9uKGRmKXtcbiAgcmV0dXJuIG15X2NvdW50cnkgPT0gZGYuY2NfaXNvM2Ncbn0pO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJodG1sYDxwIGNsYXNzPVwibGVhZFwiPiR7bXlfbmFycmF0aXZlLmxlYWRfdGV4dH08L3A+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5iYXJfcGxvdCA9IFBsb3QucGxvdCh7XG4gIHdpZHRoOiAzMDAsXG4gIGhlaWdodDogNTAwLFxuICBtYXJnaW5MZWZ0OiA3NSxcbiAgc3R5bGU6IHtmb250U2l6ZTogMTF9LFxuICB4OiB7bGFiZWw6IG51bGwsIGdyaWQ6IHRydWUsIGRvbWFpbjogWzAsIDEuNF19LFxuICB5OiB7bGFiZWw6IG51bGx9LFxuICBtYXJrczogW1xuICAgIFBsb3QuYmFyWChiYXJfZGF0YSwge1xuICAgICAgeDogXCJ2YWx1ZVwiLFxuICAgICAgeTogXCJjY19pc28zY1wiLFxuICAgICAgc29ydDoge3k6IFwieFwiLCByZXZlcnNlOiB0cnVlfSxcbiAgICAgIGZpbGw6IFwiI2RkZGRkZFwiXG4gICAgfSksXG4gICAgUGxvdC5iYXJYKGluY2lzZV9iYXIsIHtcbiAgICAgIHg6IFwidmFsdWVcIixcbiAgICAgIHk6IFwiY2NfaXNvM2NcIixcbiAgICAgIHNvcnQ6IHt5OiBcInhcIiwgcmV2ZXJzZTogdHJ1ZX0sXG4gICAgICBmaWxsOiBcIiNDNDYyMkRcIlxuICAgIH0pLFxuICAgIFBsb3QuYmFyWChjb3VudHJ5X2Jhciwge1xuICAgICAgeDogXCJ2YWx1ZVwiLFxuICAgICAgeTogXCJjY19pc28zY1wiLFxuICAgICAgc29ydDoge3k6IFwieFwiLCByZXZlcnNlOiB0cnVlfSxcbiAgICAgIGZpbGw6IFwiIzAwNjI5QlwiXG4gICAgfSksXG4gICAgUGxvdC50ZXh0KGluY2lzZV9iYXIsIHtcbiAgICAgIHg6IChkKSA9PiBkLnZhbHVlICsgMC4wNSxcbiAgICAgIHk6IFwiY2NfaXNvM2NcIixcbiAgICAgIHRleHQ6IFwiaG92ZXJfbGFiZWxcIixcbiAgICAgIGZpbGw6IFwiI0M0NjIyRFwiLFxuICAgICAgZm9udFdlaWdodDogXCI2MDBcIixcbiAgICAgIHRleHRBbmNob3I6IFwic3RhcnRcIixcbiAgICAgIHNvcnQ6IHt5OiBcInhcIiwgcmV2ZXJzZTogdHJ1ZX1cbiAgICB9KSxcbiAgICBQbG90LnRleHQoY291bnRyeV9iYXIsIHtcbiAgICAgIHg6IChkKSA9PiBkLnZhbHVlICsgMC4wNSxcbiAgICAgIHk6IFwiY2NfaXNvM2NcIixcbiAgICAgIHRleHQ6IFwiaG92ZXJfbGFiZWxcIixcbiAgICAgIGZpbGw6IFwiIzAwNjI5QlwiLFxuICAgICAgZm9udFdlaWdodDogXCI2MDBcIixcbiAgICAgIHRleHRBbmNob3I6IFwic3RhcnRcIixcbiAgICAgIHNvcnQ6IHt5OiBcInhcIiwgcmV2ZXJzZTogdHJ1ZX1cbiAgICB9KSxcbiAgICBQbG90LnRpcChiYXJfZGF0YSxcbiAgICAgIFBsb3QucG9pbnRlclkoe1xuICAgICAgICB4OiBcInZhbHVlXCIsXG4gICAgICAgIHk6IFwiY2NfaXNvM2NcIixcbiAgICAgICAgZmlsdGVyOiAoZCkgPT4gZC5ob3Zlcl9sYWJlbCxcbiAgICAgICAgdGl0bGU6IChkKSA9PiBkLmhvdmVyX2xhYmVsLFxuICAgICAgICBmcmFtZUFuY2hvcjogXCJsZWZ0XCJcbiAgICAgIH0pXG4gICAgKVxuICBdXG59KTtcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5jaGFydF9jdXJ2ZSA9IFwiY2F0bXVsbC1yb20tY2xvc2VkXCJcblxucmFkYXJfcGxvdCA9IFBsb3QucGxvdCh7XG4gIHdpZHRoOiA1MDAsXG4gIGhlaWdodDogNTAwLFxuICBzdHlsZToge2ZvbnRTaXplOiAxMX0sXG4gIHg6IHtkb21haW46IFstMS41LCAxLjVdLCBsYWJlbDogXCJcIiwgYXhpczogbnVsbH0sXG4gIHk6IHtkb21haW46IFstMS41LCAxLjVdLCBsYWJlbDogXCJcIiwgYXhpczogbnVsbH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5saW5lKHJhZGFyX2dyaWQsIHtcbiAgICAgIHg6IFwiZ3JpZF94XCIsXG4gICAgICB5OiBcImdyaWRfeVwiLFxuICAgICAgejogXCJncmlkXCIsXG4gICAgICBzdHJva2U6IFwiI2RkZGRkZFwiLFxuICAgICAgY3VydmU6IGNoYXJ0X2N1cnZlXG4gICAgfSksXG4gICAgUGxvdC5saW5rKHJhZGFyX2F4ZXMsIHtcbiAgICAgIHgxOiAwLFxuICAgICAgeTE6IDAsXG4gICAgICB4MjogXCJheGlzX3hcIixcbiAgICAgIHkyOiBcImF4aXNfeVwiLFxuICAgICAgejogXCJpbmRpY2F0b3JcIixcbiAgICAgIHN0cm9rZTogXCIjZGRkZGRkXCIsXG4gICAgICBjdXJ2ZTogXCJsaW5lYXJcIlxuICAgIH0pLFxuICAgIFBsb3QubGluZShjb3VudHJ5X3JhZGFyLCB7XG4gICAgICB4OiBcIm5ld194XCIsXG4gICAgICB5OiBcIm5ld195XCIsXG4gICAgICBmaWxsOiBcIiNjY2UwZWIzM1wiLFxuICAgICAgc3Ryb2tlV2lkdGg6IDIsXG4gICAgICBjdXJ2ZTogY2hhcnRfY3VydmVcbiAgICB9KSxcbiAgICBQbG90LmxpbmUoaW5jaXNlX3JhZGFyLCB7XG4gICAgICB4OiBcIm5ld194XCIsXG4gICAgICB5OiBcIm5ld195XCIsXG4gICAgICBzdHJva2U6IFwiI0M0NjIyRFwiLFxuICAgICAgc3Ryb2tlV2lkdGg6IDIsXG4gICAgICBjdXJ2ZTogY2hhcnRfY3VydmVcbiAgICB9KSxcbiAgICBQbG90LmRvdChpbmNpc2VfcmFkYXIsIHtcbiAgICAgIHg6IFwibmV3X3hcIixcbiAgICAgIHk6IFwibmV3X3lcIixcbiAgICAgIGZpbGw6IFwiI0M0NjIyRFwiLFxuICAgICAgc3ltYm9sOiBcImNpcmNsZS1zdHJva2VcIixcbiAgICAgIHN0cm9rZVdpZHRoOiAyXG4gICAgfSksXG4gICAgUGxvdC5saW5lKGNvdW50cnlfcmFkYXIsIHtcbiAgICAgIHg6IFwibmV3X3hcIixcbiAgICAgIHk6IFwibmV3X3lcIixcbiAgICAgIHN0cm9rZTogXCIjMDA2MjlCXCIsXG4gICAgICBzdHJva2VXaWR0aDogMixcbiAgICAgIGN1cnZlOiBjaGFydF9jdXJ2ZVxuICAgIH0pLFxuICAgIFBsb3QuZG90KGNvdW50cnlfcmFkYXIsIHtcbiAgICAgIHg6IFwibmV3X3hcIixcbiAgICAgIHk6IFwibmV3X3lcIixcbiAgICAgIHJhZGl1czogMyxcbiAgICAgIGZpbGw6IFwiIzAwNjI5QlwiLFxuICAgICAgc3ltYm9sOiBcImNpcmNsZS1zdHJva2VcIixcbiAgICAgIHN0cm9rZVdpZHRoOiAyXG4gICAgfSksXG4gICAgUGxvdC5kb3QoY291bnRyeV9pbXB1dGUsIHtcbiAgICAgIHg6IFwibmV3X3hcIixcbiAgICAgIHk6IFwibmV3X3lcIixcbiAgICAgIHJhZGl1czogMyxcbiAgICAgIHN0cm9rZTogXCIjMDA2MjlCXCIsXG4gICAgICBmaWxsOiBcIiNmZmZmZmZcIixcbiAgICAgIHN5bWJvbDogXCJjaXJjbGUtc3Ryb2tlXCIsXG4gICAgICBzdHJva2VXaWR0aDogMlxuICAgIH0pLFxuICAgIFBsb3QudGV4dChyYWRhcl9heGVzLCB7XG4gICAgICB4OiBcImxhYmVsX3hcIixcbiAgICAgIHk6IFwibGFiZWxfeVwiLFxuICAgICAgdGV4dDogXCJpbmRpY2F0b3JcIlxuICAgIH0pLFxuICAgIFBsb3QudGlwKGNvdW50cnlfcmFkYXIsXG4gICAgICBQbG90LnBvaW50ZXIoe1xuICAgICAgICB4OiBcIm5ld194XCIsXG4gICAgICAgIHk6IFwibmV3X3lcIixcbiAgICAgICAgZmlsdGVyOiAoZCkgPT4gZC5kYXRhX2xhYmVsLFxuICAgICAgICB0aXRsZTogKGQpID0+IGQuZGF0YV9sYWJlbFxuICAgICAgfSlcbiAgICApXG4gIF1cbn0pO1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJodG1sYDxwPiR7bXlfbmFycmF0aXZlLmJvZHlfdGV4dH08L3A+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaHRtbGBUaGUgY29udGVudCBmb3IgJHt1c3JfY291bnRyeX0gd2FzIHByZXNlbnRlZCBhcyAke215X25hcnJhdGl2ZS54cmVmX25vdGV9IGluIHRoZSBvcmlnaW5hbCAyMDE5IHB1YmxpY2F0aW9uLmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgndXNyX2NvdW50cnknKSJ9XX0=
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"\nPlot = import(\"https://esm.sh/@observablehq/plot\")\n\n/* source data */\nnarrative_data = FileAttachment(\"country_visuals/country_narratives.csv\").csv({ \"typed\": true });\nbar_data = FileAttachment(\"country_visuals/bar_data_index.csv\").csv({ \"typed\": true });\nradar_grid = FileAttachment(\"country_visuals/radar_grid.csv\").csv({ \"typed\": true });\nradar_axes = FileAttachment(\"country_visuals/radar_axes.csv\").csv({ \"typed\": true });\nradar_data = FileAttachment(\"country_visuals/radar_data_full.csv\").csv({ \"typed\": true });\nradar_imputed = FileAttachment(\"country_visuals/radar_imputed.csv\").csv({ \"typed\": true });\n\n/* country selectors */\ncountry_codes =  [\n  \"AUS\", \"AUT\", \"BEL\", \"BGR\", \"CAN\", \"CHL\", \"HRV\", \"CZE\", \"DNK\", \"EST\", \"FIN\",\n  \"FRA\", \"DEU\", \"GRC\", \"HUN\", \"ISL\", \"IRL\", \"ISR\", \"ITA\", \"JPN\", \"LVA\", \"LTU\",\n  \"MEX\", \"NLD\", \"NZL\", \"NOR\", \"POL\", \"PRT\", \"ROU\", \"SVK\", \"SVN\", \"KOR\", \"ESP\",\n  \"SWE\", \"CHE\", \"TUR\", \"GBR\", \"USA\"\n]\n\ncountries = [\n  \"Australia\", \"Austria\", \"Belgium\", \"Bulgaria\", \"Canada\", \"Chile\", \"Croatia\",\n  \"Czechia\", \"Denmark\", \"Estonia\", \"Finland\", \"France\", \"Germany\", \"Greece\",\n  \"Hungary\", \"Iceland\", \"Ireland\", \"Israel\", \"Italy\", \"Japan\", \"Latvia\",\n  \"Lithuania\", \"Mexico\", \"Netherlands\", \"New Zealand\", \"Norway\", \"Poland\",\n  \"Portugal\", \"Romania\",  \"Slovakia\",  \"Slovenia\", \"South Korea\", \"Spain\",\n  \"Sweden\", \"Switzerland\", \"Turkey\", \"United Kingdom\",\n  \"United States of America\"\n]\n\n/* InCiSE data points */\nincise_bar = bar_data.filter(function(df){\n  return \"InCiSE\" == df.cc_iso3c\n});\n\nincise_radar = radar_data.filter(function(df){\n  return \"InCiSE\" == df.cc_iso3c\n});\n\nset_val = function(input, value) {\n  input.value = value;\n  input.dispatchEvent(new Event(\"input\"))\n};\n\nbar_plot.addEventListener(\"mousedown\", (event) => {\n  if (bar_plot.value != null) {\n    if (bar_plot.value.cc_iso3c == \"InCiSE\") {\n      return null\n    }\n    var sel_country = countries[country_codes.indexOf(bar_plot.value.cc_iso3c)]\n    set_val(viewof usr_country, sel_country)\n  }\n});\n\nset_val(viewof usr_country, countries[Math.floor(Math.random()*38)])\n\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"\nviewof usr_country = Inputs.select(\n  countries,\n  {label: \"Select a country:\", unique: true}\n)\n\nmy_country = country_codes[countries.indexOf(usr_country)]\n\nmy_narrative = narrative_data.filter(function(df){\n  return my_country == df.cc_iso3c\n})[0];\n\ncountry_bar = bar_data.filter(function(df){\n  return my_country == df.cc_iso3c\n});\n\ncountry_radar = radar_data.filter(function(df){\n  return my_country == df.cc_iso3c\n});\n\ncountry_impute = radar_imputed.filter(function(df){\n  return my_country == df.cc_iso3c\n});\n\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"html`<p class=\"lead\">${my_narrative.lead_text}</p>`\n"},{"methodName":"interpret","cellName":"ojs-cell-4","inline":false,"source":"\nbar_plot = Plot.plot({\n  width: 300,\n  height: 500,\n  marginLeft: 75,\n  style: {fontSize: 11},\n  x: {label: null, grid: true, domain: [0, 1.4]},\n  y: {label: null},\n  marks: [\n    Plot.barX(bar_data, {\n      x: \"value\",\n      y: \"cc_iso3c\",\n      sort: {y: \"x\", reverse: true},\n      fill: \"#dddddd\"\n    }),\n    Plot.barX(incise_bar, {\n      x: \"value\",\n      y: \"cc_iso3c\",\n      sort: {y: \"x\", reverse: true},\n      fill: \"#C4622D\"\n    }),\n    Plot.barX(country_bar, {\n      x: \"value\",\n      y: \"cc_iso3c\",\n      sort: {y: \"x\", reverse: true},\n      fill: \"#00629B\"\n    }),\n    Plot.text(incise_bar, {\n      x: (d) => d.value + 0.05,\n      y: \"cc_iso3c\",\n      text: \"hover_label\",\n      fill: \"#C4622D\",\n      fontWeight: \"600\",\n      textAnchor: \"start\",\n      sort: {y: \"x\", reverse: true}\n    }),\n    Plot.text(country_bar, {\n      x: (d) => d.value + 0.05,\n      y: \"cc_iso3c\",\n      text: \"hover_label\",\n      fill: \"#00629B\",\n      fontWeight: \"600\",\n      textAnchor: \"start\",\n      sort: {y: \"x\", reverse: true}\n    }),\n    Plot.tip(bar_data,\n      Plot.pointerY({\n        x: \"value\",\n        y: \"cc_iso3c\",\n        filter: (d) => d.hover_label,\n        title: (d) => d.hover_label,\n        frameAnchor: \"left\"\n      })\n    )\n  ]\n});\n\n"},{"methodName":"interpret","cellName":"ojs-cell-5","inline":false,"source":"\nchart_curve = \"catmull-rom-closed\"\n\nradar_plot = Plot.plot({\n  width: 500,\n  height: 500,\n  style: {fontSize: 11},\n  x: {domain: [-1.5, 1.5], label: \"\", axis: null},\n  y: {domain: [-1.5, 1.5], label: \"\", axis: null},\n  marks: [\n    Plot.line(radar_grid, {\n      x: \"grid_x\",\n      y: \"grid_y\",\n      z: \"grid\",\n      stroke: \"#dddddd\",\n      curve: chart_curve\n    }),\n    Plot.link(radar_axes, {\n      x1: 0,\n      y1: 0,\n      x2: \"axis_x\",\n      y2: \"axis_y\",\n      z: \"indicator\",\n      stroke: \"#dddddd\",\n      curve: \"linear\"\n    }),\n    Plot.line(country_radar, {\n      x: \"new_x\",\n      y: \"new_y\",\n      fill: \"#cce0eb33\",\n      strokeWidth: 2,\n      curve: chart_curve\n    }),\n    Plot.line(incise_radar, {\n      x: \"new_x\",\n      y: \"new_y\",\n      stroke: \"#C4622D\",\n      strokeWidth: 2,\n      curve: chart_curve\n    }),\n    Plot.dot(incise_radar, {\n      x: \"new_x\",\n      y: \"new_y\",\n      fill: \"#C4622D\",\n      symbol: \"circle-stroke\",\n      strokeWidth: 2\n    }),\n    Plot.line(country_radar, {\n      x: \"new_x\",\n      y: \"new_y\",\n      stroke: \"#00629B\",\n      strokeWidth: 2,\n      curve: chart_curve\n    }),\n    Plot.dot(country_radar, {\n      x: \"new_x\",\n      y: \"new_y\",\n      radius: 3,\n      fill: \"#00629B\",\n      symbol: \"circle-stroke\",\n      strokeWidth: 2\n    }),\n    Plot.dot(country_impute, {\n      x: \"new_x\",\n      y: \"new_y\",\n      radius: 3,\n      stroke: \"#00629B\",\n      fill: \"#ffffff\",\n      symbol: \"circle-stroke\",\n      strokeWidth: 2\n    }),\n    Plot.text(radar_axes, {\n      x: \"label_x\",\n      y: \"label_y\",\n      text: \"indicator\"\n    }),\n    Plot.tip(country_radar,\n      Plot.pointer({\n        x: \"new_x\",\n        y: \"new_y\",\n        filter: (d) => d.data_label,\n        title: (d) => d.data_label\n      })\n    )\n  ]\n});\n\n"},{"methodName":"interpret","cellName":"ojs-cell-6","inline":false,"source":"html`<p>${my_narrative.body_text}</p>`\n"},{"methodName":"interpret","cellName":"ojs-cell-7","inline":false,"source":"html`The content for ${usr_country} was presented as ${my_narrative.xref_note} in the original 2019 publication.`\n"},{"methodName":"interpretQuiet","source":"shinyInput('usr_country')"}]}
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1102,9 +1101,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1114,17 +1114,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1137,125 +1128,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1299,7 +1171,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1325,32 +1196,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1412,18 +1257,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a 2019="" href="./03_results.html" class="pagination-link  aria-label=" &lt;span="" of="" the="" incise="" index&lt;="" span&gt;"="">
+      <a href="./03_results.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results of the 2019 InCiSE Index</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05_next_steps.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Next steps and conclusions</span>">
+      <a href="./05_next_steps.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Next steps and conclusions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
