@@ -175,6 +175,10 @@ nav[role=doc-toc] a {
   font-weight: 400;
 }
 
+nav[role=doc-toc] a .header-section-number {
+  color: $bsg-warm-grey6 !important;
+}
+
 .sidebar nav[role=doc-toc] ul>li>a.active,
 .sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
   padding-left: calc(.6rem - 1px);
@@ -480,6 +484,223 @@ nav.navbar .dropdown-item:hover, .dropdown-item:focus {
 
 nav.navbar .dropdown-menu {
   border-top: 3px solid $bsg-orange;
+}
+
+
+/*-- callout boxes --*/
+
+.callout {
+  margin: 0px;
+  margin-top: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.callout.callout-style-default .callout-body {
+  font-size: 0.75rem;
+}
+
+.callout.callout-style-default {
+    border-left: 3px solid;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.callout .callout-title-container {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.callout {
+  border-radius: unset;
+}
+
+.callout li::before {
+  color: $note-color;
+}
+
+div.callout.callout-style-default.callout-note>.callout-header{
+  background-color: unset;
+}
+
+.callout-header {
+  padding: 5px;
+}
+
+div.callout-note.callout {
+  border-left-color: #dddddd;
+  background-color: unset;
+  color: $note-color;
+}
+
+div.callout-tip.callout {
+  border-left-color: $bsg-beige;
+  background-color: unset;
+  color: $body-color;
+}
+
+div.callout-tip.callout .callout-header {
+  background-color: $bsg-bg-beige;
+}
+
+div.callout-important.callout {
+  border-left-color: $bsg-mid-blue;
+  background-color: unset;
+  color: $bsg-mid-blue;
+}
+
+.crf {
+  margin-top: 2rem;
+}
+
+.crf a {
+  color: $note-color;
+}
+
+#preface h2 {
+  width: 60%;
+}
+
+@media (min-width: 768px) {
+  .two-col {
+    column-count: 2;
+  }
+}
+
+.datatables {
+  font-size: 0.8rem;
+}
+
+.datatables .table-sm th, .datatables .table-sm td {
+  padding: 0.25rem;
+}
+
+.datatables th {
+  border-left: 0px;
+}
+
+.datatables tbody tr.odd, .datatables tbody tr.odd td {
+  background-color: $bsg-bg-blue;
+}
+
+.datatables thead th {
+  border-top: 1px solid $bsg-mid-blue !important;
+}
+
+.datatables table {
+  border-bottom: 0px !important;
+}
+
+.datatables .ui-toolbar {
+  min-height: 50px;
+  color: $note-color;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.rag-key ul {
+  display: inline-flex;
+  font-size: 0.7rem;
+  color: $note-color;
+  padding: 8px;
+  text-transform: uppercase;
+}
+
+.rag-key ul::before {
+  content: "Icon key: ";
+  padding-right: 1rem;
+}
+
+.rag-key li {
+  padding-right: 1rem;
+}
+
+.dataTables_paginate .previous.ui-state-disabled,
+.dataTables_paginate .next.ui-state-disabled {
+  display: none !important;
+}
+
+.dataTables_paginate .ui-button {
+  color: $body-color;
+  font-weight: 600;
+  margin: 0px 3px;
+}
+
+.dataTables_paginate .ui-button.ui-state-disabled {
+  color: $bsg-mid-blue;
+  font-weight: 600;
+  border-bottom: 2px solid $bsg-warm-grey6 !important;
+}
+
+.dataTables_paginate .ui-button:hover {
+  background-color: $bsg-mid-blue;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dataTables_filter label {
+  font-weight: 600;
+}
+
+.dataTables_filter input {
+  border: 1px solid #dddddd !important;
+  border-radius: 0px !important;
+  background-color: #fafafa !important;
+  color: $body-color !important;
+  font-weight: 600 !important;
+}
+
+.quarto-title-meta div {
+  margin-top: 0.25rem;
+  display: flex;
+}
+
+.quarto-title-meta-heading, .quarto-title-meta-contents {
+  font-family: $headings-font-style;
+  font-weight: 400;
+  opacity: 1.0 !important;
+  font-size: 0.8em !important;
+  color: $bsg-orange !important;
+  text-transform: uppercase;
+  margin: 0px !important;
+}
+
+.quarto-title-meta-heading {
+  padding-right: 0.5rem;
+}
+
+svg text[style*="bold"] {
+  font-weight: 600 !important;
+}
+
+div.cell p.lead {
+  margin: 0px;
+}
+
+div.cell.quarto-layout-cell {
+  margin: 0px;
+}
+
+.profile-crf {
+  margin-top: 0px;
+}
+
+.quarto-title-banner {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  background-color: $bsg-dark-blue;
+  padding: 10px;
+}
+
+.quarto-title-banner h1 {
+  font-size: 3rem;
+  font-weight: 300 !important;
+  color: #ffffff;
+}
+
+#quarto-sidebar > div.mt-2.flex-shrink-0.align-items-center {
+  display: none;
 }
 
 /*-- specific tables --*/
