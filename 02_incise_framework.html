@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,7 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./03_results.html" rel="next">
 <link href="./01_introduction.html" rel="prev">
-<link href="./figures/incise_logo_green.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -48,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -70,12 +76,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./figures/incise_wordmark_green.png" alt="InCiSE project logo" class="navbar-logo">
-    </a>
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">InCiSE 2019: Results Report</span>
     </a>
@@ -87,56 +90,53 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-more" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">More</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-more">    
         <li>
-    <a class="dropdown-item" href="https://incise-project.github.io/incise2019-techreport/" rel="" target=""><i class="bi bi-gear-wide-connected" role="img">
+    <a class="dropdown-item" href="https://incise-project.github.io/incise2019-techreport/"><i class="bi bi-book-half" role="img">
 </i> 
  <span class="dropdown-text">Read the InCiSE 2019 Technical Report</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./incise2019_results_report.pdf" rel="" target=""><i class="bi bi-file-earmark-pdf" role="img">
+    <a class="dropdown-item" href="./incise2019_results_report.pdf"><i class="bi bi-file-earmark-pdf" role="img">
 </i> 
  <span class="dropdown-text">Download the PDF of this report</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://github.com/incise-project/incise2019-results/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="dropdown-item" href="https://github.com/incise-project/incise2019-results/"><i class="bi bi-github" role="img">
 </i> 
  <span class="dropdown-text">View the source code of this report</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://incise-project.github.io/"><i class="bi bi-house-fill" role="img">
+</i> 
+ <span class="dropdown-text">Go to the InCiSE Project homepage</span></a>
   </li>  
     </ul>
   </li>
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_incise_framework.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The InCiSE framework and approach</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02_incise_framework.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The InCiSE framework and approach</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -201,13 +201,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./A_indicator_definitions.html" class="sidebar-item-text sidebar-link">
@@ -488,7 +488,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -522,7 +522,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>This chapter sets out the approach taken to further develop the InCiSE framework and produce the Index, as well as country coverage issues. It also explains how the InCiSE framework has evolved and expanded since the 2017 Pilot.</p>
 <p>A detailed explanation of the choice of indicators, their definitions, data availability and quality issues, can be found in the Technical Report.</p>
@@ -544,11 +546,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Cultivating and displaying these attributes is commonly (though not necessarily universally) understood to be good practice. They are also key determinants of an organisation’s overall effectiveness.</p>
 <p>There are some concepts which could be considered attributes but which are particularly relevant to some core functions.</p>
 <p>For example, the pursuit of value for money (VFM) is a key feature of the procurement function, while the use of evidence plays an important role in effective policy making. Where feasible, these concepts have been captured through the core functions of the InCiSE framework instead.</p>
-<p>A brief definition of each of the InCiSE indicators can be found at Annex A of this report, alongside a summary of any revisions made to each indicator since the 2017 Pilot. Further details about the InCiSE framework, can be found in the accompanying InCiSE Technical Report. A visual summary of the InCiSE framework and its context is displayed in <a href="#fig-framework">Figure&nbsp;<span>2.1</span></a>, below.</p>
-<div id="fig-framework" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<figcaption class="figure-caption">Figure&nbsp;2.1: The InCiSE Index Framework</figcaption>
-<p><img src="figures/incise_framework.png" class="img-fluid figure-img"></p>
+<p>A brief definition of each of the InCiSE indicators can be found at Annex A of this report, alongside a summary of any revisions made to each indicator since the 2017 Pilot. Further details about the InCiSE framework, can be found in the accompanying InCiSE Technical Report. A visual summary of the InCiSE framework and its context is displayed in <a href="#fig-framework" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>, below.</p>
+<div id="fig-framework" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: The InCiSE Index Framework
+</figcaption>
+<div aria-describedby="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/incise_framework.png" class="img-fluid figure-img">
+</div>
 </figure>
 </div>
 </section>
@@ -556,7 +562,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="2.2" class="anchored" data-anchor-id="sec-data-availability"><span class="header-section-number">2.2</span> Data availability, limitations and revisions</h2>
 <p>InCiSE 2019 uses the most recently available data as at 30 November 2018. Some InCiSE metrics are collected annually, some are biennial or longer, while others are ad-hoc in their repetition. As a result, while InCiSE uses the most recently available data, some metrics may use data that does not accurately reflect the current situation.</p>
 <p>Some measures that contribute to one of the InCiSE indicators may be relevant to other indicators as well, although this has been avoided wherever possible. No original piece of data utilised by the InCiSE model is used more than once, to ensure the overall figures are not overly reliant on a specific data source.</p>
-<p>Most, but not all, of the indicators in the InCiSE framework have been measured to produce the 2019 Index. In the 2017 edition, eight out of the eleven core functions proposed were measured. An additional core function has been measured for the 2019 Index – procurement. However, the social security administration indicator has not been measured this time, mainly because of feedback during the pilot phase about data reliability; alternative data sources are still to be identified. For the attributes, four out of the six have been measured, as in 2017. The functions and attributes measured in the 2019 edition of the Index are illustrated in <a href="#fig-framework">Figure&nbsp;<span>2.1</span></a>.</p>
+<p>Most, but not all, of the indicators in the InCiSE framework have been measured to produce the 2019 Index. In the 2017 edition, eight out of the eleven core functions proposed were measured. An additional core function has been measured for the 2019 Index – procurement. However, the social security administration indicator has not been measured this time, mainly because of feedback during the pilot phase about data reliability; alternative data sources are still to be identified. For the attributes, four out of the six have been measured, as in 2017. The functions and attributes measured in the 2019 edition of the Index are illustrated in <a href="#fig-framework" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>.</p>
 <p>The development of the Index has continued to involve stages where subjective judgements have had to be made, for example when aggregating the results and dealing with gaps in data. The impact of these judgements on the results is explored in the Technical Report.</p>
 </section>
 <section id="sec-comparisons" class="level2" data-number="2.3">
@@ -580,12 +586,16 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="2.6" class="anchored" data-anchor-id="sec-coverage-variations"><span class="header-section-number">2.6</span> Variations in data quality by country</h2>
 <p>For most indicators, all 38 countries have generally good data quality. However, for 4 indicators (capabilities, crisis and risk management, digital services and procurement) a small number of countries have no available data at all. The UK achieved the highest overall data quality score, followed closely by five other countries – Italy, Poland, Sweden, Norway and Slovenia.</p>
 <p>Missing data has been estimated through statistical simulation (using a method called multiple imputation). Countries with more missing data points inevitably have a larger proportion of estimated metrics and this factor should be borne in mind when interpreting results. Further details about this methodology can be found in the Technical Report.</p>
-<p><a href="#tbl-dqa-grade">Table&nbsp;<span>2.1</span></a> highlights the availability of InCiSE metrics for all countries in the 2019 Index, data availability for each of the 12 indicators measured and where data has been estimated.</p>
+<p><a href="#tbl-dqa-grade" class="quarto-xref">Table&nbsp;<span>2.1</span></a> highlights the availability of InCiSE metrics for all countries in the 2019 Index, data availability for each of the 12 indicators measured and where data has been estimated.</p>
 <div class="cell">
+<div id="tbl-dqa-grade" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dqa-grade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Data quality scores by indicator and country
+</figcaption>
+<div aria-describedby="tbl-dqa-grade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-dqa-grade" class="anchored">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2.1: Data quality scores by indicator and country</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header gt_col_headings">
 <th id="Country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Country</th>
@@ -612,684 +622,684 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_center" headers="dqa_overall">0.757</td>
 <td class="gt_row gt_center" headers="dqa_grade">A+</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">100%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">ITA</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.755</td>
 <td class="gt_row gt_center" headers="dqa_grade">A+</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">99%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">POL</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.755</td>
 <td class="gt_row gt_center" headers="dqa_grade">A+</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">99%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">SWE</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.755</td>
 <td class="gt_row gt_center" headers="dqa_grade">A+</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">99%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">NOR</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.752</td>
 <td class="gt_row gt_center" headers="dqa_grade">A+</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">99%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">SVN</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.750</td>
 <td class="gt_row gt_center" headers="dqa_grade">A+</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">99%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">AUT</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.738</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">98%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">FIN</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.736</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">97%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">ESP</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.733</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">97%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">NLD</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.731</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">98%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">FRA</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.718</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">97%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">PRT</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.716</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">85%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">DNK</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.707</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">93%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">DEU</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.701</td>
 <td class="gt_row gt_center" headers="dqa_grade">A</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">96%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">GRC</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.696</td>
 <td class="gt_row gt_center" headers="dqa_grade">B</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">94%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">SVK</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.692</td>
 <td class="gt_row gt_center" headers="dqa_grade">B</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">93%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">HUN</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.671</td>
 <td class="gt_row gt_center" headers="dqa_grade">B</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">81%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">EST</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.669</td>
 <td class="gt_row gt_center" headers="dqa_grade">B</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">90%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">CZE</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.659</td>
 <td class="gt_row gt_center" headers="dqa_grade">B</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">91%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">TUR</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.650</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">90%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">MEX</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.648</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">73%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">NZL</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.644</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">83%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">CHL</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.643</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">79%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">CAN</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.638</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">78%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">KOR</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.636</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">78%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">BEL</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.635</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">85%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">LVA</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.628</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">75%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">CHE</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.627</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">79%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">AUS</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.618</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">71%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">LTU</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.615</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">82%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">IRL</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.614</td>
 <td class="gt_row gt_center" headers="dqa_grade">C</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">84%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">JPN</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.597</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">75%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">USA</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.579</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">74%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">ISR</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.578</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">72%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">ISL</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.563</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">68%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">ROU</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.529</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">66%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="cc_iso3c">BGR</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.511</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">66%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="cc_iso3c">HRV</td>
 <td class="gt_row gt_center" headers="dqa_overall">0.501</td>
 <td class="gt_row gt_center" headers="dqa_grade">D</td>
 <td class="gt_row gt_center" headers="dqa_avl_smpl">65%</td>
-<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid" alt="x"></td>
-<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
-<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid" alt="Green"></td>
-<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/red-circle.png" class="img-fluid" alt="Red"></td>
-<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid" alt="Amber"></td>
+<td class="gt_row gt_center" headers="dqa_cap_dqi"><img src="figures/grey-x.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_crm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_dig_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_ffm_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_hrm_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_inc_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_int_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_opn_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pol_dqi"><img src="figures/green-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_pro_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_reg_dqi"><img src="figures/red-circle.png" class="img-fluid figure-img"></td>
+<td class="gt_row gt_center" headers="dqa_tax_dqi"><img src="figures/amber-circle.png" class="img-fluid figure-img"></td>
 </tr>
 </tbody><tfoot class="gt_footnotes">
 <tr class="odd">
@@ -1300,11 +1310,13 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 
 
 
-<div class="no-row-height column-margin column-container"><div class="nobullet">
+<div class="no-row-height column-margin column-container"><div class="nobullet margin-aside">
 <ul>
 <li><img src="figures/green-circle.png" class="img_h15 img-fluid" alt="Green"> Green rating icon</li>
 <li><img src="figures/amber-circle.png" class="img_h15 img-fluid" alt="Amber"> Amber rating icon</li>
@@ -1393,10 +1405,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1406,8 +1417,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1420,6 +1440,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1463,6 +1602,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1488,6 +1628,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1549,17 +1715,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01_introduction.html" class="pagination-link">
+      <a href="./01_introduction.html" class="pagination-link  aria-label=" &lt;span="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03_results.html" class="pagination-link">
+      <a href="./03_results.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Results of the 2019 InCiSE Index</span>">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Results of the 2019 InCiSE Index</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
