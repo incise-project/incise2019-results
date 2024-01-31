@@ -104,10 +104,15 @@ set_val = function(input, value) {
 
 bar_plot.addEventListener("mousedown", (event) => {
   if (bar_plot.value != null) {
+    if (bar_plot.value.cc_iso3c == "InCiSE") {
+      return null
+    }
     var sel_country = countries[country_codes.indexOf(bar_plot.value.cc_iso3c)]
     set_val(viewof usr_country, sel_country)
   }
 });
+
+set_val(viewof usr_country, countries[Math.floor(Math.random()*38)])
 
 ```
 

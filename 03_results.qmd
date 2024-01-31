@@ -158,6 +158,8 @@ indicator_summary.addEventListener("input", (event) => {
       set_val(viewof hover_value, indicator_summary.value.raw_value)
       set_val(viewof hover_ind, indicator_summary.value.indicator)
     }
+  } else {
+    set_val(viewof hover_country, null)
   }
 });
 
