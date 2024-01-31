@@ -7,10 +7,12 @@ execute:
 # Country profiles of the 2019 InCiSE results {#sec-country-profiles}
 
 This chapter provides an interactive summary of each country's results from the
-2019 edition  of the InCiSE Index. For each country, there is a bar chart
-showing its position in the overall Index, as well as a ‘radar chart’ showing
-their scores for each indicator compared with the InCiSE average. The radar
-charts highlight where a country performs particularly well compared to the
+2019 edition  of the InCiSE Index. For the selected country, the bar chart
+shows the country's score for the overall InCiSE Index (in blue) compared to
+the InCiSE average (in orange) and that of all other countries. The
+'radar chart' highlights the selected country's scores for each of the 12
+indicators (in blue) compared with the InCiSE average (in orange), this
+chart highlights where a country performs particularly well compared to the
 average and where further analysis or attention may be beneficial.
 
 As discussed at the start of @sec-index-results, all scores in the InCiSE
@@ -22,7 +24,7 @@ measure.
 Weaker scores do not reflect a view on prioritisation within a country, but
 instead can highlight opportunities to learn from other countries.
 
-@sec-scores-rankings provides tables of the country score for each indicator.
+@sec-scores-rankings provides tables of the country scores for each indicator.
 More detailed results of country scores, including for the metrics which
 underlie each indicator result, can be found on the InCiSE website. Further
 details about the methodological approach, including the construction of each
@@ -30,7 +32,6 @@ indicator, can be found in the
 [Technical Report](http://incise-project.github.io/incise2019-techreport/).
 
 ::: {.callout-note title="Key to reading country graphs" icon="false" collapse="true"}
-
 Each country section includes a figure with two charts: a bar chart on the
 left hand side showing the results of the InCiSE Index and a radar chart on
 the right hand side showing the results of the 12 indicators that make up
@@ -52,9 +53,15 @@ for each indicator is shown in orange.
 :::
 
 ::: {.callout-tip title="Interactive content" icon="false"}
-The following content is interactive and may not be fully accessible,
-[static versions](Z_00_country_profiles_static.qmd) of the country profiles are
-available in the Appendices to this report.
+The following content, including the charts and narrative, is interactive and
+may not be fully accessible, [static versions](Z_00_country_profiles_static.qmd)
+of the country profiles are available in the Appendices to this report.
+Depending on your network connection it may take a few seconds for the charts
+to load properly.
+
+When this page is first loaded one of the 38 countries covered by the InCiSE
+Index is selected at random, to change the selection either use the drop down
+menu or click on the country's position in the bar chat.
 :::
 
 ```{ojs, setup}

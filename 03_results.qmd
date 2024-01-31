@@ -29,7 +29,16 @@ performing. Rather, of the 38 countries selected they have the highest and
 lowest performance within that group of countries. The methodology used to
 explain these scores is explained in the Technical Report.
 
-::: {.callout-caution title="Interactive content" icon="false"}
+::: {.callout-tip title="Interactive content" icon="false"}
+This charts in this chapter are interactive and may not be fully accessible,
+a [static version](Y_results_static.qmd) of this chapter is available in the
+Appendices to this report. Depending on your network connection it may take a
+few seconds for the charts to load properly.
+
+When this page is first loaded one of the 38 countries covered by the InCiSE
+Index is selected at random, to change the selection either use the drop down
+menu or click on the country's position in the bar chat.
+
 The following content is interactive and may not be fully accessible,
 a [static version](Y_results_static.qmd) of this chapter is available in the
 Appendices to this report.
@@ -294,10 +303,10 @@ radar_plot = Plot.plot({
 :::
 
 The chart below shows the distribution of country scores for each indicator.
-Country scores are shown as green dots, the lowest scoring country is on the
+Country scores are shown as blue dots, the lowest scoring country is on the
 left hand-side and the highest scoring country on the right hand-side (the
 country code is also shown to the right of each line). The InCiSE average for
-each indicator is shown by a grey bar.
+each indicator is shown by an orange vertical bar.
 
 ```{ojs, indicator_summary}
 
@@ -397,6 +406,10 @@ indicator_summary = Plot.plot({
 
 ```
 
+The following sections summarise the scores for each of the 12 indicators
+measured in InCiSE 2019, each section includes a bar chart showing the scores
+for each country (in grey) and the InCiSE average (in orange), the scores of
+the five highest scoring countries are also highlighted (in blue).
 
 ## Policy making {#sec-policy-making}
 
