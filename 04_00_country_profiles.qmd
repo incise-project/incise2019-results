@@ -67,7 +67,7 @@ menu or click on the country's position in the bar chat.
 ```{ojs, setup}
 //| output: false
 
-Plot = import("https://esm.sh/@observablehq/plot")
+Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm")
 
 /* source data */
 narrative_data = FileAttachment("country_visuals/country_narratives.csv").csv({ "typed": true });

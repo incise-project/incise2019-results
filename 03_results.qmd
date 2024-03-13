@@ -46,7 +46,7 @@ quartile country scores (in grey) for each of the 12 InCiSE Indicators.
 ```{ojs, setup}
 //| output: false
 
-Plot = import("https://esm.sh/@observablehq/plot")
+Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm")
 
 bar_data = FileAttachment("country_visuals/bar_data_full.csv").csv({ "typed": true });
 radar_grid = FileAttachment("country_visuals/radar_grid.csv").csv({ "typed": true });
