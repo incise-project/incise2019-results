@@ -8,44 +8,44 @@ ISO 3166-1 country codes, the codes for the 38 countries covered by the
 
 Code| Country
 :-: | :--
-GBR | United Kingdom
-NZL | New Zealand
-CAN | Canada
-FIN | Finland
 AUS | Australia
-DNK | Denmark
-NOR | Norway
-NLD | Netherlands (the)
-KOR | Korea (the Republic of)
-SWE | Sweden
-USA | United States of America (the)
-EST | Estonia
-CHE | Switzerland
-IRL | Ireland
-FRA | France
 AUT | Austria
-ESP | Spain
-MEX | Mexico
-DEU | Germany
-LTU | Lithuania
 BEL | Belgium
-JPN | Japan
-LVA | Latvia
-CHL | Chile
-ITA | Italy
-SVN | Slovenia
-ISR | Israel
-POL | Poland
-PRT | Portugal
-CZE | Czechia
-ISL | Iceland
-TUR | Turkey
-SVK | Slovakia
 BGR | Bulgaria
+CAN | Canada
+CHL | Chile
 HRV | Croatia
-ROU | Romania
+CZE | Czechia
+DNK | Denmark
+EST | Estonia
+FIN | Finland
+FRA | France
+DEU | Germany
 GRC | Greece
 HUN | Hungary
+ISL | Iceland
+IRL | Ireland
+ISR | Israel
+ITA | Italy
+JPN | Japan
+KOR | Korea (the Republic of)
+LVA | Latvia
+LTU | Lithuania
+MEX | Mexico
+NLD | Netherlands (the)
+NZL | New Zealand
+NOR | Norway
+POL | Poland
+PRT | Portugal
+ROU | Romania
+SVK | Slovakia
+SVN | Slovenia
+ESP | Spain
+SWE | Sweden
+CHE | Switzerland
+TUR | Turkey
+GBR | United Kingdom
+USA | United States of America (the)
 
 : {tbl-colwidths="[25, 75]" .striped .sm}
 
