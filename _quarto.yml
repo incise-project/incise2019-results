@@ -78,6 +78,9 @@ book:
           - text: "Download the PDF of this report"
             icon: file-earmark-pdf
             href: incise2019_results_report.pdf
+          - text: "View the results dashboard"
+            icon: bar-chart-fill
+            href: https://incise-project.github.io/incise2019-dashboard/
           - text: "View the source code of this report"
             icon: github
             href: https://github.com/incise-project/incise2019-results/
