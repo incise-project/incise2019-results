@@ -72,6 +72,10 @@ book:
     right:
       - text: "More"
         menu:
+          - text: "Go to the Blavatnik Index of Public Administration"
+            icon: box-arrow-right
+            href: https://index.bsg.ox.ac.uk
+          - text: "---"
           - text: "Read the InCiSE 2019 Technical Report"
             icon: book-half
             href: https://incise-project.github.io/incise2019-techreport/
@@ -109,3 +113,4 @@ format:
     reference-location: margin
     strip-comments: true
     number-depth: 2
+    include-after-body: banner.html
