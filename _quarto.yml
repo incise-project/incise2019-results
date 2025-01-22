@@ -1,7 +1,6 @@
 project:
   type: book
   output-dir: docs
-  pre-render: prepare.R
 
 book:
   title: "InCiSE 2019: Results Report"
